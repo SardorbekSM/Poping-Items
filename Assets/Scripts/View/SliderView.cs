@@ -9,11 +9,6 @@ namespace View
     {
         [SerializeField] private Slider _slider;
 
-        private void Start()
-        {
-            _slider.onValueChanged.AddListener(OnValueChanged);
-        }
-
         [Inject]
         public void Inject(ScoreControl scoreControl)
         {
@@ -28,11 +23,6 @@ namespace View
         public void ChangeSliderMaxCount(float maxValue)
         {
             _slider.maxValue = maxValue;
-        }
-
-        private void OnValueChanged(float sliderValue)
-        {
-            Debug.Log("Value: " + sliderValue);
         }
     }
 }
