@@ -24,6 +24,7 @@ namespace View
         private void OnButtonClick()
         {
             Hide();
+            _restartButtonCallback?.Invoke();
         }
         
         private void OnDestroy()
