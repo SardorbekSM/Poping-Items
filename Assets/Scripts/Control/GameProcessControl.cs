@@ -5,7 +5,7 @@ using VContainer;
 
 namespace Control
 {
-    public class LoopedSpawnControl : MonoBehaviour
+    public class GameProcessControl : MonoBehaviour
     {
         private SpawnModel _spawnModel;
         private SpawnerWithPool _spawnerWithPool;

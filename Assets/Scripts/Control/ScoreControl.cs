@@ -1,13 +1,14 @@
-﻿using View;
+﻿using UnityEngine;
+using View;
 
 namespace Control
 {
     public class ScoreControl
     {
-        private readonly LoopedSpawnControl _spawnControl;
+        private readonly GameProcessControl _spawnControl;
         private readonly EndGameView _endGameView;
 
-        public ScoreControl(LoopedSpawnControl spawnControl, EndGameView endGameView)
+        public ScoreControl(GameProcessControl spawnControl, EndGameView endGameView)
         {
             _spawnControl = spawnControl;
             _endGameView = endGameView;
@@ -22,6 +23,7 @@ namespace Control
 
         private void RestartGame()
         {
+            Debug.Log("Restart is working");
             _spawnControl.Start();
         }
     }

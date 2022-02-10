@@ -12,7 +12,7 @@ using View;
 public class GameLifetimeScope : LifetimeScope
 {
     [SerializeField] private Camera _mainCamera;
-    [SerializeField] private LoopedSpawnControl _spawnControl;
+    [SerializeField] private GameProcessControl _spawnControl;
     [SerializeField] private SliderView _sliderView;
     [SerializeField] private EndGameView _endGameView;
     
