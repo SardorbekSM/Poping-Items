@@ -1,4 +1,5 @@
 ﻿using System;
+using Core.WaiterAsync;
 using Model;
 using UnityEngine;
 using UnityEngine.UI;
@@ -13,13 +14,13 @@ namespace View
         public event Action ButtonClicked;
 
         private IPooler<GameObject> _pooler;
-        private LoopedAction _loopedAction;
+        private LoopedActionAsync _loopedActionAsync;
 
         public void SetValue(IPooler<GameObject> value)
         {
-            _loopedAction = new LoopedAction();
-            _loopedAction.DoAction += ResetToDefault;
-            _loopedAction.Begin(_lifeTime);
+            _loopedActionAsync = new LoopedActionAsync();
+            _loopedActionAsync.DoAction += ResetToDefault;
+            _loopedActionAsync.Begin(_lifeTime);
         
             gameObject.SetActive(true);
 
@@ -35,7 +36,7 @@ namespace View
 
         public void ResetToDefault()
         {
-            _loopedAction.EndLoop();
+            _loopedActionAsync.EndLoop();
             gameObject.SetActive(false);
             _pooler.Return(gameObject);
         }

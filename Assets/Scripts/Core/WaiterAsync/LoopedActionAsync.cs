@@ -2,9 +2,9 @@
 using System.Threading;
 using Cysharp.Threading.Tasks;
 
-namespace Model
+namespace Core.WaiterAsync
 {
-    public class LoopedAction
+    public class LoopedActionAsync
     {
         private readonly CancellationTokenSource _cancellationTokenSource;
         private readonly CancellationToken _cancellation;
@@ -13,7 +13,7 @@ namespace Model
         public event Action DoAction;
         private bool _isLooped;
         
-        public LoopedAction()
+        public LoopedActionAsync()
         {
             _cancellationTokenSource = new CancellationTokenSource();
             _cancellation = _cancellationTokenSource.Token;

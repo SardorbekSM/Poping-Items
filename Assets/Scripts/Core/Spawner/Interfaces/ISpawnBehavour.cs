@@ -1,10 +1,9 @@
 ﻿using System;
+using UnityEngine;
 
-public interface ISpawnerBehaviour<T> : IDisposable
+public interface ISpawnerBehaviour : IDisposable
 {
     void Spawn(int count);
 
-    void OnSpawnedObject(T spawnedGameObject);
-
-    void DestroySpawnedObject(T spawnedGameObject);
+    void OnSpawnedObject(GameObject spawnedGameObject);
 }

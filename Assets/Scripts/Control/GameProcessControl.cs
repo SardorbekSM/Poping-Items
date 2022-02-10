@@ -1,4 +1,5 @@
 ﻿using Core.Spawner;
+using Core.WaiterAsync;
 using Model;
 using UnityEngine;
 using VContainer;
@@ -9,7 +10,7 @@ namespace Control
     {
         private SpawnModel _spawnModel;
         private SpawnerWithPool _spawnerWithPool;
-        private LoopedAction _loopedAction;
+        private LoopedActionAsync _loopedActionAsync;
 
         [Inject]
         public void Inject(SpawnerWithPool spawnerWithPool, SpawnModel spawnModel)
@@ -20,10 +21,11 @@ namespace Control
 
         public void Start()
         {
-            _loopedAction = new LoopedAction();
-            _loopedAction.DoAction += BeginSpawn;
+            _spawnerWithPool.Dispose();
+            _loopedActionAsync = new LoopedActionAsync();
+            _loopedActionAsync.DoAction += BeginSpawn;
             StopLooping();
-            _loopedAction.Begin(_spawnModel.SpawnDuration);
+            _loopedActionAsync.Begin(_spawnModel.SpawnDuration);
         }
 
         private void BeginSpawn()
@@ -33,7 +35,7 @@ namespace Control
 
         public void StopLooping()
         {
-            _loopedAction.EndLoop();
+            _loopedActionAsync.EndLoop();
         }
     }
 }

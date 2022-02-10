@@ -5,7 +5,7 @@ using VContainer;
 
 namespace Core.Spawner
 {
-    public sealed class SpawnerWithPool : ISpawnerBehaviour<GameObject>
+    public sealed class SpawnerWithPool : ISpawnerBehaviour
     {
         public event Action<GameObject> OnInstantiatedObject = delegate {  };
 
@@ -38,15 +38,9 @@ namespace Core.Spawner
             OnInstantiatedObject.Invoke(spawnedObject);
         }
 
-        public void DestroySpawnedObject(GameObject spawnedGameObject)
-        {
-            _spawnerContainer.DestroySpawnedObject(spawnedGameObject);
-            _pooler.Dispose();
-        }
-
         public void Dispose()
         {
-            _spawnerContainer.Dispose();
+            _spawnerContainer?.Dispose();
             _pooler?.Dispose();
         }
     }
