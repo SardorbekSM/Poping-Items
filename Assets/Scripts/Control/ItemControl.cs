@@ -2,6 +2,7 @@
 using Model;
 using UnityEngine;
 using VContainer.Unity;
+using View;
 
 namespace Control
 {

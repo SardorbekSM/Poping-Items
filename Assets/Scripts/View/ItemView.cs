@@ -1,55 +1,49 @@
 ﻿using System;
-using System.Threading;
-using Core.Position;
-using Cysharp.Threading.Tasks;
+using Model;
 using UnityEngine;
-using UnityEngine.Assertions;
 using UnityEngine.UI;
 
-public class ItemView : MonoBehaviour, ISpawnableObject<IPooler<GameObject>>, IClickBehaviour
+namespace View
 {
-    [SerializeField] private Button _itemButton;
-    [SerializeField] private float _lifeTime;
-
-    public event Action ButtonClicked;
-
-    private IPooler<GameObject> _pooler;
-    private CancellationTokenSource _cancellation;
-
-    public void SetValue(IPooler<GameObject> value)
+    public class ItemView : MonoBehaviour, ISpawnableObject<IPooler<GameObject>>, IClickBehaviour
     {
-        _cancellation = new CancellationTokenSource();
-        
-        gameObject.SetActive(true);
-
-        _pooler = value;
-        
-        _itemButton.onClick.AddListener(OnButtonClicked);
-
-        Begin(_cancellation.Token);
-    }
+        [SerializeField] private Button _itemButton;
+        [SerializeField] private float _lifeTime;
     
-    private async UniTask Begin(CancellationToken token)
-    {
-        await UniTask.Delay(TimeSpan.FromSeconds(_lifeTime), cancellationToken: token);
-        ResetToDefault();
-    }
+        public event Action ButtonClicked;
 
-    public void ChangePosition(Vector2 newPosition)
-    {
-        transform.position = newPosition;
-    }
+        private IPooler<GameObject> _pooler;
+        private LoopedAction _loopedAction;
 
-    public void ResetToDefault()
-    {
-        _cancellation.Dispose();
-        gameObject.SetActive(false);
-        _pooler.Return(gameObject);
-    }
+        public void SetValue(IPooler<GameObject> value)
+        {
+            _loopedAction = new LoopedAction();
+            _loopedAction.DoAction += ResetToDefault;
+            _loopedAction.Begin(_lifeTime);
+        
+            gameObject.SetActive(true);
 
-    public void OnButtonClicked()
-    {
-        ResetToDefault();
-        ButtonClicked?.Invoke();
+            _pooler = value;
+        
+            _itemButton.onClick.AddListener(OnButtonClicked);
+        }
+
+        public void ChangePosition(Vector2 newPosition)
+        {
+            transform.position = newPosition;
+        }
+
+        public void ResetToDefault()
+        {
+            _loopedAction.EndLoop();
+            gameObject.SetActive(false);
+            _pooler.Return(gameObject);
+        }
+
+        public void OnButtonClicked()
+        {
+            ResetToDefault();
+            ButtonClicked?.Invoke();
+        }
     }
 }
