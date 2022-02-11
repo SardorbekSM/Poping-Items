@@ -8,12 +8,12 @@ namespace Control
 {
     public class ItemControl : IStartable
     {
-        private readonly IPosition _position;
+        private readonly IPositionGetter _positionGetter;
         private readonly SpawnerWithPool _spawnerWithPool;
         
-        public ItemControl(IPosition position, SpawnerWithPool spawnerWithPool)
+        public ItemControl(IPositionGetter positionGetter, SpawnerWithPool spawnerWithPool)
         {
-            _position = position;
+            _positionGetter = positionGetter;
             _spawnerWithPool = spawnerWithPool;
         }
 
@@ -26,7 +26,7 @@ namespace Control
         {
             var item = obj.GetComponent<ItemView>();
             item.ChangePosition(
-                _position.GetRandom());
+                _positionGetter.GetRandom());
         }
     }
 }

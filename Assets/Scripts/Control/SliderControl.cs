@@ -8,7 +8,7 @@ using View;
 
 namespace Control
 {
-    public class SliderControl : IStartable, IDisposable
+    public class SliderControl
     {
         private readonly SliderView _sliderView;
         private readonly SliderModel _sliderModel;
@@ -23,7 +23,7 @@ namespace Control
             _scoreControl = scoreControl;
         }
 
-        public void Start()
+        public void StartControl()
         {
             _spawnerWithPool.OnInstantiatedObject += SubscribeToClick;
             _sliderView.ChangeSliderMinCount(_sliderModel.FillMin);
@@ -41,7 +41,7 @@ namespace Control
             _sliderView.ChangeValue(_scoreControl.AddScore());
         }
 
-        public void Dispose()
+        public void EndControl()
         {
             _spawnerWithPool.OnInstantiatedObject -= SubscribeToClick;
             

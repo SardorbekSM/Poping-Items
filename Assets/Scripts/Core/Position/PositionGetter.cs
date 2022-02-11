@@ -3,11 +3,11 @@ using UnityEngine;
 
 namespace Core.Position
 {
-    public class ItemPosition : IPosition
+    public class PositionGetter : IPositionGetter
     {
         private readonly SpawnModel _spawnModel;
         
-        public ItemPosition(SpawnModel spawnModel)
+        public PositionGetter(SpawnModel spawnModel)
         {
             _spawnModel = spawnModel;
         }

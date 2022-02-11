@@ -7,35 +7,30 @@ using VContainer.Unity;
 
 namespace Control
 {
-    public class GameProcessControl
+    public class SpawnControl
     {
         private readonly SpawnModel _spawnModel;
         private readonly SpawnerWithPool _spawnerWithPool;
         private LoopedActionAsync _loopedActionAsync;
 
-        public GameProcessControl(SpawnerWithPool spawnerWithPool, SpawnModel spawnModel)
+        public SpawnControl(SpawnerWithPool spawnerWithPool, SpawnModel spawnModel)
         {
             _spawnerWithPool = spawnerWithPool;
             _spawnModel = spawnModel;
         }
 
-        public void BeginSpawn()
+        public void StartControl()
         {
             _spawnerWithPool.Dispose();
             _loopedActionAsync = new LoopedActionAsync();
             _loopedActionAsync.DoAction += _spawnerWithPool.Spawn;
-            StopSpawn();
+            EndControl();
             _loopedActionAsync.Begin(_spawnModel.SpawnDuration);
         }
 
-        public void StopSpawn()
+        public void EndControl()
         {
             _loopedActionAsync.EndLoop();
-        }
-
-        public void OnWin()
-        {
-            Debug.Log("You Win!");
         }
     }
 }
