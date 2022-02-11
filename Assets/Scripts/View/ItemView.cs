@@ -36,6 +36,7 @@ namespace View
 
         public void ResetToDefault()
         {
+            _itemButton.onClick.RemoveAllListeners();
             _loopedActionAsync.EndLoop();
             _pooler.Return(gameObject);
             gameObject.SetActive(false);
@@ -45,6 +46,13 @@ namespace View
         {
             ResetToDefault();
             ButtonClicked?.Invoke();
+            ButtonClicked = delegate { };
+        }
+
+        private void OnDisable()
+        {
+            _loopedActionAsync.DoAction -= ResetToDefault;
+            _loopedActionAsync.EndLoop();
         }
     }
 }

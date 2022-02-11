@@ -1,9 +1,7 @@
 ﻿using System;
+
 using Control.Interfaces;
-using Core;
 using Model;
-using UnityEngine;
-using View;
 
 namespace Control
 {

@@ -4,6 +4,7 @@ using Core.Spawner;
 using Core.Spawner.Interfaces;
 using Model;
 using UnityEngine;
+using UnityEngine.Assertions;
 using VContainer.Unity;
 using View;
 
@@ -29,14 +30,18 @@ namespace Control
             _spawnerWithPool.OnInstantiatedObject += SubscribeToClick;
             _sliderView.ChangeSliderMinCount(_sliderModel.FillMin);
             _sliderView.ChangeSliderMaxCount(_sliderModel.FillMax);
+            _sliderView.ChangeValue(_sliderModel.FillMin);
         }
 
         private void SubscribeToClick(GameObject obj)
         {
-            var click = obj.GetComponent<IClickBehaviour>();
-            click.ButtonClicked += ChangeSliderValue;
-        }
+            var item = obj.GetComponent<IClickBehaviour>();
+            
+            Assert.IsNotNull(item);
 
+            item.ButtonClicked += ChangeSliderValue;
+        }
+        
         private void ChangeSliderValue()
         {
             _sliderView.ChangeValue(_scoreControl.AddScore());
@@ -45,7 +50,6 @@ namespace Control
         public void EndControl()
         {
             _spawnerWithPool.OnInstantiatedObject -= SubscribeToClick;
-            
         }
     }
 }

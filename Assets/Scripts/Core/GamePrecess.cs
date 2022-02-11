@@ -24,6 +24,11 @@ namespace Core
 
         public void Start()
         {
+            Initialize();
+        }
+
+        private void Initialize()
+        {
             _spawnControl.StartControl();
             _sliderControl.StartControl();
             _scoreControl.Scored += End;
@@ -31,7 +36,7 @@ namespace Core
 
         private void RestartGame()
         {
-            Start();
+            Initialize();
         }
 
         private void End()
@@ -44,7 +49,7 @@ namespace Core
 
         public void Dispose()
         {
-            End();
+            _scoreControl.Scored -= End;
         }
     }
 }

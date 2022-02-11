@@ -714,4 +714,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _itemButton: {fileID: 8490260311634001224}
-  _lifeTime: 15
+  _lifeTime: 7
