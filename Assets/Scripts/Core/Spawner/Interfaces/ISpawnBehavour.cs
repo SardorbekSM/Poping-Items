@@ -1,9 +1,13 @@
 ﻿using System;
 using UnityEngine;
 
-public interface ISpawnerBehaviour : IDisposable
+namespace Core.Spawner.Interfaces
 {
-    void Spawn();
+    public interface ISpawnerBehaviour : IDisposable
+    {
+        event Action<GameObject> OnInstantiatedObject;
+        void Spawn();
 
-    void OnSpawnedObject(GameObject spawnedGameObject);
+        void OnSpawnedObject(GameObject spawnedGameObject);
+    }
 }

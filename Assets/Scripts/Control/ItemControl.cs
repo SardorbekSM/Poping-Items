@@ -1,4 +1,5 @@
 ﻿using Core.Spawner;
+using Core.Spawner.Interfaces;
 using Model;
 using UnityEngine;
 using VContainer.Unity;
@@ -9,9 +10,9 @@ namespace Control
     public class ItemControl : IStartable
     {
         private readonly IPositionGetter _positionGetter;
-        private readonly SpawnerWithPool _spawnerWithPool;
+        private readonly ISpawnerBehaviour _spawnerWithPool;
         
-        public ItemControl(IPositionGetter positionGetter, SpawnerWithPool spawnerWithPool)
+        public ItemControl(IPositionGetter positionGetter, ISpawnerBehaviour spawnerWithPool)
         {
             _positionGetter = positionGetter;
             _spawnerWithPool = spawnerWithPool;

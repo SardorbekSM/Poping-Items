@@ -1,5 +1,6 @@
 ﻿using Control.Interfaces;
 using Core.Spawner;
+using Core.Spawner.Interfaces;
 using Core.WaiterAsync;
 using Model;
 using UnityEngine;
@@ -10,10 +11,10 @@ namespace Control
     public class SpawnControl
     {
         private readonly SpawnModel _spawnModel;
-        private readonly SpawnerWithPool _spawnerWithPool;
+        private readonly ISpawnerBehaviour _spawnerWithPool;
         private LoopedActionAsync _loopedActionAsync;
 
-        public SpawnControl(SpawnerWithPool spawnerWithPool, SpawnModel spawnModel)
+        public SpawnControl(ISpawnerBehaviour spawnerWithPool, SpawnModel spawnModel)
         {
             _spawnerWithPool = spawnerWithPool;
             _spawnModel = spawnModel;

@@ -1,6 +1,7 @@
 ﻿using System;
 using Control.Interfaces;
 using Core.Spawner;
+using Core.Spawner.Interfaces;
 using Model;
 using UnityEngine;
 using VContainer.Unity;
@@ -12,10 +13,10 @@ namespace Control
     {
         private readonly SliderView _sliderView;
         private readonly SliderModel _sliderModel;
-        private readonly SpawnerWithPool _spawnerWithPool;
+        private readonly ISpawnerBehaviour _spawnerWithPool;
         private readonly IScoreControl _scoreControl;
 
-        public SliderControl(SliderView sliderView, SliderModel sliderModel, SpawnerWithPool spawnerWithPool, IScoreControl scoreControl)
+        public SliderControl(SliderView sliderView, SliderModel sliderModel, ISpawnerBehaviour spawnerWithPool, IScoreControl scoreControl)
         {
             _sliderView = sliderView;
             _sliderModel = sliderModel;

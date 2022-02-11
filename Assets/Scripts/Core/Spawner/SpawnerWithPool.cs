@@ -1,4 +1,5 @@
 ﻿using System;
+using Core.Spawner.Interfaces;
 using Data;
 using UnityEngine;
 using VContainer;
