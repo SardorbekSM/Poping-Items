@@ -1,28 +1,33 @@
-﻿using View;
+﻿using System;
+
+using Control.Interfaces;
+using Model;
 
 namespace Control
 {
-    public class ScoreControl
+    public class ScoreControl : IScoreControl
     {
-        private readonly LoopedSpawnControl _spawnControl;
-        private readonly EndGameView _endGameView;
+        private readonly SliderModel _sliderModel;
 
-        public ScoreControl(LoopedSpawnControl spawnControl, EndGameView endGameView)
+        private float _score;
+        
+        public event Action Scored;
+
+        public ScoreControl(SliderModel sliderModel)
         {
-            _spawnControl = spawnControl;
-            _endGameView = endGameView;
+            _sliderModel = sliderModel;
         }
 
-        public void OnScoreChanged(float sliderValue)
+        public float AddScore()
         {
-            if (!(sliderValue >= 10)) return;
-            _spawnControl.StopLooping();
-            _endGameView.Activate(RestartGame);
+            return _score += _sliderModel.Step;
         }
 
-        private void RestartGame()
+        public void OnScoreChanged(float score)
         {
-            _spawnControl.Start();
+            if (!(score >= _sliderModel.FillMax)) return;
+            _score = _sliderModel.FillMin;
+            Scored?.Invoke();
         }
     }
 }

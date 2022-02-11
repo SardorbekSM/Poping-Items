@@ -1,4 +1,5 @@
 using Control;
+using Core;
 using Core.Position;
 using Core.Spawner;
 using Data;
@@ -12,7 +13,6 @@ using View;
 public class GameLifetimeScope : LifetimeScope
 {
     [SerializeField] private Camera _mainCamera;
-    [SerializeField] private LoopedSpawnControl _spawnControl;
     [SerializeField] private SliderView _sliderView;
     [SerializeField] private EndGameView _endGameView;
     
@@ -33,7 +33,6 @@ public class GameLifetimeScope : LifetimeScope
     private void BindComponents(IContainerBuilder builder)
     {
         builder.RegisterInstance(_mainCamera).AsSelf();
-        builder.RegisterComponent(_spawnControl).AsSelf();
         builder.RegisterComponent(_sliderView).AsSelf();
         builder.RegisterComponent(_endGameView).AsSelf();
     }
@@ -41,14 +40,17 @@ public class GameLifetimeScope : LifetimeScope
     private void BindCore(IContainerBuilder builder)
     {
         builder.Register<UniqueValueRandomizer>(Lifetime.Singleton).AsImplementedInterfaces();
-        builder.Register<ItemPosition>(Lifetime.Singleton).AsImplementedInterfaces();
-        builder.Register<SpawnerWithPool>(Lifetime.Singleton);
-        builder.Register<SliderModel>(Lifetime.Singleton);
-        builder.Register<SpawnModel>(Lifetime.Singleton);
-        builder.Register<ScoreControl>(Lifetime.Singleton);
+        builder.Register<PositionGetter>(Lifetime.Singleton).AsImplementedInterfaces();
+        builder.Register<ScoreControl>(Lifetime.Singleton).AsImplementedInterfaces();
+        
+        builder.Register<SpawnerWithPool>(Lifetime.Singleton).AsImplementedInterfaces();
+        builder.Register<SliderModel>(Lifetime.Singleton).AsSelf();
+        builder.Register<SpawnModel>(Lifetime.Singleton).AsSelf();
+        builder.Register<SpawnControl>(Lifetime.Singleton).AsSelf();
+        builder.Register<SliderControl>(Lifetime.Singleton).AsSelf();
 
-        builder.RegisterEntryPoint<SliderControl>();
         builder.RegisterEntryPoint<ItemControl>();
+        builder.RegisterEntryPoint<GamePrecess>();
     }
     
     private void BindInstance<T>(IContainerBuilder builder, T instance)

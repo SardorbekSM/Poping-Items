@@ -21,9 +21,10 @@ namespace View
             _restartButton.onClick.AddListener(OnButtonClick);
         }
 
-        public void OnButtonClick()
+        private void OnButtonClick()
         {
             Hide();
+            _restartButtonCallback?.Invoke();
         }
         
         private void OnDestroy()

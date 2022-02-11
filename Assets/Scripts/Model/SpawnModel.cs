@@ -6,14 +6,12 @@ namespace Model
 {
     public class SpawnModel
     {
-        public int SpawnCount => _spawnData.SpawnCount;
         public float SpawnDuration => _spawnData.SpawnDuration;
-        public float LifeTime => _spawnData.LifeTime;
 
         public GameObject[] Prefabs => _spawnData.Prefabs;
 
         public float LeftBorder { get; private set; }
-        public float RightBoder { get; private set; }
+        public float RightBorder { get; private set; }
         public float BottomBorder { get; private set; }
 
         private readonly SpawnData _spawnData;
@@ -36,7 +34,7 @@ namespace Model
             var rightTopCorner = _mainCamera.ScreenToWorldPoint(new Vector2(Screen.width, Screen.height));
 
             LeftBorder = leftBottomCorner.x + _itemsOffsetData.LeftOffset;
-            RightBoder = rightTopCorner.x + _itemsOffsetData.RightOffset;
+            RightBorder = rightTopCorner.x + _itemsOffsetData.RightOffset;
             BottomBorder = leftBottomCorner.y + _itemsOffsetData.BottomOffset;
         }
     }

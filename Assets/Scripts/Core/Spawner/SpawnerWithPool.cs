@@ -1,11 +1,12 @@
 ﻿using System;
+using Core.Spawner.Interfaces;
 using Data;
 using UnityEngine;
 using VContainer;
 
 namespace Core.Spawner
 {
-    public sealed class SpawnerWithPool : ISpawnerBehaviour<GameObject>
+    public sealed class SpawnerWithPool : ISpawnerBehaviour
     {
         public event Action<GameObject> OnInstantiatedObject = delegate {  };
 
@@ -21,12 +22,9 @@ namespace Core.Spawner
             _spawner = new Spawner<GameObject>(_pooler);
         }
 
-        public async void Spawn(int count)
+        public async void Spawn()
         {
-            for (var i = 0; i < count; i++)
-            {
-                await _spawner.BeginSpawning(OnSpawnedObject);
-            }
+            await _spawner.BeginSpawning(OnSpawnedObject);
         }
 
         public void OnSpawnedObject(GameObject spawnedObject)
@@ -38,15 +36,9 @@ namespace Core.Spawner
             OnInstantiatedObject.Invoke(spawnedObject);
         }
 
-        public void DestroySpawnedObject(GameObject spawnedGameObject)
-        {
-            _spawnerContainer.DestroySpawnedObject(spawnedGameObject);
-            _pooler.Dispose();
-        }
-
         public void Dispose()
         {
-            _spawnerContainer.Dispose();
+            _spawnerContainer?.Dispose();
             _pooler?.Dispose();
         }
     }
