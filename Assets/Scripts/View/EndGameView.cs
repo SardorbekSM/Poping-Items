@@ -34,7 +34,7 @@ namespace View
         
         public void Activate(Action buttonClickCallback)
         {
-            _restartButtonCallback += buttonClickCallback;
+            _restartButtonCallback = buttonClickCallback;
 
             StartFadeAnimation();
             Show();
