@@ -31,20 +31,15 @@ namespace Core
 
         private void RestartGame()
         {
-            Debug.Log("Restart is working");
-            
             Start();
         }
 
         private void End()
         {
-            Debug.Log("End is working");
-
             _spawnControl.EndControl();
             _sliderControl.EndControl();
             _scoreControl.Scored -= End;
             _endGameView.Activate(RestartGame);
-
         }
 
         public void Dispose()

@@ -34,10 +34,10 @@ namespace Control
         private void SubscribeToClick(GameObject obj)
         {
             var click = obj.GetComponent<IClickBehaviour>();
-            click.ButtonClicked += SliderValue;
+            click.ButtonClicked += ChangeSliderValue;
         }
 
-        private void SliderValue()
+        private void ChangeSliderValue()
         {
             _sliderView.ChangeValue(_scoreControl.AddScore());
         }

@@ -37,8 +37,8 @@ namespace View
         public void ResetToDefault()
         {
             _loopedActionAsync.EndLoop();
-            gameObject.SetActive(false);
             _pooler.Return(gameObject);
+            gameObject.SetActive(false);
         }
 
         public void OnButtonClicked()
