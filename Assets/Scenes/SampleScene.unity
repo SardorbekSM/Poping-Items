@@ -305,7 +305,6 @@ GameObject:
   m_Component:
   - component: {fileID: 285132988}
   - component: {fileID: 285132987}
-  - component: {fileID: 285132986}
   m_Layer: 0
   m_Name: LifetimeScope
   m_TagString: Untagged
@@ -313,18 +312,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &285132986
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 285132985}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4372652f88eeb4c46a2c5713de188480, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &285132987
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -342,7 +329,6 @@ MonoBehaviour:
   autoRun: 1
   autoInjectGameObjects: []
   _mainCamera: {fileID: 519420031}
-  _spawnControl: {fileID: 285132986}
   _sliderView: {fileID: 1882025163}
   _endGameView: {fileID: 136495834}
   _spawnData: {fileID: 11400000, guid: 2c06c461f732131439a8e83693e04585, type: 2}

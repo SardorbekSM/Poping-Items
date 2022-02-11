@@ -1,4 +1,5 @@
 using Control;
+using Core;
 using Core.Position;
 using Core.Spawner;
 using Data;
@@ -12,7 +13,6 @@ using View;
 public class GameLifetimeScope : LifetimeScope
 {
     [SerializeField] private Camera _mainCamera;
-    [SerializeField] private GameProcessControl _spawnControl;
     [SerializeField] private SliderView _sliderView;
     [SerializeField] private EndGameView _endGameView;
     
@@ -33,7 +33,6 @@ public class GameLifetimeScope : LifetimeScope
     private void BindComponents(IContainerBuilder builder)
     {
         builder.RegisterInstance(_mainCamera).AsSelf();
-        builder.RegisterComponent(_spawnControl).AsSelf();
         builder.RegisterComponent(_sliderView).AsSelf();
         builder.RegisterComponent(_endGameView).AsSelf();
     }
@@ -42,13 +41,16 @@ public class GameLifetimeScope : LifetimeScope
     {
         builder.Register<UniqueValueRandomizer>(Lifetime.Singleton).AsImplementedInterfaces();
         builder.Register<ItemPosition>(Lifetime.Singleton).AsImplementedInterfaces();
-        builder.Register<SpawnerWithPool>(Lifetime.Singleton);
-        builder.Register<SliderModel>(Lifetime.Singleton);
-        builder.Register<SpawnModel>(Lifetime.Singleton);
-        builder.Register<ScoreControl>(Lifetime.Singleton);
+        builder.Register<ScoreControl>(Lifetime.Singleton).AsImplementedInterfaces();
+        
+        builder.Register<SpawnerWithPool>(Lifetime.Singleton).AsSelf();
+        builder.Register<SliderModel>(Lifetime.Singleton).AsSelf();
+        builder.Register<SpawnModel>(Lifetime.Singleton).AsSelf();
+        builder.Register<GameProcessControl>(Lifetime.Singleton).AsSelf();
 
         builder.RegisterEntryPoint<SliderControl>();
         builder.RegisterEntryPoint<ItemControl>();
+        builder.RegisterEntryPoint<Launcher>();
     }
     
     private void BindInstance<T>(IContainerBuilder builder, T instance)

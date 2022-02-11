@@ -21,12 +21,9 @@ namespace Core.Spawner
             _spawner = new Spawner<GameObject>(_pooler);
         }
 
-        public async void Spawn(int count)
+        public async void Spawn()
         {
-            for (var i = 0; i < count; i++)
-            {
-                await _spawner.BeginSpawning(OnSpawnedObject);
-            }
+            await _spawner.BeginSpawning(OnSpawnedObject);
         }
 
         public void OnSpawnedObject(GameObject spawnedObject)

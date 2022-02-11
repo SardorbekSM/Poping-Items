@@ -1,41 +1,41 @@
-﻿using Core.Spawner;
+﻿using Control.Interfaces;
+using Core.Spawner;
 using Core.WaiterAsync;
 using Model;
 using UnityEngine;
-using VContainer;
+using VContainer.Unity;
 
 namespace Control
 {
-    public class GameProcessControl : MonoBehaviour
+    public class GameProcessControl
     {
-        private SpawnModel _spawnModel;
-        private SpawnerWithPool _spawnerWithPool;
+        private readonly SpawnModel _spawnModel;
+        private readonly SpawnerWithPool _spawnerWithPool;
         private LoopedActionAsync _loopedActionAsync;
 
-        [Inject]
-        public void Inject(SpawnerWithPool spawnerWithPool, SpawnModel spawnModel)
+        public GameProcessControl(SpawnerWithPool spawnerWithPool, SpawnModel spawnModel)
         {
             _spawnerWithPool = spawnerWithPool;
             _spawnModel = spawnModel;
         }
 
-        public void Start()
+        public void BeginSpawn()
         {
             _spawnerWithPool.Dispose();
             _loopedActionAsync = new LoopedActionAsync();
-            _loopedActionAsync.DoAction += BeginSpawn;
-            StopLooping();
+            _loopedActionAsync.DoAction += _spawnerWithPool.Spawn;
+            StopSpawn();
             _loopedActionAsync.Begin(_spawnModel.SpawnDuration);
         }
 
-        private void BeginSpawn()
-        {
-            _spawnerWithPool.Spawn(_spawnModel.SpawnCount);
-        }
-
-        public void StopLooping()
+        public void StopSpawn()
         {
             _loopedActionAsync.EndLoop();
+        }
+
+        public void OnWin()
+        {
+            Debug.Log("You Win!");
         }
     }
 }

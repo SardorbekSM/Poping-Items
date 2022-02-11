@@ -3,7 +3,7 @@ using UnityEngine;
 
 public interface ISpawnerBehaviour : IDisposable
 {
-    void Spawn(int count);
+    void Spawn();
 
     void OnSpawnedObject(GameObject spawnedGameObject);
 }

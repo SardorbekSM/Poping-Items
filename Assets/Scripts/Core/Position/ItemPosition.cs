@@ -19,7 +19,7 @@ namespace Core.Position
 
         public Vector2 GetRandom()
         {
-            return GetRandomInCamera(_spawnModel.LeftBorder, _spawnModel.RightBoder, _spawnModel.BottomBorder);
+            return GetRandomInCamera(_spawnModel.LeftBorder, _spawnModel.RightBorder, _spawnModel.BottomBorder);
         }
 
         private Vector2 GetRandomInCamera(float minX, float maxX, float bottom)
