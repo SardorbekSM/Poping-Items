@@ -1,5 +1,6 @@
 ﻿using System;
 using Control.Interfaces;
+using Core;
 using Model;
 using UnityEngine;
 using View;
@@ -8,16 +9,14 @@ namespace Control
 {
     public class ScoreControl : IScoreControl
     {
-        private readonly GameProcessControl _spawnControl;
-        private readonly EndGameView _endGameView;
         private readonly SliderModel _sliderModel;
 
         private float _score;
+        
+        public event Action Scored;
 
-        public ScoreControl(GameProcessControl spawnControl, EndGameView endGameView, SliderModel sliderModel)
+        public ScoreControl(SliderModel sliderModel)
         {
-            _spawnControl = spawnControl;
-            _endGameView = endGameView;
             _sliderModel = sliderModel;
         }
 
@@ -29,17 +28,8 @@ namespace Control
         public void OnScoreChanged(float score)
         {
             if (!(score >= _sliderModel.FillMax)) return;
-            _spawnControl.StopSpawn();
-            _endGameView.Activate(RestartGame);
-            _spawnControl.OnWin();
-        }
-
-        private void RestartGame()
-        {
-            Debug.Log("Restart is working");
-            
             _score = _sliderModel.FillMin;
-            _spawnControl.BeginSpawn();
+            Scored?.Invoke();
         }
     }
 }
