@@ -40,17 +40,17 @@ public class GameLifetimeScope : LifetimeScope
     private void BindCore(IContainerBuilder builder)
     {
         builder.Register<UniqueValueRandomizer>(Lifetime.Singleton).AsImplementedInterfaces();
-        builder.Register<ItemPosition>(Lifetime.Singleton).AsImplementedInterfaces();
+        builder.Register<PositionGetter>(Lifetime.Singleton).AsImplementedInterfaces();
         builder.Register<ScoreControl>(Lifetime.Singleton).AsImplementedInterfaces();
         
         builder.Register<SpawnerWithPool>(Lifetime.Singleton).AsSelf();
         builder.Register<SliderModel>(Lifetime.Singleton).AsSelf();
         builder.Register<SpawnModel>(Lifetime.Singleton).AsSelf();
-        builder.Register<GameProcessControl>(Lifetime.Singleton).AsSelf();
+        builder.Register<SpawnControl>(Lifetime.Singleton).AsSelf();
+        builder.Register<SliderControl>(Lifetime.Singleton).AsSelf();
 
-        builder.RegisterEntryPoint<SliderControl>();
         builder.RegisterEntryPoint<ItemControl>();
-        builder.RegisterEntryPoint<Launcher>();
+        builder.RegisterEntryPoint<GamePrecess>();
     }
     
     private void BindInstance<T>(IContainerBuilder builder, T instance)
