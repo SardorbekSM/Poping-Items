@@ -28,9 +28,7 @@ namespace Control
         public void StartControl()
         {
             _spawnerWithPool.OnInstantiatedObject += SubscribeToClick;
-            _sliderView.ChangeSliderMinCount(_sliderModel.FillMin);
-            _sliderView.ChangeSliderMaxCount(_sliderModel.FillMax);
-            _sliderView.ChangeValue(_sliderModel.FillMin);
+            _sliderView.CreateSliderSpan(_sliderModel.FillMin, _sliderModel.FillMax);
         }
 
         private void SubscribeToClick(GameObject obj)

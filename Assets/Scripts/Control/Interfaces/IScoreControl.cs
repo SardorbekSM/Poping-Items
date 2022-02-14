@@ -6,6 +6,5 @@ namespace Control.Interfaces
     {
         event Action Scored;
         float AddScore();
-        void OnScoreChanged(float score);
     }
 }

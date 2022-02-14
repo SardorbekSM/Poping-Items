@@ -20,12 +20,16 @@ namespace Control
 
         public float AddScore()
         {
-            return _score += _sliderModel.Step;
+            var newScore = _score += _sliderModel.Step;
+            
+            OnScoreChanged();
+            
+            return newScore;
         }
 
-        public void OnScoreChanged(float score)
+        private void OnScoreChanged()
         {
-            if (!(score >= _sliderModel.FillMax)) return;
+            if (_score < _sliderModel.FillMax) return;
             _score = _sliderModel.FillMin;
             Scored?.Invoke();
         }

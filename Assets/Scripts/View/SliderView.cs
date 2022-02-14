@@ -10,25 +10,16 @@ namespace View
     {
         [SerializeField] private Slider _slider;
 
-        [Inject]
-        public void Inject(IScoreControl scoreControl)
-        {
-            _slider.onValueChanged.AddListener(scoreControl.OnScoreChanged);
-        }
-
         public void ChangeValue(float value)
         {
             _slider.value = value;
         }
 
-        public void ChangeSliderMinCount(float minValue)
+        public void CreateSliderSpan(float minValue, float maxValue)
         {
             _slider.minValue = minValue;
-        }
-
-        public void ChangeSliderMaxCount(float maxValue)
-        {
             _slider.maxValue = maxValue;
+            ChangeValue(minValue);
         }
     }
 }
