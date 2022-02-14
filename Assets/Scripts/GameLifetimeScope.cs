@@ -41,16 +41,16 @@ public class GameLifetimeScope : LifetimeScope
     {
         builder.Register<UniqueValueRandomizer>(Lifetime.Singleton).AsImplementedInterfaces();
         builder.Register<PositionGetter>(Lifetime.Singleton).AsImplementedInterfaces();
-        builder.Register<ScoreControl>(Lifetime.Singleton).AsImplementedInterfaces();
+        builder.Register<ScoreController>(Lifetime.Singleton).AsImplementedInterfaces();
         
         builder.Register<SpawnerWithPool>(Lifetime.Singleton).AsImplementedInterfaces();
         builder.Register<SliderModel>(Lifetime.Singleton).AsSelf();
         builder.Register<SpawnModel>(Lifetime.Singleton).AsSelf();
-        builder.Register<SpawnControl>(Lifetime.Singleton).AsSelf();
-        builder.Register<SliderControl>(Lifetime.Singleton).AsSelf();
+        builder.Register<SpawnController>(Lifetime.Singleton).AsSelf();
+        builder.Register<SliderController>(Lifetime.Singleton).AsSelf();
 
-        builder.RegisterEntryPoint<ItemControl>();
-        builder.RegisterEntryPoint<GamePrecess>();
+        builder.RegisterEntryPoint<ItemController>();
+        builder.RegisterEntryPoint<GameProcess>();
     }
     
     private void BindInstance<T>(IContainerBuilder builder, T instance)

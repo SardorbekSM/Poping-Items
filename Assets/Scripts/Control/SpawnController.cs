@@ -8,13 +8,13 @@ using VContainer.Unity;
 
 namespace Control
 {
-    public class SpawnControl
+    public class SpawnController
     {
         private readonly SpawnModel _spawnModel;
         private readonly ISpawnerBehaviour _spawnerWithPool;
         private LoopedActionAsync _loopedActionAsync;
 
-        public SpawnControl(ISpawnerBehaviour spawnerWithPool, SpawnModel spawnModel)
+        public SpawnController(ISpawnerBehaviour spawnerWithPool, SpawnModel spawnModel)
         {
             _spawnerWithPool = spawnerWithPool;
             _spawnModel = spawnModel;
