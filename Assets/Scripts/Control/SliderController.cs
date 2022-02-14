@@ -10,14 +10,14 @@ using View;
 
 namespace Control
 {
-    public class SliderControl
+    public class SliderController
     {
         private readonly SliderView _sliderView;
         private readonly SliderModel _sliderModel;
         private readonly ISpawnerBehaviour _spawnerWithPool;
         private readonly IScoreControl _scoreControl;
 
-        public SliderControl(SliderView sliderView, SliderModel sliderModel, ISpawnerBehaviour spawnerWithPool, IScoreControl scoreControl)
+        public SliderController(SliderView sliderView, SliderModel sliderModel, ISpawnerBehaviour spawnerWithPool, IScoreControl scoreControl)
         {
             _sliderView = sliderView;
             _sliderModel = sliderModel;

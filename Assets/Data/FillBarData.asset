@@ -12,5 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31f0fcaa371d4b44b2213b6e6f810c2b, type: 3}
   m_Name: FillBarData
   m_EditorClassIdentifier: 
-  _fillMax: 10
+  _fillMin: 0
+  _fillMax: 15
   _step: 1

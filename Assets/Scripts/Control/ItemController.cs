@@ -8,12 +8,12 @@ using View;
 
 namespace Control
 {
-    public class ItemControl : IStartable
+    public class ItemController : IStartable
     {
         private readonly IPositionGetter _positionGetter;
         private readonly ISpawnerBehaviour _spawnerWithPool;
         
-        public ItemControl(IPositionGetter positionGetter, ISpawnerBehaviour spawnerWithPool)
+        public ItemController(IPositionGetter positionGetter, ISpawnerBehaviour spawnerWithPool)
         {
             _positionGetter = positionGetter;
             _spawnerWithPool = spawnerWithPool;

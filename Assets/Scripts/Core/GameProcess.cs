@@ -7,17 +7,17 @@ using View;
 
 namespace Core
 {
-    public class GamePrecess : IStartable, IDisposable
+    public class GameProcess : IStartable, IDisposable
     {
-        private readonly SpawnControl _spawnControl;
-        private readonly SliderControl _sliderControl;
+        private readonly SpawnController _spawnController;
+        private readonly SliderController _sliderController;
         private readonly IScoreControl _scoreControl;
         private readonly EndGameView _endGameView;
 
-        public GamePrecess(SpawnControl spawnControl, SliderControl sliderControl, IScoreControl scoreControl, EndGameView endGameView)
+        public GameProcess(SpawnController spawnController, SliderController sliderController, IScoreControl scoreControl, EndGameView endGameView)
         {
-            _spawnControl = spawnControl;
-            _sliderControl = sliderControl;
+            _spawnController = spawnController;
+            _sliderController = sliderController;
             _scoreControl = scoreControl;
             _endGameView = endGameView;
         }
@@ -29,8 +29,8 @@ namespace Core
 
         private void Initialize()
         {
-            _spawnControl.StartControl();
-            _sliderControl.StartControl();
+            _spawnController.StartControl();
+            _sliderController.StartControl();
             _scoreControl.Scored += End;
         }
 
@@ -41,8 +41,8 @@ namespace Core
 
         private void End()
         {
-            _spawnControl.EndControl();
-            _sliderControl.EndControl();
+            _spawnController.EndControl();
+            _sliderController.EndControl();
             _scoreControl.Scored -= End;
             _endGameView.Activate(RestartGame);
         }

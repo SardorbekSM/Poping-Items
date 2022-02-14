@@ -5,7 +5,7 @@ using Model;
 
 namespace Control
 {
-    public class ScoreControl : IScoreControl
+    public class ScoreController : IScoreControl
     {
         private readonly SliderModel _sliderModel;
 
@@ -13,7 +13,7 @@ namespace Control
         
         public event Action Scored;
 
-        public ScoreControl(SliderModel sliderModel)
+        public ScoreController(SliderModel sliderModel)
         {
             _sliderModel = sliderModel;
         }
