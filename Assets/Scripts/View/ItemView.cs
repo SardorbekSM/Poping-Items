@@ -10,6 +10,7 @@ namespace View
     {
         [SerializeField] private Button _itemButton;
         [SerializeField] private float _lifeTime;
+        [SerializeField] private Transform _patternPlace;
     
         public event Action ButtonClicked;
 
@@ -32,6 +33,11 @@ namespace View
         public void ChangePosition(Vector2 newPosition)
         {
             transform.position = newPosition;
+        }
+
+        public void ChangePattern(GameObject pattern)
+        {
+            pattern.transform.SetParent(_patternPlace);
         }
 
         public void ResetToDefault()

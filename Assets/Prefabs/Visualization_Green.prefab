@@ -162,36 +162,6 @@ MonoBehaviour:
           m_StringArgument: Click
           m_BoolArgument: 0
         m_CallState: 2
---- !u!1 &4722725655011323269
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 798527372551956711}
-  m_Layer: 0
-  m_Name: Pattern
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &798527372551956711
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4722725655011323269}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.6, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 421041772937928188}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5842857556140731849
 GameObject:
   m_ObjectHideFlags: 0
@@ -261,10 +231,10 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 55
   m_Sprite: {fileID: -9029688276042879060, guid: f7dcbb3c4c0448142b82b263ce06e658,
     type: 3}
-  m_Color: {r: 0.30980393, g: 0.6745098, b: 1, a: 1}
+  m_Color: {r: 0.15508187, g: 0.8018868, b: 0.24073783, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -343,7 +313,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 56
   m_Sprite: {fileID: 6004597535561896319, guid: f7dcbb3c4c0448142b82b263ce06e658,
     type: 3}
   m_Color: {r: 0.9882353, g: 0.9882353, b: 0.9882353, a: 1}
@@ -425,10 +395,10 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: -1
+  m_SortingOrder: 54
   m_Sprite: {fileID: -3250155415278002652, guid: f7dcbb3c4c0448142b82b263ce06e658,
     type: 3}
-  m_Color: {r: 0.34509805, g: 0.5647059, b: 0.8679245, a: 1}
+  m_Color: {r: 0.15686275, g: 0.5882353, b: 0.23921569, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -548,9 +518,9 @@ GameObject:
   - component: {fileID: 421041772937928188}
   - component: {fileID: 7300432577758591004}
   - component: {fileID: 4660935604698632438}
-  - component: {fileID: 7259227268704981268}
+  - component: {fileID: 2504174611689266327}
   m_Layer: 0
-  m_Name: Visualization_Blue
+  m_Name: Visualization_Green
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -569,7 +539,6 @@ Transform:
   m_Children:
   - {fileID: 9094241958233652585}
   - {fileID: 5543484312727694160}
-  - {fileID: 798527372551956711}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -608,8 +577,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _itemButton: {fileID: 8490260311634001224}
   _lifeTime: 7
-  _patternPlace: {fileID: 798527372551956711}
---- !u!210 &7259227268704981268
+--- !u!210 &2504174611689266327
 SortingGroup:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

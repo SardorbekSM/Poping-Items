@@ -12,11 +12,13 @@ namespace Control
     {
         private readonly IPositionGetter _positionGetter;
         private readonly ISpawnerBehaviour _spawnerWithPool;
-        
-        public ItemController(IPositionGetter positionGetter, ISpawnerBehaviour spawnerWithPool)
+        private readonly ItemModel _itemModel;
+
+        public ItemController(IPositionGetter positionGetter, ISpawnerBehaviour spawnerWithPool, ItemModel itemModel)
         {
             _positionGetter = positionGetter;
             _spawnerWithPool = spawnerWithPool;
+            _itemModel = itemModel;
         }
 
         public void Start()
@@ -29,9 +31,9 @@ namespace Control
             var item = obj.GetComponent<ItemView>();
             
             Assert.IsNotNull(item);
-            
-            item.ChangePosition(
-                _positionGetter.GetRandom());
+            item.ChangePattern(_itemModel.GetPattern());
+
+            item.ChangePosition(_positionGetter.GetRandom());
         }
     }
 }
