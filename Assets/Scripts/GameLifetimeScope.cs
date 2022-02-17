@@ -53,11 +53,10 @@ public class GameLifetimeScope : LifetimeScope
         builder.Register<ItemModel>(Lifetime.Singleton).AsSelf();
         builder.Register<MainCameraBorders>(Lifetime.Singleton).AsSelf();
         builder.Register<PatternModel>(Lifetime.Singleton).AsSelf();
-        builder.Register<SpawnController>(Lifetime.Singleton).AsSelf();
         builder.Register<SliderController>(Lifetime.Singleton).AsSelf();
         builder.Register<LevelModel>(Lifetime.Singleton).AsSelf();
+        builder.Register<ItemController>(Lifetime.Singleton).AsSelf(); // Как можно передвигать строки с помощью alt как в VS
 
-        builder.RegisterEntryPoint<ItemController>();
         builder.RegisterEntryPoint<GameProcess>();
     }
     

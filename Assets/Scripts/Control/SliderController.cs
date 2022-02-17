@@ -14,15 +14,13 @@ namespace Control
         private readonly SliderView _sliderView;
         private readonly SliderModel _sliderModel;
         private readonly IScoreControl _scoreControl;
-        private readonly SpawnController _spawnController;
         private readonly ISpawnerBehaviour _spawnerBehaviour;
 
-        public SliderController(SliderView sliderView, SliderModel sliderModel, IScoreControl scoreControl, SpawnController spawnController, ISpawnerBehaviour spawnerBehaviour)
+        public SliderController(SliderView sliderView, SliderModel sliderModel, IScoreControl scoreControl, ISpawnerBehaviour spawnerBehaviour)
         {
             _sliderView = sliderView;
             _sliderModel = sliderModel;
             _scoreControl = scoreControl;
-            _spawnController = spawnController;
             _spawnerBehaviour = spawnerBehaviour;
         }
 
@@ -55,7 +53,7 @@ namespace Control
 
         public void EndControl()
         {
-            _spawnController.SpawnedObject -= SubscribeToClick;
+            _spawnerBehaviour.OnInstantiatedObject -= SubscribeToClick;
         }
     }
 }
