@@ -48,7 +48,7 @@ public class GameLifetimeScope : LifetimeScope
         builder.Register<SpawnerWithPool>(Lifetime.Singleton).AsImplementedInterfaces();
         
         builder.Register<SliderModel>(Lifetime.Singleton).AsSelf();
-        builder.Register<SpawnModel>(Lifetime.Singleton).AsSelf();
+        builder.Register<ItemModel>(Lifetime.Singleton).AsSelf();
         builder.Register<MainCameraBorders>(Lifetime.Singleton).AsSelf();
         builder.Register<PatternModel>(Lifetime.Singleton).AsSelf();
         builder.Register<SpawnController>(Lifetime.Singleton).AsSelf();

@@ -11,16 +11,16 @@ namespace Control
 {
     public class SpawnController
     {
-        private readonly SpawnModel _spawnModel;
+        private readonly ItemModel _itemModel;
         private readonly ISpawnerBehaviour _spawnerWithPool;
         private LoopedActionAsync _loopedActionAsync;
 
         public event Action<GameObject> SpawnedObject;
 
-        public SpawnController(ISpawnerBehaviour spawnerWithPool, SpawnModel spawnModel)
+        public SpawnController(ISpawnerBehaviour spawnerWithPool, ItemModel itemModel)
         {
             _spawnerWithPool = spawnerWithPool;
-            _spawnModel = spawnModel;
+            _itemModel = itemModel;
         }
 
         public void StartControl()
@@ -29,7 +29,7 @@ namespace Control
             _spawnerWithPool.OnInstantiatedObject += SpawnedObject;
             _loopedActionAsync = new LoopedActionAsync();
             _loopedActionAsync.DoAction += _spawnerWithPool.Spawn;
-            _loopedActionAsync.Begin(_spawnModel.SpawnDuration);
+            _loopedActionAsync.Begin(_itemModel.SpawnDuration);
         }
 
         public void EndControl()

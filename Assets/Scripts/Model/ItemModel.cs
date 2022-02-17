@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace Model
 {
-    public class SpawnModel
+    public class ItemModel
     {
         public float SpawnDuration => _spawnData.SpawnDuration;
         public float ItemLifeTime => _spawnData.ItemsLifeTime;
@@ -12,7 +12,7 @@ namespace Model
 
         private readonly SpawnData _spawnData;
 
-        public SpawnModel(SpawnData spawnData)
+        public ItemModel(SpawnData spawnData)
         {
             _spawnData = spawnData;
         }
