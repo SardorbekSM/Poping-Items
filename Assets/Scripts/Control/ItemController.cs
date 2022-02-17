@@ -17,7 +17,7 @@ namespace Control
         private readonly PatternModel _patternModel;
 
         private readonly ItemModel _itemModel;
-        private LoopedActionAsync _loopedActionAsync; // Не ижектится на VContainer
+        private LoopedActionAsync _loopedActionAsync; // Не инжектится на VContainer
 
         public ItemController(IPositionGetter positionGetter, ISpawnerBehaviour spawnerWithPool, PatternModel patternModel, ItemModel itemModel)
         {
@@ -31,9 +31,7 @@ namespace Control
         {
             _spawnerWithPool.OnInstantiatedObject += OnSpawned;
             _spawnerWithPool.Dispose();
-            _loopedActionAsync = new LoopedActionAsync();
-            _loopedActionAsync.DoAction += _spawnerWithPool.Spawn;
-            _loopedActionAsync.Begin(_itemModel.SpawnDuration);
+            _itemModel.BeginSpawn();
         }
 
         private void OnSpawned(GameObject obj)
@@ -48,14 +46,13 @@ namespace Control
 
             // Две методы всегда вызываются одновременно
             item.ChangePosition(_positionGetter.GetRandom());
-            item.ChangePattern(newPattern, type); 
+            item.ChangePattern(newPattern, type);
         }
         
         public void EndControl()
         {
             _spawnerWithPool.OnInstantiatedObject -= OnSpawned;
-            _loopedActionAsync.DoAction -= _spawnerWithPool.Spawn;
-            _loopedActionAsync.EndLoop();
+            _itemModel.EndSpawn();
         }
     }
 }
