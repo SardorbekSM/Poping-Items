@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c9df7720caa4719a6a9b3f910a14219, type: 3}
   m_Name: Patterns
   m_EditorClassIdentifier: 
+  _frequency: 2
   _correctPatterns:
   - {fileID: 4641315858080940053, guid: 596f43833f72f9e409a5aa97cf571a1a, type: 3}
   - {fileID: 4641315858080940053, guid: 1b02ef227e50eed4b80887adc314bf86, type: 3}
@@ -34,3 +35,14 @@ MonoBehaviour:
   - {fileID: 1014186581119606367, guid: b28ebe60aa1a017409886058b4faf297, type: 3}
   - {fileID: 3507544181715076926, guid: e3fba3f4e9f64a74ea32d153182f83ea, type: 3}
   - {fileID: 3348826331691875776, guid: 22f27c871544a8641bfc62f27288eb67, type: 3}
+  _patternsData:
+  - interactableType: 0
+    prefab: {fileID: 0}
+  - interactableType: 0
+    prefab: {fileID: 0}
+  - interactableType: 0
+    prefab: {fileID: 0}
+  - interactableType: 0
+    prefab: {fileID: 0}
+  - interactableType: 0
+    prefab: {fileID: 0}

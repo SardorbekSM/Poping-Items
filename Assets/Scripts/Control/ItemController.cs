@@ -1,5 +1,6 @@
 ﻿using Core.Spawner;
 using Core.Spawner.Interfaces;
+using Data;
 using Model;
 using UnityEngine;
 using UnityEngine.Assertions;
@@ -12,13 +13,13 @@ namespace Control
     {
         private readonly IPositionGetter _positionGetter;
         private readonly ISpawnerBehaviour _spawnerWithPool;
-        private readonly ItemModel _itemModel;
+        private readonly PatternModel _patternModel;
 
-        public ItemController(IPositionGetter positionGetter, ISpawnerBehaviour spawnerWithPool, ItemModel itemModel)
+        public ItemController(IPositionGetter positionGetter, ISpawnerBehaviour spawnerWithPool, PatternModel patternModel)
         {
             _positionGetter = positionGetter;
             _spawnerWithPool = spawnerWithPool;
-            _itemModel = itemModel;
+            _patternModel = patternModel;
         }
 
         public void Start()
@@ -29,11 +30,15 @@ namespace Control
         private void OnSpawned(GameObject obj)
         {
             var item = obj.GetComponent<ItemView>();
+            var pattern = obj.GetComponentInChildren<PatternView>();
+
+            var newPattern = _patternModel.GetPattern(out var type);
             
             Assert.IsNotNull(item);
-            item.ChangePattern(_itemModel.GetPattern());
 
             item.ChangePosition(_positionGetter.GetRandom());
+            pattern.ChangePattern(newPattern, type);
+
         }
     }
 }

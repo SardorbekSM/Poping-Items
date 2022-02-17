@@ -1,11 +1,15 @@
-﻿using Model;
+﻿using System;
+using Model;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 namespace Core.Position
 {
     public class PositionGetter : IPositionGetter
     {
         private readonly SpawnModel _spawnModel;
+
+        private float _lastXPosition;
         
         public PositionGetter(SpawnModel spawnModel)
         {
@@ -24,7 +28,16 @@ namespace Core.Position
 
         private Vector2 GetRandomInCamera(float minX, float maxX, float bottom)
         {
-            return new Vector2(Random.Range(minX, maxX), bottom);
+            var xPosition = _lastXPosition;
+            
+            while (Math.Abs(xPosition - _lastXPosition) < 2)
+            {
+                xPosition = Random.Range(minX, maxX);
+            }
+
+            _lastXPosition = xPosition;
+            
+            return new Vector2( xPosition, bottom);
         }
     }
 }

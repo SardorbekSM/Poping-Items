@@ -1,4 +1,5 @@
 ﻿using System;
+using Core;
 using Core.WaiterAsync;
 using Model;
 using UnityEngine;
@@ -12,7 +13,7 @@ namespace View
         [SerializeField] private float _lifeTime;
         [SerializeField] private Transform _patternPlace;
     
-        public event Action ButtonClicked;
+        public event Action<GameObject> ButtonClicked;
 
         private IPooler<GameObject> _pooler;
         private LoopedActionAsync _loopedActionAsync;
@@ -35,24 +36,20 @@ namespace View
             transform.position = newPosition;
         }
 
-        public void ChangePattern(GameObject pattern)
-        {
-            pattern.transform.SetParent(_patternPlace);
-        }
-
         public void ResetToDefault()
         {
             _itemButton.onClick.RemoveAllListeners();
             _loopedActionAsync.EndLoop();
             _pooler.Return(gameObject);
             gameObject.SetActive(false);
+            Destroy(_patternPlace.GetChild(0).gameObject);
+            ButtonClicked = delegate { };
         }
 
         public void OnButtonClicked()
         {
+            ButtonClicked?.Invoke(gameObject);
             ResetToDefault();
-            ButtonClicked?.Invoke();
-            ButtonClicked = delegate { };
         }
 
         private void OnDisable()

@@ -1,11 +1,10 @@
-﻿using System;
-using Control.Interfaces;
-using Core.Spawner;
+﻿using Control.Interfaces;
+using Core;
 using Core.Spawner.Interfaces;
+using Data;
 using Model;
 using UnityEngine;
 using UnityEngine.Assertions;
-using VContainer.Unity;
 using View;
 
 namespace Control
@@ -14,20 +13,22 @@ namespace Control
     {
         private readonly SliderView _sliderView;
         private readonly SliderModel _sliderModel;
-        private readonly ISpawnerBehaviour _spawnerWithPool;
         private readonly IScoreControl _scoreControl;
+        private readonly SpawnController _spawnController;
+        private readonly ISpawnerBehaviour _spawnerBehaviour;
 
-        public SliderController(SliderView sliderView, SliderModel sliderModel, ISpawnerBehaviour spawnerWithPool, IScoreControl scoreControl)
+        public SliderController(SliderView sliderView, SliderModel sliderModel, IScoreControl scoreControl, SpawnController spawnController, ISpawnerBehaviour spawnerBehaviour)
         {
             _sliderView = sliderView;
             _sliderModel = sliderModel;
-            _spawnerWithPool = spawnerWithPool;
             _scoreControl = scoreControl;
+            _spawnController = spawnController;
+            _spawnerBehaviour = spawnerBehaviour;
         }
 
         public void StartControl()
         {
-            _spawnerWithPool.OnInstantiatedObject += SubscribeToClick;
+            _spawnerBehaviour.OnInstantiatedObject += SubscribeToClick;
             _sliderView.CreateSliderSpan(_sliderModel.FillMin, _sliderModel.FillMax);
         }
 
@@ -40,14 +41,21 @@ namespace Control
             item.ButtonClicked += ChangeSliderValue;
         }
         
-        private void ChangeSliderValue()
+        private void ChangeSliderValue(GameObject obj)
         {
+            var view = obj.GetComponentInChildren<PatternView>();
+            
+            Assert.IsNotNull(view); 
+
+            if (view.PatternType != InteractableType.Correct) return;
+            
             _sliderView.ChangeValue(_scoreControl.AddScore());
+            Debug.Log("Add Score");
         }
 
         public void EndControl()
         {
-            _spawnerWithPool.OnInstantiatedObject -= SubscribeToClick;
+            _spawnController.SpawnedObject -= SubscribeToClick;
         }
     }
 }

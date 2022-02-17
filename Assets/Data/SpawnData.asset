@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ecf620521585d174ba632566857e64b6, type: 3}
   m_Name: SpawnData
   m_EditorClassIdentifier: 
-  _spawnDuration: 0.3
+  _spawnDuration: 0.5
   _prefabs:
   - {fileID: 8371784336996744033, guid: 973eda0496b43a0409d902ac6934985e, type: 3}

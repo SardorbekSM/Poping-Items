@@ -5,33 +5,32 @@ using UnityEngine;
 
 namespace Model
 {
-    public class ItemModel
+    public class PatternModel
     {
-        private readonly ItemPatternsData _itemPatterns;
+        private readonly PatternsData _patterns;
         private readonly IRandomizer _randomizer;
+        private readonly IFactoryGameObject<GameObject> _factory;
+
         private List<GameObject> _correctPatterns;
         private List<GameObject> _wrongPatterns;
-
-        private Dictionary<InteractableType, GameObject> _correctGameObjects;
-        private Dictionary<InteractableType, GameObject> _wrongGameObjects;
-
         private GameObject _correctPattern;
+
+        private int _currentStep = 0;
         
         public GameObject CorrectPattern => _correctPattern;
-        public List<GameObject> WrongPatterns => _wrongPatterns;
-        public List<GameObject> CorrectPatterns => _correctPatterns;
 
-        public ItemModel(ItemPatternsData itemPatterns, IRandomizer randomizer)
+        public PatternModel(PatternsData patterns, IRandomizer randomizer)
         {
-            _itemPatterns = itemPatterns;
+            _patterns = patterns;
             _randomizer = randomizer;
+            _factory = new GameObjectFactory();
             Initialize();
         }
 
         public void Initialize()
         {
-            _correctPatterns = new List<GameObject>(_itemPatterns.CorrectPatterns);
-            _wrongPatterns = new List<GameObject>(_itemPatterns.WrongPatterns);
+            _correctPatterns = new List<GameObject>(_patterns.CorrectPatterns);
+            _wrongPatterns = new List<GameObject>(_patterns.WrongPatterns);
 
             _randomizer.SetMax(_correctPatterns.Count);
             var index = _randomizer.GetIndex();
@@ -46,12 +45,21 @@ namespace Model
             }
         }
 
-        public GameObject GetPattern()
+        public GameObject GetPattern(out InteractableType type)
         {
+            if (_currentStep >= _patterns.Frequency)
+            {
+                _currentStep = 0;
+                type = InteractableType.Correct;
+                return _factory.Create(_correctPattern);
+            }
+
+            _currentStep++;
             _randomizer.SetMax(_wrongPatterns.Count);
             var index = _randomizer.GetIndex();
+            type = InteractableType.Wrong;
 
-            return Object.Instantiate(_wrongPatterns[index]);
+            return _factory.Create(_wrongPatterns[index]);
         }
     }
 }

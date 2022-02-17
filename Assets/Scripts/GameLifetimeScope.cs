@@ -20,7 +20,7 @@ public class GameLifetimeScope : LifetimeScope
     [SerializeField] private SpawnData _spawnData;
     [SerializeField] private FillBarData _fillBarData;
     [SerializeField] private ItemsOffsetData _itemsOffsetData;
-    [SerializeField] private ItemPatternsData _itemPatternsData;
+    [SerializeField] private PatternsData _patternsData;
 
     protected override void Configure(IContainerBuilder builder)
     {
@@ -29,7 +29,7 @@ public class GameLifetimeScope : LifetimeScope
         BindInstance(builder, _spawnData);
         BindInstance(builder, _fillBarData);
         BindInstance(builder, _itemsOffsetData);
-        BindInstance(builder, _itemPatternsData);
+        BindInstance(builder, _patternsData);
     }
 
     private void BindComponents(IContainerBuilder builder)
@@ -48,7 +48,7 @@ public class GameLifetimeScope : LifetimeScope
         
         builder.Register<SliderModel>(Lifetime.Singleton).AsSelf();
         builder.Register<SpawnModel>(Lifetime.Singleton).AsSelf();
-        builder.Register<ItemModel>(Lifetime.Singleton).AsSelf();
+        builder.Register<PatternModel>(Lifetime.Singleton).AsSelf();
         builder.Register<SpawnController>(Lifetime.Singleton).AsSelf();
         builder.Register<SliderController>(Lifetime.Singleton).AsSelf();
 
