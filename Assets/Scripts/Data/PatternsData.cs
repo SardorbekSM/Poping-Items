@@ -14,8 +14,6 @@ namespace Data
         [SerializeField] private GameObject[] _correctPatterns;
         [SerializeField] private GameObject[] _wrongPatterns;
 
-        [SerializeField] public PatternData[] _patternsData;
-
         public int Frequency => _frequency;
 
         public IEnumerable<GameObject> CorrectPatterns => _correctPatterns;
