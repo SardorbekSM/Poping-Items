@@ -30,14 +30,15 @@ namespace Control
         private void OnSpawned(GameObject obj)
         {
             var item = obj.GetComponent<ItemView>();
-            var pattern = obj.GetComponentInChildren<PatternView>();
+            //var pattern = obj.GetComponentInChildren<PatternView>();
 
             var newPattern = _patternModel.GetPattern(out var type);
             
             Assert.IsNotNull(item);
 
             item.ChangePosition(_positionGetter.GetRandom());
-            pattern.ChangePattern(newPattern, type);
+            //pattern.ChangePattern(newPattern, type);
+            item.ChangePattern(newPattern, type);
 
         }
     }

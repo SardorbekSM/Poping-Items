@@ -43,7 +43,7 @@ namespace Control
         
         private void ChangeSliderValue(GameObject obj)
         {
-            var view = obj.GetComponentInChildren<PatternView>();
+            var view = obj.GetComponent<ItemView>();
             
             Assert.IsNotNull(view); 
 

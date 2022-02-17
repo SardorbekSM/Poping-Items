@@ -16,6 +16,6 @@ MonoBehaviour:
   _itemsLifeTime: 0
   _prefabs:
   - {fileID: 8371784336996744033, guid: 973eda0496b43a0409d902ac6934985e, type: 3}
-  - {fileID: 8371784336996744033, guid: 981577b05d721b24ba778a90d58b3b14, type: 3}
-  - {fileID: 8371784336996744033, guid: 5dc52a1e5203d3a4d9206b7563b02241, type: 3}
-  - {fileID: 8371784336996744033, guid: d7991fabaf32f034aa77e04dbecf7d6d, type: 3}
+  - {fileID: 3155509512452777122, guid: 679cb3e260515a94aaae4794563e655f, type: 3}
+  - {fileID: 3155509512452777122, guid: 3fbb7f0d0dc87b345b9e28217c49b8f3, type: 3}
+  - {fileID: 3155509512452777122, guid: 6d7c8a308a81a5e4a93d4d40453ea775, type: 3}

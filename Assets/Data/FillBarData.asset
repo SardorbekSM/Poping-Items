@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: FillBarData
   m_EditorClassIdentifier: 
   _fillMin: 0
-  _fillMax: 5
+  _fillMax: 7
   _step: 1
