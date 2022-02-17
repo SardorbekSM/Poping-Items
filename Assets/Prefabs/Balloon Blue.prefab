@@ -563,7 +563,7 @@ GameObject:
   - component: {fileID: 4660935604698632438}
   - component: {fileID: 7259227268704981268}
   m_Layer: 0
-  m_Name: Balloon
+  m_Name: Balloon Blue
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -599,11 +599,11 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDrag: 0.2
+  m_LinearDrag: 2
   m_AngularDrag: 0
-  m_GravityScale: -0.1
+  m_GravityScale: -0.5
   m_Material: {fileID: 0}
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0

@@ -10,6 +10,8 @@ namespace Data
     {
         [Tooltip("The Frequency of choosing the correct pattern")]
         [SerializeField] private int _frequency;
+
+        [SerializeField] private bool _useCorrectsAsWrong;
         
         [SerializeField] private GameObject[] _correctPatterns;
         [SerializeField] private GameObject[] _wrongPatterns;
@@ -18,6 +20,6 @@ namespace Data
 
         public IEnumerable<GameObject> CorrectPatterns => _correctPatterns;
         public IEnumerable<GameObject> WrongPatterns => _wrongPatterns;
-
+        public bool UseCorrectsAsWrong => _useCorrectsAsWrong;
     }
 }

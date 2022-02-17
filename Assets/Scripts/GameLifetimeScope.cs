@@ -22,6 +22,7 @@ public class GameLifetimeScope : LifetimeScope
     [SerializeField] private FillBarData _fillBarData;
     [SerializeField] private ItemsOffsetData _itemsOffsetData;
     [SerializeField] private PatternsData _patternsData;
+    [SerializeField] private LevelPatternsData _levelPatternsData;
 
     protected override void Configure(IContainerBuilder builder)
     {
@@ -31,6 +32,7 @@ public class GameLifetimeScope : LifetimeScope
         BindInstance(builder, _fillBarData);
         BindInstance(builder, _itemsOffsetData);
         BindInstance(builder, _patternsData);
+        BindInstance(builder, _levelPatternsData);
     }
 
     private void BindComponents(IContainerBuilder builder)
@@ -44,7 +46,7 @@ public class GameLifetimeScope : LifetimeScope
     {
         builder.Register<UniqueValueRandomizer>(Lifetime.Singleton).AsImplementedInterfaces();
         builder.Register<PositionGetter>(Lifetime.Singleton).AsImplementedInterfaces();
-        builder.Register<ScoreController>(Lifetime.Singleton).AsImplementedInterfaces();
+        builder.Register<LevelController>(Lifetime.Singleton).AsImplementedInterfaces();
         builder.Register<SpawnerWithPool>(Lifetime.Singleton).AsImplementedInterfaces();
         
         builder.Register<SliderModel>(Lifetime.Singleton).AsSelf();
@@ -53,6 +55,7 @@ public class GameLifetimeScope : LifetimeScope
         builder.Register<PatternModel>(Lifetime.Singleton).AsSelf();
         builder.Register<SpawnController>(Lifetime.Singleton).AsSelf();
         builder.Register<SliderController>(Lifetime.Singleton).AsSelf();
+        builder.Register<LevelModel>(Lifetime.Singleton).AsSelf();
 
         builder.RegisterEntryPoint<ItemController>();
         builder.RegisterEntryPoint<GameProcess>();
