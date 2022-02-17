@@ -13,5 +13,9 @@ MonoBehaviour:
   m_Name: SpawnData
   m_EditorClassIdentifier: 
   _spawnDuration: 0.5
+  _itemsLifeTime: 0
   _prefabs:
   - {fileID: 8371784336996744033, guid: 973eda0496b43a0409d902ac6934985e, type: 3}
+  - {fileID: 8371784336996744033, guid: 981577b05d721b24ba778a90d58b3b14, type: 3}
+  - {fileID: 8371784336996744033, guid: 5dc52a1e5203d3a4d9206b7563b02241, type: 3}
+  - {fileID: 8371784336996744033, guid: d7991fabaf32f034aa77e04dbecf7d6d, type: 3}
