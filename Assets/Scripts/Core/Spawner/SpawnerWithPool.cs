@@ -3,7 +3,6 @@ using Core.Randomizer;
 using Core.Spawner.Interfaces;
 using Data;
 using UnityEngine;
-using VContainer;
 
 namespace Core.Spawner
 {

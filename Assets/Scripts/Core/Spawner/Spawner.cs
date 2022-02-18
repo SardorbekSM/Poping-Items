@@ -2,30 +2,33 @@
 using Cysharp.Threading.Tasks;
 using Object = UnityEngine.Object;
 
-public class Spawner <T> : ISpawner<T> where T : Object
+namespace Core.Spawner
 {
-    private readonly IPooler<T> _pooler;
-
-    private bool _isSpawning;
-
-    public Spawner(IPooler<T> pooler)
+    public class Spawner <T> : ISpawner<T> where T : Object
     {
-        _pooler = pooler;
-    }
+        private readonly IPooler<T> _pooler;
 
-    public bool IsSpawning()
-    {
-        return _isSpawning;
-    }
+        private bool _isSpawning;
 
-    public async UniTask BeginSpawning(Action<T> onInstantiatedObject)
-    {
-        _isSpawning = true;
+        public Spawner(IPooler<T> pooler)
+        {
+            _pooler = pooler;
+        }
 
-        var pooledObject = await _pooler.Get();
+        public bool IsSpawning()
+        {
+            return _isSpawning;
+        }
 
-        onInstantiatedObject?.Invoke(pooledObject);
+        public async UniTask BeginSpawning(Action<T> onInstantiatedObject)
+        {
+            _isSpawning = true;
 
-        _isSpawning = false;
+            var pooledObject = await _pooler.Get();
+
+            onInstantiatedObject?.Invoke(pooledObject);
+
+            _isSpawning = false;
+        }
     }
 }
