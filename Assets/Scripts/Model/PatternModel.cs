@@ -6,7 +6,7 @@ namespace Model
 {
     public class PatternModel
     {
-        private readonly LevelPatternsModel _levelPatternsModel;
+        private readonly IterationModel _iterationModel;
         private readonly IRandomizer _randomizer;
         private readonly IFactoryGameObject<GameObject> _factory;
 
@@ -17,19 +17,19 @@ namespace Model
 
         private GameObject CorrectPattern { get; set; }
 
-        public PatternModel(IRandomizer randomizer, LevelPatternsModel levelPatternsModel, IFactoryGameObject<GameObject> factory)
+        public PatternModel(IRandomizer randomizer, IterationModel iterationModel, IFactoryGameObject<GameObject> factory)
         {
-            _levelPatternsModel = levelPatternsModel;
+            _iterationModel = iterationModel;
             _randomizer = randomizer;
             _factory = factory;
         }
 
         public void Initialize()
         {
-            _levelPatternsModel.InitializeNewPatterns();
+            _iterationModel.InitializeNewPatterns();
             
-            _correctPatterns = new List<GameObject>(_levelPatternsModel.CorrectPatterns);
-            _wrongPatterns = new List<GameObject>(_levelPatternsModel.WrongPatterns);
+            _correctPatterns = new List<GameObject>(_iterationModel.CorrectPatterns);
+            _wrongPatterns = new List<GameObject>(_iterationModel.WrongPatterns);
 
             if (CorrectPattern == null)
             {
@@ -45,7 +45,7 @@ namespace Model
                 _correctPatterns.Remove(CorrectPattern);
             }
 
-            if (!_levelPatternsModel.UseCorrectsAsWrong) return;
+            if (!_iterationModel.UseCorrectsAsWrong) return;
             
             foreach (var pattern in _correctPatterns)
             {
@@ -55,7 +55,7 @@ namespace Model
 
         public GameObject GetPattern(out InteractableType type)
         {
-            if (_currentStep >= _levelPatternsModel.Frequency)
+            if (_currentStep >= _iterationModel.Frequency)
             {
                 _currentStep = 0;
                 type = InteractableType.Correct;
@@ -75,7 +75,7 @@ namespace Model
             _correctPatterns.Clear();
             _wrongPatterns.Clear();
             CorrectPattern = null;
-            _levelPatternsModel.ResetToDefault();
+            _iterationModel.ResetToDefault();
         }
         
     }

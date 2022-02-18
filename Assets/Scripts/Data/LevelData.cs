@@ -6,7 +6,7 @@ namespace Data
     public class LevelData : ScriptableObject
     {
 #if UNITY_EDITOR
-        [SerializeField] private LevelPatternsData _levelPatternsData;
+        [SerializeField] private IterationPatternsData _iterationPatternsData;
         [SerializeReference] private int _iterationsCount;
 #endif
         
@@ -22,7 +22,7 @@ namespace Data
 #if UNITY_EDITOR
         private void OnValidate()
         {
-            _iterationsCount = _levelPatternsData.LevelPatterns.Length;
+            _iterationsCount = _iterationPatternsData.IterationPatterns.Length;
             _levelRequiredItemsCount = IterationRequiredItemsCount * _iterationsCount;
 
             if ((_levelRequiredItemsCount % _iterationsCount) == 0) return;

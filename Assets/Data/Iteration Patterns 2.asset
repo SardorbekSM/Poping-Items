@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0c9df7720caa4719a6a9b3f910a14219, type: 3}
-  m_Name: Patterns 2
+  m_Name: Iteration Patterns 2
   m_EditorClassIdentifier: 
   _frequency: 2
   _useCorrectsAsWrong: 0
