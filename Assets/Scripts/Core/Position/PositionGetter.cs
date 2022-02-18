@@ -1,7 +1,6 @@
 ﻿using System;
 using Core.CameraUtils;
 using Data;
-using Model;
 using UnityEngine;
 using Random = UnityEngine.Random;
 

@@ -17,7 +17,6 @@ namespace Data
         [SerializeField] private SpawnData _wrongPatterns;
 
         public int Frequency => _frequency;
-
         public IEnumerable<GameObject> CorrectPatterns => _correctPatterns.Prefabs;
         public IEnumerable<GameObject> WrongPatterns => _wrongPatterns.Prefabs;
         public bool UseCorrectsAsWrong => _useCorrectsAsWrong;

@@ -1,5 +1,5 @@
-﻿
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+
 using UnityEngine;
 
 namespace Data
@@ -13,7 +13,7 @@ namespace Data
 
         public float SpawnDuration => _spawnDuration;
         public float ItemsLifeTime => _itemsLifeTime;
-        public IList<GameObject> Prefabs => _prefabs.Prefabs;
+        public IEnumerable<GameObject> Prefabs => _prefabs.Prefabs;
 
     }
 }

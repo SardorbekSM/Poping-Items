@@ -1,5 +1,8 @@
-﻿public interface IRandomizer
+﻿namespace Core.Randomizer
 {
-    void SetMax(int max);
-    int GetIndex();
+    public interface IRandomizer
+    {
+        void SetMax(int max);
+        int GetIndex();
+    }
 }
