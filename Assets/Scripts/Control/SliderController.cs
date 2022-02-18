@@ -9,14 +9,14 @@ using View;
 
 namespace Control
 {
-    public class SliderController
+    public class SliderController : IControl
     {
         private readonly SliderView _sliderView;
         private readonly SliderModel _sliderModel;
-        private readonly IScoreControl _scoreControl;
+        private readonly LevelController _scoreControl;
         private readonly ISpawnerBehaviour _spawnerBehaviour;
 
-        public SliderController(SliderView sliderView, SliderModel sliderModel, IScoreControl scoreControl, ISpawnerBehaviour spawnerBehaviour)
+        public SliderController(SliderView sliderView, SliderModel sliderModel, LevelController scoreControl, ISpawnerBehaviour spawnerBehaviour)
         {
             _sliderView = sliderView;
             _sliderModel = sliderModel;

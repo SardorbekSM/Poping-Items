@@ -5,13 +5,14 @@ using Model;
 
 namespace Control
 {
-    public class LevelController : IScoreControl
+    public class LevelController : IControl
     {
         private readonly SliderModel _sliderModel;
         private readonly LevelModel _levelModel;
         private readonly PatternModel _patternModel;
 
-        private float _score;
+        private int _score;
+        private int _iterationScore;
         
         public event Action Scored;
 
@@ -20,7 +21,12 @@ namespace Control
             _sliderModel = sliderModel;
             _levelModel = levelModel;
             _patternModel = patternModel;
-            _levelModel.AllLevelsCompleted += AllLevelsComplete;
+        }
+
+        public void StartControl()
+        {
+            _levelModel.InitializeNewPatterns();
+            _patternModel.Initialize();
         }
 
         public float AddScore()
@@ -34,15 +40,30 @@ namespace Control
 
         private void OnScoreChanged()
         {
-            if (_score < _sliderModel.FillMax) return;
-            _score = _sliderModel.FillMin;
+            _iterationScore++;
+
+            if (_iterationScore < _sliderModel.RequiredItemsCount) return;
+
+            _iterationScore = _sliderModel.FillMin;
+
             _levelModel.InitializeNewPatterns();
             _patternModel.Initialize();
+
+            if (_score < _sliderModel.FillMax) return;
+            
+            AllLevelsComplete();
         }
 
         private void AllLevelsComplete()
         {
+            _score = _sliderModel.FillMin;
             Scored?.Invoke();
+        }
+
+        public void EndControl()
+        {
+            _patternModel.ResetToDefault();
+            _levelModel.ResetToDefault();
         }
     }
 }

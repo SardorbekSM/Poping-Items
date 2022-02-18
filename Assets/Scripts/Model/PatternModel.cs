@@ -17,12 +17,11 @@ namespace Model
 
         private GameObject CorrectPattern { get; set; }
 
-        public PatternModel(IRandomizer randomizer, LevelModel levelModel)
+        public PatternModel(IRandomizer randomizer, LevelModel levelModel, IFactoryGameObject<GameObject> factory)
         {
             _levelModel = levelModel;
             _randomizer = randomizer;
-            _factory = new GameObjectFactory();
-            Initialize();
+            _factory = factory;
         }
 
         public void Initialize()
@@ -45,6 +44,7 @@ namespace Model
             }
 
             if (!_levelModel.UseCorrectsAsWrong) return;
+            
             foreach (var pattern in _correctPatterns)
             {
                 _wrongPatterns.Add(pattern);
@@ -67,5 +67,13 @@ namespace Model
 
             return _factory.Create(_wrongPatterns[index]);
         }
+
+        public void ResetToDefault()
+        {
+            _correctPatterns.Clear();
+            _wrongPatterns.Clear();
+            CorrectPattern = null;
+        }
+        
     }
 }

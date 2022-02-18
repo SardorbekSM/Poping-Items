@@ -10,19 +10,19 @@ namespace Core
     public class GameProcess : IStartable, IDisposable
     {
         private readonly SliderController _sliderController;
-        private readonly IScoreControl _scoreControl;
+        private readonly LevelController _levelController;
         private readonly EndGameView _endGameView;
         private readonly ItemController _itemController;
 
         public GameProcess(
             SliderController sliderController, 
-            IScoreControl scoreControl, 
+            LevelController levelController, 
             EndGameView endGameView,
             ItemController itemController
             )
         {
             _sliderController = sliderController;
-            _scoreControl = scoreControl;
+            _levelController = levelController;
             _endGameView = endGameView;
             _itemController = itemController;
         }
@@ -36,7 +36,8 @@ namespace Core
         {
             _itemController.StartControl();
             _sliderController.StartControl();
-            _scoreControl.Scored += End;
+            _levelController.StartControl();
+            _levelController.Scored += End;
         }
 
         private void RestartGame()
@@ -46,15 +47,16 @@ namespace Core
 
         private void End()
         {
-            _itemController.EndControl();
-            _sliderController.EndControl();
-            _scoreControl.Scored -= End;
             _endGameView.Activate(RestartGame);
+            Dispose();
         }
 
         public void Dispose()
         {
-            _scoreControl.Scored -= End;
+            _itemController.EndControl();
+            _sliderController.EndControl();
+            _levelController.EndControl();
+            _levelController.Scored -= End;
         }
     }
 }

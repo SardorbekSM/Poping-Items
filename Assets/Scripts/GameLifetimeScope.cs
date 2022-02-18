@@ -46,8 +46,8 @@ public class GameLifetimeScope : LifetimeScope
     {
         builder.Register<UniqueValueRandomizer>(Lifetime.Singleton).AsImplementedInterfaces();
         builder.Register<PositionGetter>(Lifetime.Singleton).AsImplementedInterfaces();
-        builder.Register<LevelController>(Lifetime.Singleton).AsImplementedInterfaces();
         builder.Register<SpawnerWithPool>(Lifetime.Singleton).AsImplementedInterfaces();
+        builder.Register<GameObjectFactory>(Lifetime.Singleton).AsImplementedInterfaces();
         
         builder.Register<SliderModel>(Lifetime.Singleton).AsSelf();
         builder.Register<ItemModel>(Lifetime.Singleton).AsSelf();
@@ -55,6 +55,7 @@ public class GameLifetimeScope : LifetimeScope
         builder.Register<PatternModel>(Lifetime.Singleton).AsSelf();
         builder.Register<SliderController>(Lifetime.Singleton).AsSelf();
         builder.Register<LevelModel>(Lifetime.Singleton).AsSelf();
+        builder.Register<LevelController>(Lifetime.Singleton).AsSelf();
         builder.Register<ItemController>(Lifetime.Singleton).AsSelf(); // Как можно передвигать строки с помощью alt как в VS
 
         builder.RegisterEntryPoint<GameProcess>();

@@ -1,4 +1,5 @@
-﻿using Core.Spawner;
+﻿using Control.Interfaces;
+using Core.Spawner;
 using Core.Spawner.Interfaces;
 using Core.WaiterAsync;
 using Data;
@@ -10,7 +11,7 @@ using View;
 
 namespace Control
 {
-    public class ItemController
+    public class ItemController : IControl
     {
         private readonly IPositionGetter _positionGetter;
         private readonly ISpawnerBehaviour _spawnerWithPool;

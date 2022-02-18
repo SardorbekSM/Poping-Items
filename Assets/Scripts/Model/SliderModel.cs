@@ -4,11 +4,12 @@ namespace Model
 {
     public class SliderModel
     {
-        public float FillMin => _fillBarData.FillMin;
-        public float FillMax => _fillBarData.FillMax;
-        public float Step => _fillBarData.Step;
-
         private readonly FillBarData _fillBarData;
+        
+        public int FillMin => _fillBarData.FillMin;
+        public int FillMax => _fillBarData.FillMax;
+        public int Step => _fillBarData.Step;
+        public int RequiredItemsCount => _fillBarData.RequiredItemsCount;
 
         public SliderModel(FillBarData fillBarData)
         {

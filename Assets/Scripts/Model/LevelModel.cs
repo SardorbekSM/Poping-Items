@@ -24,7 +24,6 @@ namespace Model
             _levelPatternsData = levelPatternsData;
             
             _levelsCount = levelPatternsData.LevelPatterns.Length;
-            InitializeNewPatterns();
         }
 
         public void InitializeNewPatterns()
@@ -40,9 +39,15 @@ namespace Model
                 
                 return;
             }
-
-            _currentLevel = 0;
             
+            ResetToDefault();
+        }
+
+        public void ResetToDefault()
+        {
+            _currentLevel = 0;
+            CorrectPatterns.Clear();
+            WrongPatterns.Clear();
             AllLevelsCompleted?.Invoke();
         }
     }
