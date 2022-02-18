@@ -1,17 +1,24 @@
-﻿using Model;
+﻿using System;
+using Core.CameraUtils;
+using Data;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 namespace Core.Position
 {
     public class PositionGetter : IPositionGetter
     {
-        private readonly SpawnModel _spawnModel;
-        
-        public PositionGetter(SpawnModel spawnModel)
+        private readonly MainCameraBorders _cameraBorders;
+        private readonly ItemsOffsetData _itemsOffsetData;
+
+        private float _lastXPosition;
+
+        public PositionGetter(MainCameraBorders cameraBorders, ItemsOffsetData itemsOffsetData)
         {
-            _spawnModel = spawnModel;
+            _cameraBorders = cameraBorders;
+            _itemsOffsetData = itemsOffsetData;
         }
-        
+
         public Vector2 GetDefault()
         {
             return Vector2.zero;
@@ -19,12 +26,21 @@ namespace Core.Position
 
         public Vector2 GetRandom()
         {
-            return GetRandomInCamera(_spawnModel.LeftBorder, _spawnModel.RightBorder, _spawnModel.BottomBorder);
+            return GetRandomInCamera(_cameraBorders.LeftBorder, _cameraBorders.RightBorder, _cameraBorders.BottomBorder);
         }
 
         private Vector2 GetRandomInCamera(float minX, float maxX, float bottom)
         {
-            return new Vector2(Random.Range(minX, maxX), bottom);
+            var xPosition = _lastXPosition;
+            
+            while (Math.Abs(xPosition - _lastXPosition) < _itemsOffsetData.BetweenDistance)
+            {
+                xPosition = Random.Range(minX, maxX);
+            }
+
+            _lastXPosition = xPosition;
+            
+            return new Vector2( xPosition, bottom);
         }
     }
 }

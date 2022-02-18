@@ -1,36 +1,33 @@
-﻿using System;
-using Control.Interfaces;
-using Core.Spawner;
+﻿using Control.Interfaces;
+using Core;
 using Core.Spawner.Interfaces;
+using Data;
 using Model;
 using UnityEngine;
 using UnityEngine.Assertions;
-using VContainer.Unity;
 using View;
 
 namespace Control
 {
-    public class SliderController
+    public class SliderController : ISliderController
     {
         private readonly SliderView _sliderView;
-        private readonly SliderModel _sliderModel;
-        private readonly ISpawnerBehaviour _spawnerWithPool;
-        private readonly IScoreControl _scoreControl;
+        private readonly LevelModel _levelModel;
+        private readonly ILevelController _scoreControl;
+        private readonly ISpawnerBehaviour _spawnerBehaviour;
 
-        public SliderController(SliderView sliderView, SliderModel sliderModel, ISpawnerBehaviour spawnerWithPool, IScoreControl scoreControl)
+        public SliderController(SliderView sliderView, LevelModel levelModel, ILevelController scoreControl, ISpawnerBehaviour spawnerBehaviour)
         {
             _sliderView = sliderView;
-            _sliderModel = sliderModel;
-            _spawnerWithPool = spawnerWithPool;
+            _levelModel = levelModel;
             _scoreControl = scoreControl;
+            _spawnerBehaviour = spawnerBehaviour;
         }
 
         public void StartControl()
         {
-            _spawnerWithPool.OnInstantiatedObject += SubscribeToClick;
-            _sliderView.ChangeSliderMinCount(_sliderModel.FillMin);
-            _sliderView.ChangeSliderMaxCount(_sliderModel.FillMax);
-            _sliderView.ChangeValue(_sliderModel.FillMin);
+            _spawnerBehaviour.OnInstantiatedObject += SubscribeToClick;
+            _sliderView.CreateSliderSpan(_levelModel.StartValue, _levelModel.LevelItemsCount);
         }
 
         private void SubscribeToClick(GameObject obj)
@@ -42,14 +39,22 @@ namespace Control
             item.ButtonClicked += ChangeSliderValue;
         }
         
-        private void ChangeSliderValue()
+        private void ChangeSliderValue(GameObject obj)
         {
+            var view = obj.GetComponent<ItemView>();
+            
+            Assert.IsNotNull(view); 
+
+            if (view.PatternType != InteractableType.Correct) return;
+            
             _sliderView.ChangeValue(_scoreControl.AddScore());
+            
+            Debug.Log("Add Score");
         }
 
         public void EndControl()
         {
-            _spawnerWithPool.OnInstantiatedObject -= SubscribeToClick;
+            _spawnerBehaviour.OnInstantiatedObject -= SubscribeToClick;
         }
     }
 }

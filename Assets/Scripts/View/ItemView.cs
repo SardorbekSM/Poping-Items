@@ -1,6 +1,7 @@
 ﻿using System;
+using Core;
 using Core.WaiterAsync;
-using Model;
+using Data;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -10,11 +11,13 @@ namespace View
     {
         [SerializeField] private Button _itemButton;
         [SerializeField] private float _lifeTime;
-    
-        public event Action ButtonClicked;
-
+        [SerializeField] private Transform _patternPlace;
+        
         private IPooler<GameObject> _pooler;
-        private LoopedActionAsync _loopedActionAsync;
+        private ILoopedAction _loopedActionAsync;
+
+        public InteractableType PatternType { get; private set; }
+        public event Action<GameObject> ButtonClicked;
 
         public void SetValue(IPooler<GameObject> value)
         {
@@ -33,6 +36,13 @@ namespace View
         {
             transform.position = newPosition;
         }
+        
+        public void ChangePattern(GameObject pattern, InteractableType type)
+        {
+            PatternType = type;
+            pattern.transform.SetParent(_patternPlace);
+            pattern.transform.localPosition = Vector3.zero;
+        }
 
         public void ResetToDefault()
         {
@@ -40,13 +50,14 @@ namespace View
             _loopedActionAsync.EndLoop();
             _pooler.Return(gameObject);
             gameObject.SetActive(false);
+            Destroy(_patternPlace.GetChild(0).gameObject);
+            ButtonClicked = delegate { };
         }
 
         public void OnButtonClicked()
         {
+            ButtonClicked?.Invoke(gameObject);
             ResetToDefault();
-            ButtonClicked?.Invoke();
-            ButtonClicked = delegate { };
         }
 
         private void OnDisable()

@@ -1,7 +1,10 @@
 ﻿using UnityEngine;
 
-public interface IPositionGetter
+namespace Core.Position
 {
-    Vector2 GetDefault();
-    Vector2 GetRandom();
+    public interface IPositionGetter
+    {
+        Vector2 GetDefault();
+        Vector2 GetRandom();
+    }
 }

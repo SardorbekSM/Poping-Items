@@ -1,0 +1,1263 @@
+fileFormatVersion: 2
+guid: 44ba9cb51d43f084eb3723908ef005e4
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 7455058357585515688
+    second: Items_1_Bee_Head
+  - first:
+      213: 4292531093066514535
+    second: Items_1_Bee_Tendril
+  - first:
+      213: 1777419697579625635
+    second: Items_1_Bee_Wing
+  - first:
+      213: -3069033634951228400
+    second: Items_1_Cat_Tail
+  - first:
+      213: -2585042310909185913
+    second: Items_1_Cat_Ear
+  - first:
+      213: -2894241272156299307
+    second: Items_1_Cat_Head
+  - first:
+      213: -2047619670962445711
+    second: Items_1_Bee_Mouth
+  - first:
+      213: -5598286171239873919
+    second: Items_1_Cat_Part_Mouth_2
+  - first:
+      213: 6153079266434214394
+    second: Items_1_Circle_Small
+  - first:
+      213: 623606996824345768
+    second: Items_1_Cat_Part_Mouth_1
+  - first:
+      213: 680999100137453412
+    second: Items_1_Cat_Head_Part_2
+  - first:
+      213: -2651580692282312214
+    second: Items_1_Wolf_Face_Part
+  - first:
+      213: -6671084575838887788
+    second: Items_1_Bee_Body_2
+  - first:
+      213: -6731228509793326337
+    second: Items_1_Cat_Leg
+  - first:
+      213: -7349188606907693936
+    second: Items_1_Cat_Nose
+  - first:
+      213: 5975223695553752494
+    second: Items_1_Elephant_Body
+  - first:
+      213: -614613384640543364
+    second: Items_1_Bee_Body_3
+  - first:
+      213: -5130363283294325692
+    second: Items_1_Cat_Body
+  - first:
+      213: -8892968748215703745
+    second: Items_1_Elephant_Leg
+  - first:
+      213: -8747369593603170607
+    second: Items_1_Elephant_Parts
+  - first:
+      213: 4055234663518992166
+    second: Items_1_Elephant_Mouth
+  - first:
+      213: 8888877690394475795
+    second: Items_1_Elephant_Head
+  - first:
+      213: 2013212050860837656
+    second: Items_1_Elephant_Body_2
+  - first:
+      213: -41609205810213078
+    second: Items_1_Apple_Part
+  - first:
+      213: 7561271210192570649
+    second: Items_1_Apple
+  - first:
+      213: -1563810228789852898
+    second: Items_1_Elephant_Ear_Inner
+  - first:
+      213: 4533096248220844462
+    second: Items_1_Elephant_Tail_Part
+  - first:
+      213: 7812042827317415813
+    second: Items_1_Elephant_Trunk_Part
+  - first:
+      213: -4290365436625077318
+    second: Items_1_Apple_Glare
+  - first:
+      213: -8525903695565431072
+    second: Items_1_Elephant_Ear
+  - first:
+      213: -4424737673781526173
+    second: Items_1_Apple_Sheet_1
+  - first:
+      213: -8511405367551149010
+    second: Items_1_Apple_Sheet_2
+  - first:
+      213: 3155561729382455995
+    second: Items_1_Cat_Head_Part_1
+  - first:
+      213: 4922595831604609654
+    second: Items_1_Circle_Eyes
+  - first:
+      213: -2125901813117281890
+    second: Items_1_Elephant_Finger_2
+  - first:
+      213: 7641115178940479111
+    second: Items_1_Elephant_Finger_3
+  - first:
+      213: -8789125774305908492
+    second: Items_1_Elephant_Finger_1
+  externalObjects: {}
+  serializedVersion: 10
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 0
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Items_1_Bee_Head
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 720
+        width: 192
+        height: 302
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1c4c02b13ef020e438a770003d00d9fe
+      internalID: 7455058357585515688
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Items_1_Bee_Tendril
+      rect:
+        serializedVersion: 2
+        x: 197
+        y: 847
+        width: 55
+        height: 175
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 647b50c3479a68b478442227476b417f
+      internalID: 4292531093066514535
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Items_1_Bee_Wing
+      rect:
+        serializedVersion: 2
+        x: 255
+        y: 745
+        width: 186
+        height: 278
+      alignment: 9
+      pivot: {x: 0.5072398, y: 0.13475838}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d194518ae195fdd4690698f923f8478b
+      internalID: 1777419697579625635
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Items_1_Cat_Tail
+      rect:
+        serializedVersion: 2
+        x: 455
+        y: 758
+        width: 150
+        height: 262
+      alignment: 9
+      pivot: {x: 0.20763075, y: 0.14525285}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones:
+      - name: bone_1
+        position: {x: 42.2894, y: 26.96637, z: 0}
+        rotation: {x: 0, y: 0, z: 0.5540139, w: 0.83250743}
+        length: 121.83002
+        parentId: -1
+      - name: bone_2
+        position: {x: 121.82997, y: -0.000019687446, z: 0}
+        rotation: {x: 0, y: 0, z: 0.37314275, w: 0.927774}
+        length: 63.872406
+        parentId: 0
+      spriteID: 9e6775c94f691a94491d6c1c50a066f7
+      internalID: -3069033634951228400
+      vertices:
+      - {x: 52.233, y: 0.46600342}
+      - {x: 53.046997, y: 0.9249878}
+      - {x: 78.45099, y: 13.21698}
+      - {x: 97.52301, y: 24.47699}
+      - {x: 115.289, y: 47.419006}
+      - {x: 131.27698, y: 71.400024}
+      - {x: 143.64899, y: 96.63599}
+      - {x: 151.60901, y: 123.17999}
+      - {x: 151.64899, y: 152.39099}
+      - {x: 150.62201, y: 181.19202}
+      - {x: 141.66602, y: 207.76898}
+      - {x: 128.771, y: 233.08002}
+      - {x: 106.86102, y: 251.20502}
+      - {x: 81.93201, y: 264}
+      - {x: 71.88397, y: 264.67603}
+      - {x: 46.734985, y: 264.734}
+      - {x: 28.315002, y: 256.114}
+      - {x: 8.178009, y: 234.56897}
+      - {x: 0.4580078, y: 210.38403}
+      - {x: 0.47198486, y: 178.25897}
+      - {x: 8.472992, y: 153.03198}
+      - {x: 19.925995, y: 125.66998}
+      - {x: 20.321991, y: 99.05798}
+      - {x: 11.221985, y: 73.554016}
+      - {x: 7.376007, y: 60.711975}
+      - {x: 10.447998, y: 24.552979}
+      - {x: 20.458984, y: 6.6240234}
+      - {x: 31.354004, y: 0.4249878}
+      indices: 1800000017000000020000000c0000000a000000130000000a0000000c0000000b000000140000000a000000090000000c000000120000000e0000000d0000000c0000000e0000000700000015000000080000000500000004000000160000000700000006000000150000001600000006000000050000000400000003000000170000001700000003000000020000001b0000000100000000000000120000000c000000130000001500000014000000090000000e000000100000000f00000014000000130000000a0000000e00000012000000110000000e00000011000000100000001500000006000000160000001b0000001a0000001900000004000000170000001600000019000000010000001b000000180000000200000019000000080000001500000009000000020000000100000019000000
+      edges:
+      - {x: 0, y: 1}
+      - {x: 1, y: 2}
+      - {x: 2, y: 3}
+      - {x: 3, y: 4}
+      - {x: 4, y: 5}
+      - {x: 5, y: 6}
+      - {x: 6, y: 7}
+      - {x: 7, y: 8}
+      - {x: 8, y: 9}
+      - {x: 9, y: 10}
+      - {x: 10, y: 11}
+      - {x: 11, y: 12}
+      - {x: 12, y: 13}
+      - {x: 13, y: 14}
+      - {x: 14, y: 15}
+      - {x: 15, y: 16}
+      - {x: 16, y: 17}
+      - {x: 17, y: 18}
+      - {x: 18, y: 19}
+      - {x: 19, y: 20}
+      - {x: 20, y: 21}
+      - {x: 21, y: 22}
+      - {x: 22, y: 23}
+      - {x: 23, y: 24}
+      - {x: 24, y: 25}
+      - {x: 25, y: 26}
+      - {x: 26, y: 27}
+      - {x: 27, y: 0}
+      weights:
+      - weight[0]: 1
+        weight[1]: 0
+        weight[2]: 0
+        weight[3]: 0
+        boneIndex[0]: 0
+        boneIndex[1]: 0
+        boneIndex[2]: 0
+        boneIndex[3]: 0
+      - weight[0]: 1
+        weight[1]: 0
+        weight[2]: 0
+        weight[3]: 0
+        boneIndex[0]: 0
+        boneIndex[1]: 0
+        boneIndex[2]: 0
+        boneIndex[3]: 0
+      - weight[0]: 1
+        weight[1]: 0
+        weight[2]: 0
+        weight[3]: 0
+        boneIndex[0]: 0
+        boneIndex[1]: 0
+        boneIndex[2]: 0
+        boneIndex[3]: 0
+      - weight[0]: 0.99866045
+        weight[1]: 0.0013395548
+        weight[2]: 0
+        weight[3]: 0
+        boneIndex[0]: 0
+        boneIndex[1]: 1
+        boneIndex[2]: 0
+        boneIndex[3]: 0
+      - weight[0]: 0.93615144
+        weight[1]: 0.063848555
+        weight[2]: 0
+        weight[3]: 0
+        boneIndex[0]: 0
+        boneIndex[1]: 1
+        boneIndex[2]: 0
+        boneIndex[3]: 0
+      - weight[0]: 0.87693673
+        weight[1]: 0.12306327
+        weight[2]: 0
+        weight[3]: 0
+        boneIndex[0]: 0
+        boneIndex[1]: 1
+        boneIndex[2]: 0
+        boneIndex[3]: 0
+      - weight[0]: 0.7184545
+        weight[1]: 0.28154552
+        weight[2]: 0
+        weight[3]: 0
+        boneIndex[0]: 0
+        boneIndex[1]: 1
+        boneIndex[2]: 0
+        boneIndex[3]: 0
+      - weight[0]: 0.56111693
+        weight[1]: 0.43888307
+        weight[2]: 0
+        weight[3]: 0
+        boneIndex[0]: 0
+        boneIndex[1]: 1
+        boneIndex[2]: 0
+        boneIndex[3]: 0
+      - weight[0]: 0.6007305
+        weight[1]: 0.39926952
+        weight[2]: 0
+        weight[3]: 0
+        boneIndex[0]: 1
+        boneIndex[1]: 0
+        boneIndex[2]: 0
+        boneIndex[3]: 0
+      - weight[0]: 0.7338498
+        weight[1]: 0.26615018
+        weight[2]: 0
+        weight[3]: 0
+        boneIndex[0]: 1
+        boneIndex[1]: 0
+        boneIndex[2]: 0
+        boneIndex[3]: 0
+      - weight[0]: 0.93542147
+        weight[1]: 0.06457853
+        weight[2]: 0
+        weight[3]: 0
+        boneIndex[0]: 1
+        boneIndex[1]: 0
+        boneIndex[2]: 0
+        boneIndex[3]: 0
+      - weight[0]: 1
+        weight[1]: 0
+        weight[2]: 0
+        weight[3]: 0
+        boneIndex[0]: 1
+        boneIndex[1]: 0
+        boneIndex[2]: 0
+        boneIndex[3]: 0
+      - weight[0]: 1
+        weight[1]: 0
+        weight[2]: 0
+        weight[3]: 0
+        boneIndex[0]: 1
+        boneIndex[1]: 0
+        boneIndex[2]: 0
+        boneIndex[3]: 0
+      - weight[0]: 1
+        weight[1]: 0
+        weight[2]: 0
+        weight[3]: 0
+        boneIndex[0]: 1
+        boneIndex[1]: 0
+        boneIndex[2]: 0
+        boneIndex[3]: 0
+      - weight[0]: 1
+        weight[1]: 0
+        weight[2]: 0
+        weight[3]: 0
+        boneIndex[0]: 1
+        boneIndex[1]: 0
+        boneIndex[2]: 0
+        boneIndex[3]: 0
+      - weight[0]: 1
+        weight[1]: 0
+        weight[2]: 0
+        weight[3]: 0
+        boneIndex[0]: 1
+        boneIndex[1]: 0
+        boneIndex[2]: 0
+        boneIndex[3]: 0
+      - weight[0]: 1
+        weight[1]: 0
+        weight[2]: 0
+        weight[3]: 0
+        boneIndex[0]: 1
+        boneIndex[1]: 0
+        boneIndex[2]: 0
+        boneIndex[3]: 0
+      - weight[0]: 1
+        weight[1]: 0
+        weight[2]: 0
+        weight[3]: 0
+        boneIndex[0]: 1
+        boneIndex[1]: 0
+        boneIndex[2]: 0
+        boneIndex[3]: 0
+      - weight[0]: 1
+        weight[1]: 0
+        weight[2]: 0
+        weight[3]: 0
+        boneIndex[0]: 1
+        boneIndex[1]: 0
+        boneIndex[2]: 0
+        boneIndex[3]: 0
+      - weight[0]: 1
+        weight[1]: 0
+        weight[2]: 0
+        weight[3]: 0
+        boneIndex[0]: 1
+        boneIndex[1]: 0
+        boneIndex[2]: 0
+        boneIndex[3]: 0
+      - weight[0]: 0.81752574
+        weight[1]: 0.18247426
+        weight[2]: 0
+        weight[3]: 0
+        boneIndex[0]: 1
+        boneIndex[1]: 0
+        boneIndex[2]: 0
+        boneIndex[3]: 0
+      - weight[0]: 0.5056524
+        weight[1]: 0.49434757
+        weight[2]: 0
+        weight[3]: 0
+        boneIndex[0]: 1
+        boneIndex[1]: 0
+        boneIndex[2]: 0
+        boneIndex[3]: 0
+      - weight[0]: 0.80546725
+        weight[1]: 0.19453275
+        weight[2]: 0
+        weight[3]: 0
+        boneIndex[0]: 0
+        boneIndex[1]: 1
+        boneIndex[2]: 0
+        boneIndex[3]: 0
+      - weight[0]: 1
+        weight[1]: 0
+        weight[2]: 0
+        weight[3]: 0
+        boneIndex[0]: 0
+        boneIndex[1]: 0
+        boneIndex[2]: 0
+        boneIndex[3]: 0
+      - weight[0]: 1
+        weight[1]: 0
+        weight[2]: 0
+        weight[3]: 0
+        boneIndex[0]: 0
+        boneIndex[1]: 0
+        boneIndex[2]: 0
+        boneIndex[3]: 0
+      - weight[0]: 1
+        weight[1]: 0
+        weight[2]: 0
+        weight[3]: 0
+        boneIndex[0]: 0
+        boneIndex[1]: 0
+        boneIndex[2]: 0
+        boneIndex[3]: 0
+      - weight[0]: 1
+        weight[1]: 0
+        weight[2]: 0
+        weight[3]: 0
+        boneIndex[0]: 0
+        boneIndex[1]: 0
+        boneIndex[2]: 0
+        boneIndex[3]: 0
+      - weight[0]: 1
+        weight[1]: 0
+        weight[2]: 0
+        weight[3]: 0
+        boneIndex[0]: 0
+        boneIndex[1]: 0
+        boneIndex[2]: 0
+        boneIndex[3]: 0
+    - serializedVersion: 2
+      name: Items_1_Cat_Ear
+      rect:
+        serializedVersion: 2
+        x: 621
+        y: 826
+        width: 132
+        height: 196
+      alignment: 9
+      pivot: {x: 0.5799551, y: 0.38675395}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 000caaef344777d4992a4697d19a40b6
+      internalID: -2585042310909185913
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Items_1_Cat_Head
+      rect:
+        serializedVersion: 2
+        x: 757
+        y: 628
+        width: 266
+        height: 395
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c9ff6ab0c545726498fdb23b6914fe9d
+      internalID: -2894241272156299307
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Items_1_Bee_Mouth
+      rect:
+        serializedVersion: 2
+        x: 197
+        y: 760
+        width: 47
+        height: 84
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9137c1a31fa712742b77c31eda80222d
+      internalID: -2047619670962445711
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Items_1_Cat_Part_Mouth_2
+      rect:
+        serializedVersion: 2
+        x: 621
+        y: 789
+        width: 69
+        height: 33
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: baac176299c531b4ca3ae32dcf63c29a
+      internalID: -5598286171239873919
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Items_1_Cat_Part_Mouth_1
+      rect:
+        serializedVersion: 2
+        x: 627
+        y: 772
+        width: 10
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 6, z: 0, w: 6}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cdeb5579a20dcf0428af1bba1b2ae2bd
+      internalID: 623606996824345768
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Items_1_Cat_Head_Part_2
+      rect:
+        serializedVersion: 2
+        x: 641
+        y: 759
+        width: 59
+        height: 28
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 20, z: 0, w: 5}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b7cd5179a27b47845a04f3ee7cf67468
+      internalID: 680999100137453412
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Items_1_Wolf_Face_Part
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 439
+        width: 275
+        height: 277
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e11f03d4c0dcda94f984338b20d051dd
+      internalID: -2651580692282312214
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Items_1_Bee_Body_2
+      rect:
+        serializedVersion: 2
+        x: 301
+        y: 637
+        width: 287
+        height: 104
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9c0f9cfa1c769204a9a23274d0be6413
+      internalID: -6671084575838887788
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Items_1_Cat_Leg
+      rect:
+        serializedVersion: 2
+        x: 591
+        y: 692
+        width: 98
+        height: 65
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 14, z: 0, w: 48}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4d398353bdea41a42bb78c2a2ac350db
+      internalID: -6731228509793326337
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Items_1_Cat_Nose
+      rect:
+        serializedVersion: 2
+        x: 692
+        y: 711
+        width: 61
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a8bdf79534cbe374eabe04990aa8e9f6
+      internalID: -7349188606907693936
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Items_1_Elephant_Body
+      rect:
+        serializedVersion: 2
+        x: 299
+        y: 475
+        width: 259
+        height: 158
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 44eb38c6ea3ee8149b8807b757065ecf
+      internalID: 5975223695553752494
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Items_1_Bee_Body_3
+      rect:
+        serializedVersion: 2
+        x: 592
+        y: 611
+        width: 147
+        height: 78
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eba7ae3453b5928418c93d3167e87be2
+      internalID: -614613384640543364
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Items_1_Cat_Body
+      rect:
+        serializedVersion: 2
+        x: 803
+        y: 477
+        width: 220
+        height: 147
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 109, y: 36, z: 109, w: 108}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3b02f9e8545cc914ebeb7a93a6827f60
+      internalID: -5130363283294325692
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Items_1_Elephant_Leg
+      rect:
+        serializedVersion: 2
+        x: 561
+        y: 508
+        width: 108
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c7534bf364ef5e24799deaa513513703
+      internalID: -8892968748215703745
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Items_1_Elephant_Parts
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 388
+        width: 20
+        height: 21
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 81e6e81ab33a60d4894c142269e7810f
+      internalID: -8747369593603170607
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Items_1_Elephant_Mouth
+      rect:
+        serializedVersion: 2
+        x: 25
+        y: 390
+        width: 76
+        height: 29
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7356b506429307740a1178a09ef5109c
+      internalID: 4055234663518992166
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Items_1_Elephant_Head
+      rect:
+        serializedVersion: 2
+        x: 316
+        y: 3
+        width: 248
+        height: 408
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5c284ef2e8869b7419d36c32b36e523a
+      internalID: 8888877690394475795
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Items_1_Elephant_Body_2
+      rect:
+        serializedVersion: 2
+        x: 567
+        y: 347
+        width: 90
+        height: 103
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 43d69d79c0eed1e448b4a027c584776c
+      internalID: 2013212050860837656
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Items_1_Apple_Part
+      rect:
+        serializedVersion: 2
+        x: 681
+        y: 242
+        width: 75
+        height: 199
+      alignment: 9
+      pivot: {x: 0.66192466, y: 0.0903397}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9a9b33cd0c123e84b86541bffc7c72b1
+      internalID: -41609205810213078
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Items_1_Apple
+      rect:
+        serializedVersion: 2
+        x: 776
+        y: 2
+        width: 247
+        height: 455
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d313190d574c3bf47b93b2c94157755d
+      internalID: 7561271210192570649
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Items_1_Elephant_Ear_Inner
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 226
+        width: 201
+        height: 159
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a2cf78ba7e083364f92f5c7dfd78c4a9
+      internalID: -1563810228789852898
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Items_1_Elephant_Tail_Part
+      rect:
+        serializedVersion: 2
+        x: 206
+        y: 226
+        width: 89
+        height: 107
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eb470712fefa22e4eab262c795fee5d4
+      internalID: 4533096248220844462
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Items_1_Elephant_Trunk_Part
+      rect:
+        serializedVersion: 2
+        x: 567
+        y: 233
+        width: 57
+        height: 97
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b90f3f6b9f89c4a42aa6fc8f9a13bff1
+      internalID: 7812042827317415813
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Items_1_Apple_Glare
+      rect:
+        serializedVersion: 2
+        x: 644
+        y: 233
+        width: 34
+        height: 111
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e5cb8c88c26ff414e891bd0a22f61581
+      internalID: -4290365436625077318
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Items_1_Elephant_Ear
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 3
+        width: 260
+        height: 220
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a8e4362a35b99574a976fa33422c4177
+      internalID: -8525903695565431072
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Items_1_Apple_Sheet_1
+      rect:
+        serializedVersion: 2
+        x: 568
+        y: 2
+        width: 129
+        height: 228
+      alignment: 9
+      pivot: {x: 0.546506, y: 0.12163685}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aa0d61aa5f6ea26428df2ad68a4af592
+      internalID: -4424737673781526173
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Items_1_Apple_Sheet_2
+      rect:
+        serializedVersion: 2
+        x: 701
+        y: 3
+        width: 72
+        height: 228
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1e5e79b3733537641abbb7a0c43ebcba
+      internalID: -8511405367551149010
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Items_1_Cat_Head_Part_1
+      rect:
+        serializedVersion: 2
+        x: 705
+        y: 778
+        width: 48
+        height: 45
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 25, z: 0, w: 17}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 16ad165f1bba30d429ab0795b7d4d227
+      internalID: 3155561729382455995
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Items_1_Elephant_Finger_2
+      rect:
+        serializedVersion: 2
+        x: 266
+        y: 3
+        width: 28
+        height: 27
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 57fa6571a8a82784ca775b287a9e2d1c
+      internalID: -2125901813117281890
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Items_1_Elephant_Finger_3
+      rect:
+        serializedVersion: 2
+        x: 266
+        y: 33
+        width: 29
+        height: 31
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: afc04f8a3eeef3840bcecc41442da683
+      internalID: 7641115178940479111
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Items_1_Elephant_Finger_1
+      rect:
+        serializedVersion: 2
+        x: 266
+        y: 66
+        width: 28
+        height: 38
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a0bc54508ce839348b13cbd7614f27dd
+      internalID: -8789125774305908492
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

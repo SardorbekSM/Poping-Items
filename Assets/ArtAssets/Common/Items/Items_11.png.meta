@@ -1,0 +1,655 @@
+fileFormatVersion: 2
+guid: 534e652ce65276d49aab1e0c10595c2c
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -8972568093048672622
+    second: Items_3_Pumpkin_Bottom_3
+  - first:
+      213: 7973489207022010867
+    second: Items_3_Pumpkin_Top_2
+  - first:
+      213: -7822309223313093270
+    second: Items_3_Pumpkin_Top_4
+  - first:
+      213: -4879250036850644100
+    second: Items_3_Pumpkin_Bottom_5
+  - first:
+      213: -4332478485744596247
+    second: Items_3_Quil_3
+  - first:
+      213: -5304744314923191093
+    second: Items_3_Quil_2
+  - first:
+      213: -8293055203164619411
+    second: Items_3_Zebra_Face_Part_1
+  - first:
+      213: -7337113676870586208
+    second: Items_3_Zebra_Head_Part
+  - first:
+      213: -7521317590943981783
+    second: Items_3_Zebra_Face_Part_2
+  - first:
+      213: 7704756148757424966
+    second: Items_3_Zebra_Face_Part_3
+  - first:
+      213: -5620171930278496902
+    second: Items_3_Zebra_Face_Part_4
+  - first:
+      213: 2608409962577732684
+    second: Items_3_Pumpkin_1
+  - first:
+      213: -5567189510062952435
+    second: Items_3_Zebra_Head
+  - first:
+      213: -3578495762468272132
+    second: Items_3_Owl_Beak
+  - first:
+      213: 1663737972716701901
+    second: Items_3_Quil_1
+  - first:
+      213: 2357768972935112527
+    second: Items_3_Owl_Eyes_Part
+  - first:
+      213: 8198876520093094376
+    second: Items_3_Mushroom_1
+  - first:
+      213: -2805587384351000556
+    second: Items_3_Mushroom_2
+  - first:
+      213: -6104597134858410997
+    second: Items_3_Owl_Body_2
+  - first:
+      213: 8835652877261469788
+    second: Items_3_Owl_Body_1
+  - first:
+      213: 6687005959284050551
+    second: Items_3_Mushroom_4
+  - first:
+      213: -7973880896280662829
+    second: Items_3_Mushroom_3
+  externalObjects: {}
+  serializedVersion: 10
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 0
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Items_3_Pumpkin_Bottom_3
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 740
+        width: 77
+        height: 282
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4d0d350c0b65c314dab8a45e00b83784
+      internalID: -8972568093048672622
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Items_3_Pumpkin_Top_2
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 781
+        width: 58
+        height: 241
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7e08887aeee9c2d439a1885cde6c6a53
+      internalID: 7973489207022010867
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Items_3_Pumpkin_Top_4
+      rect:
+        serializedVersion: 2
+        x: 142
+        y: 724
+        width: 61
+        height: 298
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b5b05fcba8aa058438666844d99b7b88
+      internalID: -7822309223313093270
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Items_3_Pumpkin_Bottom_5
+      rect:
+        serializedVersion: 2
+        x: 207
+        y: 728
+        width: 71
+        height: 294
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 44d7c8c0a35df214281908fc28bbd7bb
+      internalID: -4879250036850644100
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Items_3_Quil_3
+      rect:
+        serializedVersion: 2
+        x: 281
+        y: 638
+        width: 236
+        height: 385
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1ac8107cb2c422946acf25037de914e9
+      internalID: -4332478485744596247
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Items_3_Quil_2
+      rect:
+        serializedVersion: 2
+        x: 527
+        y: 743
+        width: 249
+        height: 279
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 250c0026b134359419fca32f7e479b19
+      internalID: -5304744314923191093
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Items_3_Zebra_Face_Part_1
+      rect:
+        serializedVersion: 2
+        x: 817
+        y: 871
+        width: 205
+        height: 151
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e810401a1a2780c4eb3502239027a3bf
+      internalID: -8293055203164619411
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Items_3_Zebra_Head_Part
+      rect:
+        serializedVersion: 2
+        x: 799
+        y: 744
+        width: 105
+        height: 124
+      alignment: 9
+      pivot: {x: 0.5, y: 0.2255371}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 837072e2bb22437419c06daa6c3b6b4b
+      internalID: -7337113676870586208
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Items_3_Zebra_Face_Part_2
+      rect:
+        serializedVersion: 2
+        x: 907
+        y: 817
+        width: 39
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 32bf7296637086e4883c5c39bab111bf
+      internalID: -7521317590943981783
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Items_3_Zebra_Face_Part_3
+      rect:
+        serializedVersion: 2
+        x: 952
+        y: 823
+        width: 71
+        height: 44
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fcd6d5d36b8c63a4d969df1c25449aa3
+      internalID: 7704756148757424966
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Items_3_Zebra_Face_Part_4
+      rect:
+        serializedVersion: 2
+        x: 949
+        y: 771
+        width: 74
+        height: 49
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a3e89d803755644082d50dabbc339f7
+      internalID: -5620171930278496902
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Items_3_Pumpkin_1
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 534
+        width: 139
+        height: 203
+      alignment: 9
+      pivot: {x: 0.35510203, y: 0.20943928}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8f931f7f9f8c5094d86efd7a44449201
+      internalID: 2608409962577732684
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Items_3_Zebra_Head
+      rect:
+        serializedVersion: 2
+        x: 548
+        y: 345
+        width: 205
+        height: 393
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6bf948b0e3eaf094d8788e056ea7d132
+      internalID: -5567189510062952435
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Items_3_Owl_Beak
+      rect:
+        serializedVersion: 2
+        x: 932
+        y: 590
+        width: 90
+        height: 98
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7496df180bb86c34c8e4ea6bf1645f91
+      internalID: -3578495762468272132
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Items_3_Quil_1
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 441
+        width: 514
+        height: 90
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a16b98d666b83d9449f4408678a84be4
+      internalID: 1663737972716701901
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Items_3_Owl_Eyes_Part
+      rect:
+        serializedVersion: 2
+        x: 954
+        y: 528
+        width: 69
+        height: 57
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 21, z: 0, w: 33}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7780edb789691bd41911daeafd321e76
+      internalID: 2357768972935112527
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Items_3_Mushroom_1
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 1
+        width: 288
+        height: 397
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0995ef4b963ef454297627abcd81c6ee
+      internalID: 8198876520093094376
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Items_3_Mushroom_2
+      rect:
+        serializedVersion: 2
+        x: 292
+        y: 199
+        width: 155
+        height: 189
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ad01911e7c11f684b9e12738cd859036
+      internalID: -2805587384351000556
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Items_3_Owl_Body_2
+      rect:
+        serializedVersion: 2
+        x: 574
+        y: 1
+        width: 179
+        height: 340
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 895d64615854fed4db41a12384986335
+      internalID: -6104597134858410997
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Items_3_Owl_Body_1
+      rect:
+        serializedVersion: 2
+        x: 757
+        y: 2
+        width: 266
+        height: 523
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 54dab56f871c697488adfd24d0d1aced
+      internalID: 8835652877261469788
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Items_3_Mushroom_4
+      rect:
+        serializedVersion: 2
+        x: 292
+        y: 2
+        width: 190
+        height: 194
+      alignment: 9
+      pivot: {x: 0.28185812, y: 0.23019086}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a8f1763fa37563e40bb3cc6bfe69e97d
+      internalID: 6687005959284050551
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Items_3_Mushroom_3
+      rect:
+        serializedVersion: 2
+        x: 486
+        y: 1
+        width: 45
+        height: 172
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 39, y: 0, z: 5, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f046d2f7db8ee9f4196bc818b587de00
+      internalID: -7973880896280662829
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

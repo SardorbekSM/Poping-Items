@@ -4,7 +4,7 @@ using Cysharp.Threading.Tasks;
 
 namespace Core.WaiterAsync
 {
-    public class LoopedActionAsync
+    public class LoopedActionAsync : ILoopedAction
     {
         private readonly CancellationTokenSource _cancellationTokenSource;
         private readonly CancellationToken _cancellation;

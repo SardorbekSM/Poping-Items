@@ -1,7 +1,5 @@
 ﻿using System;
-using Control;
 using Control.Interfaces;
-using UnityEngine;
 using VContainer.Unity;
 using View;
 
@@ -9,16 +7,18 @@ namespace Core
 {
     public class GameProcess : IStartable, IDisposable
     {
-        private readonly SpawnController _spawnController;
-        private readonly SliderController _sliderController;
-        private readonly IScoreControl _scoreControl;
+        private readonly ISliderController _sliderController;
+        private readonly ILevelController _levelController;
+        private readonly IItemController _itemController;
         private readonly EndGameView _endGameView;
 
-        public GameProcess(SpawnController spawnController, SliderController sliderController, IScoreControl scoreControl, EndGameView endGameView)
+        public GameProcess(ISliderController sliderController, 
+            ILevelController levelController, IItemController itemController, 
+            EndGameView endGameView)
         {
-            _spawnController = spawnController;
             _sliderController = sliderController;
-            _scoreControl = scoreControl;
+            _levelController = levelController;
+            _itemController = itemController;
             _endGameView = endGameView;
         }
 
@@ -29,9 +29,10 @@ namespace Core
 
         private void Initialize()
         {
-            _spawnController.StartControl();
+            _itemController.StartControl();
             _sliderController.StartControl();
-            _scoreControl.Scored += End;
+            _levelController.StartControl();
+            _levelController.Scored += End;
         }
 
         private void RestartGame()
@@ -41,15 +42,16 @@ namespace Core
 
         private void End()
         {
-            _spawnController.EndControl();
-            _sliderController.EndControl();
-            _scoreControl.Scored -= End;
             _endGameView.Activate(RestartGame);
+            Dispose();
         }
 
         public void Dispose()
         {
-            _scoreControl.Scored -= End;
+            _itemController.EndControl();
+            _sliderController.EndControl();
+            _levelController.EndControl();
+            _levelController.Scored -= End;
         }
     }
 }

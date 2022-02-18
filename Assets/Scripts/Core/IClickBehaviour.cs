@@ -1,7 +1,11 @@
 ﻿using System;
+using UnityEngine;
 
-public interface IClickBehaviour
+namespace Core
 {
-    event Action ButtonClicked;
-    void OnButtonClicked();
+    public interface IClickBehaviour
+    {
+        event Action<GameObject> ButtonClicked;
+        void OnButtonClicked();
+    }
 }
