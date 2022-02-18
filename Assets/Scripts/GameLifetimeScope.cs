@@ -19,9 +19,8 @@ public class GameLifetimeScope : LifetimeScope
     
     //Data
     [SerializeField] private SpawnData _spawnData;
-    [SerializeField] private FillBarData _fillBarData;
+    [SerializeField] private LevelData _levelData;
     [SerializeField] private ItemsOffsetData _itemsOffsetData;
-    [SerializeField] private PatternsData _patternsData;
     [SerializeField] private LevelPatternsData _levelPatternsData;
 
     protected override void Configure(IContainerBuilder builder)
@@ -29,9 +28,8 @@ public class GameLifetimeScope : LifetimeScope
         BindCore(builder);
         BindComponents(builder);
         BindInstance(builder, _spawnData);
-        BindInstance(builder, _fillBarData);
+        BindInstance(builder, _levelData);
         BindInstance(builder, _itemsOffsetData);
-        BindInstance(builder, _patternsData);
         BindInstance(builder, _levelPatternsData);
     }
 
@@ -49,12 +47,12 @@ public class GameLifetimeScope : LifetimeScope
         builder.Register<SpawnerWithPool>(Lifetime.Singleton).AsImplementedInterfaces();
         builder.Register<GameObjectFactory>(Lifetime.Singleton).AsImplementedInterfaces();
         
-        builder.Register<SliderModel>(Lifetime.Singleton).AsSelf();
+        builder.Register<LevelModel>(Lifetime.Singleton).AsSelf();
         builder.Register<ItemModel>(Lifetime.Singleton).AsSelf();
         builder.Register<MainCameraBorders>(Lifetime.Singleton).AsSelf();
         builder.Register<PatternModel>(Lifetime.Singleton).AsSelf();
         builder.Register<SliderController>(Lifetime.Singleton).AsSelf();
-        builder.Register<LevelModel>(Lifetime.Singleton).AsSelf();
+        builder.Register<LevelPatternsModel>(Lifetime.Singleton).AsSelf();
         builder.Register<LevelController>(Lifetime.Singleton).AsSelf();
         builder.Register<ItemController>(Lifetime.Singleton).AsSelf(); // Как можно передвигать строки с помощью alt как в VS
 

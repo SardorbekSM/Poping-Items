@@ -332,7 +332,7 @@ MonoBehaviour:
   _sliderView: {fileID: 1882025163}
   _endGameView: {fileID: 136495834}
   _spawnData: {fileID: 11400000, guid: 2c06c461f732131439a8e83693e04585, type: 2}
-  _fillBarData: {fileID: 11400000, guid: 081e81c979169324e92c8a7c7daf70eb, type: 2}
+  _levelData: {fileID: 11400000, guid: 081e81c979169324e92c8a7c7daf70eb, type: 2}
   _itemsOffsetData: {fileID: 11400000, guid: 4676772c17b9a0c46a57a259e1a0ccd8, type: 2}
   _patternsData: {fileID: 11400000, guid: 1c5820dc3d37c864e84e57631b8f8ed6, type: 2}
   _levelPatternsData: {fileID: 11400000, guid: 85020dab0c8f3b44795b397733a62c5b, type: 2}

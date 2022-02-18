@@ -7,7 +7,6 @@ namespace Control
 {
     public class LevelController : IControl
     {
-        private readonly SliderModel _sliderModel;
         private readonly LevelModel _levelModel;
         private readonly PatternModel _patternModel;
 
@@ -16,22 +15,20 @@ namespace Control
         
         public event Action Scored;
 
-        public LevelController(SliderModel sliderModel, LevelModel levelModel, PatternModel patternModel)
+        public LevelController(LevelModel levelModel, PatternModel patternModel)
         {
-            _sliderModel = sliderModel;
             _levelModel = levelModel;
             _patternModel = patternModel;
         }
 
         public void StartControl()
         {
-            _levelModel.InitializeNewPatterns();
             _patternModel.Initialize();
         }
 
         public float AddScore()
         {
-            var newScore = _score += _sliderModel.Step;
+            var newScore = _score += _levelModel.Step;
             
             OnScoreChanged();
             
@@ -42,28 +39,26 @@ namespace Control
         {
             _iterationScore++;
 
-            if (_iterationScore < _sliderModel.RequiredItemsCount) return;
+            if (_iterationScore < _levelModel.IterationItems) return;
 
-            _iterationScore = _sliderModel.FillMin;
+            _iterationScore = _levelModel.StartValue;
 
-            _levelModel.InitializeNewPatterns();
             _patternModel.Initialize();
 
-            if (_score < _sliderModel.FillMax) return;
+            if (_score < _levelModel.LevelItemsCount) return;
             
             AllLevelsComplete();
         }
 
         private void AllLevelsComplete()
         {
-            _score = _sliderModel.FillMin;
+            _score = _levelModel.StartValue;
             Scored?.Invoke();
         }
 
         public void EndControl()
         {
             _patternModel.ResetToDefault();
-            _levelModel.ResetToDefault();
         }
     }
 }

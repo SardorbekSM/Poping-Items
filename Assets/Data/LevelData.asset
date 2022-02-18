@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 31f0fcaa371d4b44b2213b6e6f810c2b, type: 3}
-  m_Name: FillBarData
+  m_Name: LevelData
   m_EditorClassIdentifier: 
   _levelPatternsData: {fileID: 11400000, guid: 85020dab0c8f3b44795b397733a62c5b, type: 2}
   _iterationsCount: 3
-  _fillMin: 0
-  _fillMax: 6
+  _startValue: 0
+  _levelRequiredItemsCount: 6
   _step: 1
-  _requiredItemsCount: 2
+  _iterationItemsCount: 2

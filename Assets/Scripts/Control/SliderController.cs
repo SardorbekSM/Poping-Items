@@ -12,14 +12,14 @@ namespace Control
     public class SliderController : IControl
     {
         private readonly SliderView _sliderView;
-        private readonly SliderModel _sliderModel;
+        private readonly LevelModel _levelModel;
         private readonly LevelController _scoreControl;
         private readonly ISpawnerBehaviour _spawnerBehaviour;
 
-        public SliderController(SliderView sliderView, SliderModel sliderModel, LevelController scoreControl, ISpawnerBehaviour spawnerBehaviour)
+        public SliderController(SliderView sliderView, LevelModel levelModel, LevelController scoreControl, ISpawnerBehaviour spawnerBehaviour)
         {
             _sliderView = sliderView;
-            _sliderModel = sliderModel;
+            _levelModel = levelModel;
             _scoreControl = scoreControl;
             _spawnerBehaviour = spawnerBehaviour;
         }
@@ -27,7 +27,7 @@ namespace Control
         public void StartControl()
         {
             _spawnerBehaviour.OnInstantiatedObject += SubscribeToClick;
-            _sliderView.CreateSliderSpan(_sliderModel.FillMin, _sliderModel.FillMax);
+            _sliderView.CreateSliderSpan(_levelModel.StartValue, _levelModel.LevelItemsCount);
         }
 
         private void SubscribeToClick(GameObject obj)
