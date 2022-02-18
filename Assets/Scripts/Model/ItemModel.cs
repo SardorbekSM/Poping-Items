@@ -7,15 +7,15 @@ namespace Model
 {
     public class ItemModel
     {
-        private readonly SpawnData _spawnData;
+        private readonly ItemsData _itemsData;
         private readonly ISpawnerBehaviour _spawnerWithPool;
         private LoopedActionAsync _loopedActionAsync; // Не инжектится на VContainer
-        public float ItemLifeTime => _spawnData.ItemsLifeTime;
-        public GameObject[] Prefabs => _spawnData.Prefabs;
+        public float ItemLifeTime => _itemsData.ItemsLifeTime;
+        public GameObject[] Prefabs => _itemsData.Prefabs;
 
-        public ItemModel(SpawnData spawnData, ISpawnerBehaviour spawnerBehaviour)
+        public ItemModel(ItemsData itemsData, ISpawnerBehaviour spawnerBehaviour)
         {
-            _spawnData = spawnData;
+            _itemsData = itemsData;
             _spawnerWithPool = spawnerBehaviour;
         }
 
@@ -23,7 +23,7 @@ namespace Model
         {
             _loopedActionAsync = new LoopedActionAsync();
             _loopedActionAsync.DoAction += _spawnerWithPool.Spawn;
-            _loopedActionAsync.Begin(_spawnData.SpawnDuration);
+            _loopedActionAsync.Begin(_itemsData.SpawnDuration);
         }
         
         public void EndSpawn()

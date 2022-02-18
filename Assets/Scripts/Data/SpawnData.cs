@@ -1,21 +1,14 @@
-﻿
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+
 using UnityEngine;
 
 namespace Data
 {
-    [CreateAssetMenu]
+    [CreateAssetMenu(fileName = "SpawnData", menuName = "SpawnData", order = 0)]
     public class SpawnData : ScriptableObject
     {
-        [SerializeField, Min(0.01f)] private float _spawnDuration = 1f;
-        [SerializeField, Min(0.01f)] private float _itemsLifeTime;
         [SerializeField] private GameObject[] _prefabs;
 
-
-        public float SpawnDuration => _spawnDuration;
-        public float ItemsLifeTime => _itemsLifeTime;
-
-        public GameObject[] Prefabs => _prefabs;
-
+        public IEnumerable<GameObject> Prefabs => _prefabs;
     }
 }

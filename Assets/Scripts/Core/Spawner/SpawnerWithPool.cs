@@ -16,9 +16,9 @@ namespace Core.Spawner
         private readonly ISpawnerContainer<GameObject> _spawnerContainer = new SpawnerContainer<GameObject>();
 
         [Inject]
-        public SpawnerWithPool(IRandomizer randomizer, SpawnData spawnData)
+        public SpawnerWithPool(IRandomizer randomizer, ItemsData itemsData)
         {
-            _pooler = new RandomizerPooler(spawnData.Prefabs, randomizer);
+            _pooler = new RandomizerPooler(itemsData.Prefabs, randomizer);
             _spawner = new Spawner<GameObject>(_pooler);
         }
 

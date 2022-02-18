@@ -16,8 +16,8 @@ namespace Control
         private readonly IPositionGetter _positionGetter;
         private readonly ISpawnerBehaviour _spawnerWithPool;
         private readonly PatternModel _patternModel;
-
         private readonly ItemModel _itemModel;
+        
         private LoopedActionAsync _loopedActionAsync; // Не инжектится на VContainer
 
         public ItemController(IPositionGetter positionGetter, ISpawnerBehaviour spawnerWithPool, PatternModel patternModel, ItemModel itemModel)

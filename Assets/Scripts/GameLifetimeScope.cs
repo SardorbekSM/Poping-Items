@@ -18,7 +18,7 @@ public class GameLifetimeScope : LifetimeScope
     [SerializeField] private EndGameView _endGameView;
     
     //Data
-    [SerializeField] private SpawnData _spawnData;
+    [SerializeField] private ItemsData _itemsData;
     [SerializeField] private LevelData _levelData;
     [SerializeField] private ItemsOffsetData _itemsOffsetData;
     [SerializeField] private LevelPatternsData _levelPatternsData;
@@ -27,7 +27,7 @@ public class GameLifetimeScope : LifetimeScope
     {
         BindCore(builder);
         BindComponents(builder);
-        BindInstance(builder, _spawnData);
+        BindInstance(builder, _itemsData);
         BindInstance(builder, _levelData);
         BindInstance(builder, _itemsOffsetData);
         BindInstance(builder, _levelPatternsData);

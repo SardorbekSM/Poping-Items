@@ -39,7 +39,7 @@ namespace Control
         {
             _iterationScore++;
 
-            if (_iterationScore < _levelModel.IterationItems) return;
+            if (_iterationScore < _levelModel.IterationItemsCount) return;
 
             _iterationScore = _levelModel.StartValue;
 

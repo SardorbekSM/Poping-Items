@@ -48,6 +48,7 @@ namespace Control
             if (view.PatternType != InteractableType.Correct) return;
             
             _sliderView.ChangeValue(_scoreControl.AddScore());
+            
             Debug.Log("Add Score");
         }
 
