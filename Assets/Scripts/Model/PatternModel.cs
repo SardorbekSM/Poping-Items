@@ -78,6 +78,5 @@ namespace Model
             CorrectPattern = null;
             _iterationModel.ResetToDefault();
         }
-        
     }
 }

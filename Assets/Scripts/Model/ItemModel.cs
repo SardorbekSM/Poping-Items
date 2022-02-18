@@ -11,7 +11,7 @@ namespace Model
     {
         private readonly ItemsData _itemsData;
         private readonly ISpawnerBehaviour _spawnerWithPool;
-        private LoopedActionAsync _loopedActionAsync; // Не инжектится на VContainer
+        private ILoopedAction _loopedActionAsync; // Не инжектится на VContainer
 
         public ItemModel(ItemsData itemsData, ISpawnerBehaviour spawnerBehaviour)
         {

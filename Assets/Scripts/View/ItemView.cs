@@ -15,7 +15,7 @@ namespace View
         [SerializeField] private Transform _patternPlace;
         
         private IPooler<GameObject> _pooler;
-        private LoopedActionAsync _loopedActionAsync;
+        private ILoopedAction _loopedActionAsync;
 
         public InteractableType PatternType { get; private set; }
         public event Action<GameObject> ButtonClicked;
