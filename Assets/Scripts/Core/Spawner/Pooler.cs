@@ -1,4 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using System.Collections;
+using System.Collections.Generic;
+using System.Linq;
 using Cysharp.Threading.Tasks;
 using UnityEngine;
 using VContainer;
@@ -6,16 +8,16 @@ using VContainer;
 public class Pooler : IPooler<GameObject>
 {
     private readonly List<GameObject> _returnedObjects;
-    private readonly GameObject[] _poolingObjects;
+    private readonly IList<GameObject> _poolingObjects;
 
     private int _currentObjectIndex = -1;
         
     private readonly IFactoryGameObject<GameObject> _factory;
 
-    public Pooler(GameObject[] poolingObjects)
+    public Pooler(IList<GameObject> poolingObjects)
     {
         _returnedObjects = new List<GameObject>();
-        _poolingObjects = poolingObjects;
+        _poolingObjects = new List<GameObject>(poolingObjects);;
         _factory = new GameObjectFactory();
     }
 
@@ -30,7 +32,7 @@ public class Pooler : IPooler<GameObject>
             return item;
         }
 
-        var one = _factory.Create(_poolingObjects[GetIndex(_poolingObjects.Length)]);
+        var one = _factory.Create(_poolingObjects[GetIndex(_poolingObjects.Count())]);
 
         return one;
     }

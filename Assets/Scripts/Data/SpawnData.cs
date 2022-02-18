@@ -9,6 +9,6 @@ namespace Data
     {
         [SerializeField] private GameObject[] _prefabs;
 
-        public IEnumerable<GameObject> Prefabs => _prefabs;
+        public IList<GameObject> Prefabs => _prefabs;
     }
 }

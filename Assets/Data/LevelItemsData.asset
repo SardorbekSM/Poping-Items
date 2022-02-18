@@ -9,11 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 31f0fcaa371d4b44b2213b6e6f810c2b, type: 3}
-  m_Name: LevelData
+  m_Script: {fileID: 11500000, guid: ecf620521585d174ba632566857e64b6, type: 3}
+  m_Name: LevelItemsData
   m_EditorClassIdentifier: 
-  _levelPatternsData: {fileID: 11400000, guid: 85020dab0c8f3b44795b397733a62c5b, type: 2}
-  _iterationsCount: 3
-  _startValue: 0
-  _levelRequiredItemsCount: 6
-  _iterationRequiredItemsCount: 2
+  _spawnDuration: 0.5
+  _itemsLifeTime: 0
+  _prefabs: {fileID: 11400000, guid: e2e368963b992784dbf6ab7d39292243, type: 2}

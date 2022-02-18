@@ -8,7 +8,7 @@ namespace Model
         
         public int StartValue => _levelData.StartValue;
         public int LevelItemsCount => _levelData.LevelRequiredItemsCount;
-        public int IterationItemsCount => _levelData.IterationItemsCount;
+        public int IterationItemsCount => _levelData.IterationRequiredItemsCount;
 
         public LevelModel(LevelData levelData)
         {

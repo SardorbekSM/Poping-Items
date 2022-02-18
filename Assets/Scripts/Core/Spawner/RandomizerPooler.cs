@@ -6,7 +6,7 @@ public class RandomizerPooler : Pooler
 {
     private readonly IRandomizer _randomizer;
         
-    public RandomizerPooler(GameObject[] poolingObjects, IRandomizer randomizer) : base(poolingObjects)
+    public RandomizerPooler(IList<GameObject> poolingObjects, IRandomizer randomizer) : base(poolingObjects)
     {
         _randomizer = randomizer;
     }

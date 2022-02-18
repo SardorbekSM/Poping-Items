@@ -14,25 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _frequency: 2
   _useCorrectsAsWrong: 1
-  _correctPatterns:
-  - {fileID: 4641315858080940053, guid: 596f43833f72f9e409a5aa97cf571a1a, type: 3}
-  - {fileID: 4641315858080940053, guid: 1b02ef227e50eed4b80887adc314bf86, type: 3}
-  - {fileID: 4641315858080940053, guid: 8c1a7214fa4a4dd4b8e9427c458dc50f, type: 3}
-  - {fileID: 4641315858080940053, guid: 15e25a7207fa9bc4baab1eaec30ea02c, type: 3}
-  - {fileID: 4641315858080940053, guid: 3d2263bc99157914cb193f310653f98e, type: 3}
-  - {fileID: 4641315858080940053, guid: 568c22570a010e844a3520a61172bbf9, type: 3}
-  - {fileID: 4641315858080940053, guid: f597b3664918a144ca3f2d07897f90a5, type: 3}
-  - {fileID: 4641315858080940053, guid: 54f61315269722046b2db027de7ec342, type: 3}
-  - {fileID: 4641315858080940053, guid: 6a5f53839184cbd4083f4b3a812eb6b3, type: 3}
-  - {fileID: 4641315858080940053, guid: 8826ecf6e26e49643962c4f005f3a3f7, type: 3}
-  _wrongPatterns:
-  - {fileID: 7252006027865057529, guid: a850502ca26bebe4f9ace7aa3aa09fd1, type: 3}
-  - {fileID: 5195524311729680581, guid: 2c22422d6dc3e5e4194a34ca02bcdb44, type: 3}
-  - {fileID: 7081838720644118605, guid: 057b1bb1ad35f254eac5fdee4a34674e, type: 3}
-  - {fileID: 4221247462762280489, guid: 8d951313d1422c7498c0b271295b8ae0, type: 3}
-  - {fileID: 4088623120948548153, guid: 8c62660b98e45214b8f1711e93c174a0, type: 3}
-  - {fileID: 7315479438786545721, guid: 68654201a18561e47a6e4ab5025f8fda, type: 3}
-  - {fileID: 3367637660667606047, guid: 682187e2a39b2ee40804b508a4a9443e, type: 3}
-  - {fileID: 1014186581119606367, guid: b28ebe60aa1a017409886058b4faf297, type: 3}
-  - {fileID: 3507544181715076926, guid: e3fba3f4e9f64a74ea32d153182f83ea, type: 3}
-  - {fileID: 3348826331691875776, guid: 22f27c871544a8641bfc62f27288eb67, type: 3}
+  _correctPatterns: {fileID: 11400000, guid: e88a4aebe792224448d37263269521ea, type: 2}
+  _wrongPatterns: {fileID: 11400000, guid: a74289290d1a36444b7c73027ca934c1, type: 2}

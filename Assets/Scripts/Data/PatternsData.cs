@@ -13,13 +13,13 @@ namespace Data
 
         [SerializeField] private bool _useCorrectsAsWrong;
         
-        [SerializeField] private GameObject[] _correctPatterns;
-        [SerializeField] private GameObject[] _wrongPatterns;
+        [SerializeField] private SpawnData _correctPatterns;
+        [SerializeField] private SpawnData _wrongPatterns;
 
         public int Frequency => _frequency;
 
-        public IEnumerable<GameObject> CorrectPatterns => _correctPatterns;
-        public IEnumerable<GameObject> WrongPatterns => _wrongPatterns;
+        public IEnumerable<GameObject> CorrectPatterns => _correctPatterns.Prefabs;
+        public IEnumerable<GameObject> WrongPatterns => _wrongPatterns.Prefabs;
         public bool UseCorrectsAsWrong => _useCorrectsAsWrong;
     }
 }

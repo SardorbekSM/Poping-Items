@@ -13,17 +13,17 @@ namespace Data
         [SerializeField, Min(0)] private int _startValue = 0;
         [SerializeReference] private int _levelRequiredItemsCount;
 
-        [SerializeField] private int _iterationItemsCount;
+        [SerializeField] private int _iterationRequiredItemsCount;
 
         public int StartValue => _startValue;
         public int LevelRequiredItemsCount => _levelRequiredItemsCount;
-        public int IterationItemsCount => _iterationItemsCount;
+        public int IterationRequiredItemsCount => _iterationRequiredItemsCount;
 
 #if UNITY_EDITOR
         private void OnValidate()
         {
             _iterationsCount = _levelPatternsData.LevelPatterns.Length;
-            _levelRequiredItemsCount = IterationItemsCount * _iterationsCount;
+            _levelRequiredItemsCount = IterationRequiredItemsCount * _iterationsCount;
 
             if ((_levelRequiredItemsCount % _iterationsCount) == 0) return;
             

@@ -9,11 +9,11 @@ namespace Data
     {
         [SerializeField, Min(0.01f)] private float _spawnDuration = 1f;
         [SerializeField, Min(0.01f)] private float _itemsLifeTime;
-        [SerializeField] private GameObject[] _prefabs;
+        [SerializeField] private SpawnData _prefabs;
 
         public float SpawnDuration => _spawnDuration;
         public float ItemsLifeTime => _itemsLifeTime;
-        public GameObject[] Prefabs => _prefabs;
+        public IList<GameObject> Prefabs => _prefabs.Prefabs;
 
     }
 }

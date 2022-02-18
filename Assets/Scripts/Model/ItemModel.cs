@@ -1,4 +1,6 @@
-﻿using Core.Spawner.Interfaces;
+﻿using System.Collections;
+using System.Collections.Generic;
+using Core.Spawner.Interfaces;
 using Core.WaiterAsync;
 using Data;
 using UnityEngine;
@@ -10,8 +12,6 @@ namespace Model
         private readonly ItemsData _itemsData;
         private readonly ISpawnerBehaviour _spawnerWithPool;
         private LoopedActionAsync _loopedActionAsync; // Не инжектится на VContainer
-        public float ItemLifeTime => _itemsData.ItemsLifeTime;
-        public GameObject[] Prefabs => _itemsData.Prefabs;
 
         public ItemModel(ItemsData itemsData, ISpawnerBehaviour spawnerBehaviour)
         {

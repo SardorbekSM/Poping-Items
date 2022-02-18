@@ -10,10 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3d9e011a74e14dbd88dc01b71b64eeff, type: 3}
-  m_Name: ItemsData
+  m_Name: Patterns Empty
   m_EditorClassIdentifier: 
   _prefabs:
-  - {fileID: 8371784336996744033, guid: 973eda0496b43a0409d902ac6934985e, type: 3}
-  - {fileID: 3155509512452777122, guid: 679cb3e260515a94aaae4794563e655f, type: 3}
-  - {fileID: 3155509512452777122, guid: 3fbb7f0d0dc87b345b9e28217c49b8f3, type: 3}
-  - {fileID: 3155509512452777122, guid: 6d7c8a308a81a5e4a93d4d40453ea775, type: 3}
+  - {fileID: 529364799678310398, guid: 85dfd0494aaede64d9a0330e3e76ea6a, type: 3}
