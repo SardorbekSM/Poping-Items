@@ -7,18 +7,18 @@ using Core.Spawner;
 using Data;
 using Model;
 using UnityEngine;
-using UnityEngine.Serialization;
 using VContainer;
 using VContainer.Unity;
 using View;
 
 public class GameLifetimeScope : LifetimeScope
 {
+    [Header("Components")]
     [SerializeField] private Camera _mainCamera;
     [SerializeField] private SliderView _sliderView;
     [SerializeField] private EndGameView _endGameView;
     
-    //Data
+    [Header("Data")]
     [SerializeField] private ItemsData _itemsData;
     [SerializeField] private LevelData _levelData;
     [SerializeField] private ItemsOffsetData _itemsOffsetData;

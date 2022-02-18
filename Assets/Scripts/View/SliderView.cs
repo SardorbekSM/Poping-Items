@@ -1,8 +1,5 @@
-﻿using Control;
-using Control.Interfaces;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
-using VContainer;
 
 namespace View
 {

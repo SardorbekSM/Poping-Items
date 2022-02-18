@@ -2,7 +2,6 @@
 using Core;
 using Core.WaiterAsync;
 using Data;
-using Model;
 using UnityEngine;
 using UnityEngine.UI;
 
