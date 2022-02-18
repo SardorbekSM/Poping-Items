@@ -5,7 +5,7 @@ using Model;
 
 namespace Control
 {
-    public class LevelController : IControl
+    public class LevelController : ILevelController
     {
         private readonly LevelModel _levelModel;
         private readonly PatternModel _patternModel;

@@ -9,7 +9,7 @@ using View;
 
 namespace Control
 {
-    public class ItemController : IControl
+    public class ItemController : IItemController
     {
         private readonly IPositionGetter _positionGetter;
         private readonly ISpawnerBehaviour _spawnerWithPool;
