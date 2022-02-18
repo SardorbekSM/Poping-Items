@@ -12,13 +12,11 @@ namespace Data
         
         [SerializeField, Min(0)] private int _startValue = 0;
         [SerializeReference] private int _levelRequiredItemsCount;
-        [SerializeField] private int _step;
 
         [SerializeField] private int _iterationItemsCount;
 
         public int StartValue => _startValue;
         public int LevelRequiredItemsCount => _levelRequiredItemsCount;
-        public int Step => _step;
         public int IterationItemsCount => _iterationItemsCount;
 
 #if UNITY_EDITOR

@@ -28,7 +28,7 @@ namespace Control
 
         public float AddScore()
         {
-            var newScore = _score += _levelModel.Step;
+            var newScore = ++_score;
             
             OnScoreChanged();
             
