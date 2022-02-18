@@ -16,8 +16,7 @@ namespace Core.Spawner
 
         private readonly ISpawnerContainer<GameObject> _spawnerContainer = new SpawnerContainer<GameObject>();
 
-        [Inject]
-        public SpawnerWithPool(IRandomizer randomizer, ItemsData itemsData)
+        public SpawnerWithPool(IRandomizer randomizer, ItemsData itemsData) // Как то надо убрать прямую связ с данными
         {
             _pooler = new RandomizerPooler(itemsData.Prefabs, randomizer);
             _spawner = new Spawner<GameObject>(_pooler);
