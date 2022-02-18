@@ -3,7 +3,7 @@ using System.Linq;
 using Cysharp.Threading.Tasks;
 using UnityEngine;
 
-namespace Core.Spawner
+namespace Core.Pool
 {
     public class Pooler : IPooler<GameObject>
     {

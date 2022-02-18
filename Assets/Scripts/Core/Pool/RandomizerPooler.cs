@@ -2,7 +2,7 @@
 using Core.Randomizer;
 using UnityEngine;
 
-namespace Core.Spawner
+namespace Core.Pool
 {
     public class RandomizerPooler : Pooler
     {
