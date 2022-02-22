@@ -8,7 +8,7 @@ using UnityEngine;
 
 namespace Core.Spawner
 {
-    public sealed class SpawnerWithPool : ISpawnerBehaviour
+    public sealed class LoopedSpawner : ISpawnerBehaviour
     {
         private readonly IRandomizer _randomizer;
         
@@ -19,7 +19,7 @@ namespace Core.Spawner
 
         public event Action<GameObject> OnInstantiatedObject = delegate {  };
 
-        public SpawnerWithPool(IRandomizer randomizer)
+        public LoopedSpawner(IRandomizer randomizer)
         {
             _loopedActionAsync = new LoopedActionAsync();
             _randomizer = randomizer;
