@@ -41,7 +41,6 @@ namespace Control
 
             Assert.IsNotNull(newPattern," Item pattern not created in " + _patternGenerator);
 
-            // Две методы всегда вызываются одновременно
             item.ChangePosition(_positionGetter.GetRandom());
             item.ChangePattern(newPattern, type);
         }
