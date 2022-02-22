@@ -13,14 +13,14 @@ namespace Control
     {
         private readonly IPositionGetter _positionGetter;
         private readonly ISpawnerBehaviour _spawnerWithPool;
-        private readonly PatternModel _patternModel;
+        private readonly PatternGenerator _patternGenerator;
         private readonly ItemModel _itemModel;
         
-        public ItemController(IPositionGetter positionGetter, ISpawnerBehaviour spawnerWithPool, PatternModel patternModel, ItemModel itemModel)
+        public ItemController(IPositionGetter positionGetter, ISpawnerBehaviour spawnerWithPool, PatternGenerator patternGenerator, ItemModel itemModel)
         {
             _positionGetter = positionGetter;
             _spawnerWithPool = spawnerWithPool;
-            _patternModel = patternModel;
+            _patternGenerator = patternGenerator;
             _itemModel = itemModel;
         }
 
@@ -37,9 +37,9 @@ namespace Control
             
             Assert.IsNotNull(item, "ItemView not found on spawned object in " + obj);
 
-            var newPattern = _patternModel.GetPattern(out var type);
+            var newPattern = _patternGenerator.GetPattern(out var type);
 
-            Assert.IsNotNull(newPattern," Item pattern not created in " + _patternModel);
+            Assert.IsNotNull(newPattern," Item pattern not created in " + _patternGenerator);
 
             // Две методы всегда вызываются одновременно
             item.ChangePosition(_positionGetter.GetRandom());

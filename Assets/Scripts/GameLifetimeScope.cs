@@ -57,7 +57,7 @@ public class GameLifetimeScope : LifetimeScope
         builder.Register<LevelModel>(Lifetime.Singleton).AsSelf();
         builder.Register<ItemModel>(Lifetime.Singleton).AsSelf();
         builder.Register<MainCameraBorders>(Lifetime.Singleton).AsSelf();
-        builder.Register<PatternModel>(Lifetime.Singleton).AsSelf();
+        builder.Register<PatternGenerator>(Lifetime.Singleton).AsSelf();
         builder.Register<IterationModel>(Lifetime.Singleton).AsSelf();
 
         builder.RegisterEntryPoint<GameProcess>();

@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace Model
 {
-    public class PatternModel
+    public class PatternGenerator
     {
         private readonly IterationModel _iterationModel;
         private readonly IRandomizer _randomizer;
@@ -18,7 +18,7 @@ namespace Model
 
         private GameObject CorrectPattern { get; set; }
 
-        public PatternModel(IRandomizer randomizer, IterationModel iterationModel, IFactoryGameObject<GameObject> factory)
+        public PatternGenerator(IRandomizer randomizer, IterationModel iterationModel, IFactoryGameObject<GameObject> factory)
         {
             _iterationModel = iterationModel;
             _randomizer = randomizer;
