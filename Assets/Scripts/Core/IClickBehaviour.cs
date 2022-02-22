@@ -5,7 +5,7 @@ namespace Core
 {
     public interface IClickBehaviour
     {
-        event Action<GameObject> ButtonClicked;
+        event Action ButtonClicked;
         void OnButtonClicked();
     }
 }

@@ -17,7 +17,7 @@ namespace View
         private ILoopedAction _loopedActionAsync;
 
         public InteractableType PatternType { get; private set; }
-        public event Action<GameObject> ButtonClicked;
+        public event Action ButtonClicked;
 
         public void SetValue(IPooler<GameObject> value)
         {
@@ -56,7 +56,7 @@ namespace View
 
         public void OnButtonClicked()
         {
-            ButtonClicked?.Invoke(gameObject);
+            ButtonClicked?.Invoke();
             ResetToDefault();
         }
 
