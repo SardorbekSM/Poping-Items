@@ -13,7 +13,7 @@ namespace Data
 
         public float SpawnDuration => _spawnDuration;
         public float ItemsLifeTime => _itemsLifeTime; // Не использется как то надо использовать
-        public IEnumerable<GameObject> Prefabs => _prefabs.Prefabs;
+        public SpawnData Prefabs => _prefabs;
 
     }
 }

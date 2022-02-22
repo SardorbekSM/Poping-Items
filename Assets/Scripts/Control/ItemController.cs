@@ -28,7 +28,7 @@ namespace Control
         {
             _spawnerWithPool.OnInstantiatedObject += OnSpawned;
             _spawnerWithPool.Dispose();
-            _itemModel.BeginSpawn();
+            _spawnerWithPool.Initialize(_itemModel.Prefabs, _itemModel.SpawnDuration);
         }
 
         private void OnSpawned(GameObject obj)
@@ -48,7 +48,7 @@ namespace Control
         public void EndControl()
         {
             _spawnerWithPool.OnInstantiatedObject -= OnSpawned;
-            _itemModel.EndSpawn();
+            _spawnerWithPool.Dispose();
         }
     }
 }

@@ -2,6 +2,7 @@
 using Core.Pool;
 using Core.Randomizer;
 using Core.Spawner.Interfaces;
+using Core.WaiterAsync;
 using Data;
 using UnityEngine;
 
@@ -9,20 +10,32 @@ namespace Core.Spawner
 {
     public sealed class SpawnerWithPool : ISpawnerBehaviour
     {
+        private readonly IRandomizer _randomizer;
+        
+        private ILoopedAction _loopedActionAsync;
+        private IPooler<GameObject> _pooler;
+        private ISpawner<GameObject> _spawner;
+        private ISpawnerContainer<GameObject> _spawnerContainer = new SpawnerContainer<GameObject>();
+
         public event Action<GameObject> OnInstantiatedObject = delegate {  };
 
-        private readonly IPooler<GameObject> _pooler;
-        private readonly ISpawner<GameObject> _spawner;
-
-        private readonly ISpawnerContainer<GameObject> _spawnerContainer = new SpawnerContainer<GameObject>();
-
-        public SpawnerWithPool(IRandomizer randomizer, ItemsData itemsData) // Как то надо убрать прямую связ с данными
+        public SpawnerWithPool(IRandomizer randomizer)
         {
-            _pooler = new RandomizerPooler(itemsData.Prefabs, randomizer);
-            _spawner = new Spawner<GameObject>(_pooler);
+            _loopedActionAsync = new LoopedActionAsync();
+            _randomizer = randomizer;
         }
 
-        public async void Spawn()
+        public void Initialize(SpawnData spawnData, float duration)
+        {
+            _pooler = new RandomizerPooler(spawnData.Prefabs, _randomizer);
+            _spawner = new Spawner<GameObject>(_pooler);
+            _spawnerContainer = new SpawnerContainer<GameObject>();
+            
+            _loopedActionAsync.DoAction += Spawn;
+            _loopedActionAsync.Begin(duration);
+        }
+
+        private async void Spawn()
         {
             await _spawner.BeginSpawning(OnSpawnedObject);
         }
@@ -38,6 +51,8 @@ namespace Core.Spawner
 
         public void Dispose()
         {
+            _loopedActionAsync.DoAction -= Spawn;
+            _loopedActionAsync.EndLoop();
             _spawnerContainer?.Dispose();
             _pooler?.Dispose();
         }
