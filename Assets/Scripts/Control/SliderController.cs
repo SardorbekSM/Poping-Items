@@ -36,7 +36,7 @@ namespace Control
             
             Assert.IsNotNull(item);
 
-            item.ButtonClicked += ChangeSliderValue;
+            item.ButtonClicked += () => ChangeSliderValue(obj);
         }
         
         private void ChangeSliderValue(GameObject obj)
