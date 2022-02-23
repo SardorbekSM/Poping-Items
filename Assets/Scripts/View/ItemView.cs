@@ -30,8 +30,6 @@ namespace View
 
         public void ResetToDefault()
         {
-            gameObject.SetActive(false);
-            
             Reseted?.Invoke();
             ButtonClicked = delegate { };
         }

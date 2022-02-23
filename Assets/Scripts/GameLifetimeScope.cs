@@ -48,7 +48,7 @@ public class GameLifetimeScope : LifetimeScope
     {
         builder.Register<UniqueValueRandomizer>(Lifetime.Singleton).AsImplementedInterfaces();
         builder.Register<PositionGetter>(Lifetime.Singleton).AsImplementedInterfaces();
-        builder.Register<SpawnController>(Lifetime.Singleton).AsImplementedInterfaces();
+        builder.Register<SpawnerWithPool>(Lifetime.Singleton).AsImplementedInterfaces();
         builder.Register<GameObjectFactory>(Lifetime.Singleton).AsImplementedInterfaces();
         builder.Register<MainCameraBorders>(Lifetime.Singleton).AsSelf();
 

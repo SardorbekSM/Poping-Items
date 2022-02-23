@@ -1,4 +1,6 @@
-﻿using Data;
+﻿using System.Collections.Generic;
+using Data;
+using UnityEngine;
 
 namespace Model
 {
@@ -7,7 +9,7 @@ namespace Model
         private readonly ItemsData _itemsData;
 
         public float SpawnDuration => _itemsData.SpawnDuration;
-        public SpawnData Prefabs => _itemsData.Prefabs;
+        public IEnumerable<GameObject> Prefabs => _itemsData.Items;
         public float Lifetime => _itemsData.ItemsLifeTime;
 
         public ItemModel(ItemsData itemsData)
