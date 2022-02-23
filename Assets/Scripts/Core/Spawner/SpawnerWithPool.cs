@@ -10,19 +10,12 @@ namespace Core.Spawner
 {
     public sealed class SpawnerWithPool : ISpawnerBehaviour
     {
-        private readonly IRandomizer _randomizer;
-        
         private IPooler<GameObject> _pooler;
         private ISpawner<GameObject> _spawner;
-        private readonly ISpawnerContainer<GameObject> _spawnerContainer;
+        private readonly ISpawnerContainer<GameObject> _spawnerContainer = new SpawnerContainer<GameObject>();
+        private readonly IRandomizer _randomizer = new UniqueValueRandomizer();
 
         public event Action<GameObject> OnInstantiatedObject = delegate {  };
-
-        public SpawnerWithPool(IRandomizer randomizer)
-        {
-            _spawnerContainer = new SpawnerContainer<GameObject>();
-            _randomizer = randomizer;
-        }
 
         public void Initialize(SpawnData spawnData)
         {

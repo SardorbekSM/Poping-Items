@@ -51,9 +51,6 @@ public class GameLifetimeScope : LifetimeScope
         builder.Register<LevelController>(Lifetime.Singleton).AsImplementedInterfaces();
         builder.Register<ItemController>(Lifetime.Singleton).AsImplementedInterfaces();
         
-        // Как можно передвигать строки с помощью alt как в VS
-        // И еще namespace автоматически ctrl + k + e;
-        
         builder.Register<LevelModel>(Lifetime.Singleton).AsSelf();
         builder.Register<ItemModel>(Lifetime.Singleton).AsSelf();
         builder.Register<MainCameraBorders>(Lifetime.Singleton).AsSelf();
