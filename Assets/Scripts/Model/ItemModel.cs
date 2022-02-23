@@ -1,8 +1,4 @@
-﻿using System.Collections.Generic;
-using Core.Spawner.Interfaces;
-using Core.WaiterAsync;
-using Data;
-using UnityEngine;
+﻿using Data;
 
 namespace Model
 {
