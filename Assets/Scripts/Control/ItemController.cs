@@ -52,6 +52,7 @@ namespace Control
             loopedActionAsync.Begin(_itemModel.Lifetime);
             item.Reseted += () =>
             {
+                Object.Destroy(newPattern);
                 loopedActionAsync.DoAction -= item.ResetToDefault;
                 loopedActionAsync.EndLoop();
             };

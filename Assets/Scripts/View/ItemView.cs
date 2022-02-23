@@ -25,7 +25,6 @@ namespace View
         public void SetValue(IPooler<GameObject> value)
         {
             gameObject.SetActive(true);
-
             _pooler = value;
         }
 
@@ -43,9 +42,7 @@ namespace View
 
         public void ResetToDefault()
         {
-            _pooler.Return(gameObject);
             gameObject.SetActive(false);
-            Destroy(_patternPlace.GetChild(0).gameObject);
             
             Reseted?.Invoke();
             ButtonClicked = delegate { };
@@ -64,6 +61,7 @@ namespace View
 
         private void OnDisable()
         {
+            _pooler.Return(gameObject);
             _itemButton.onClick.RemoveAllListeners();
         }
     }
