@@ -1,19 +1,19 @@
 ﻿using System;
 using Core.Pool;
 using Core.Randomizer;
+using Core.Spawner;
 using Core.Spawner.Interfaces;
-using Core.WaiterAsync;
 using Data;
 using UnityEngine;
 
-namespace Core.Spawner
+namespace Control
 {
-    public sealed class SpawnerWithPool : ISpawnerBehaviour
+    public sealed class SpawnController : ISpawnerBehaviour
     {
         private IPooler<GameObject> _pooler;
         private ISpawner<GameObject> _spawner;
-        private readonly ISpawnerContainer<GameObject> _spawnerContainer = new SpawnerContainer<GameObject>();
         private readonly IRandomizer _randomizer = new UniqueValueRandomizer();
+        private readonly ISpawnerContainer<GameObject> _spawnerContainer = new SpawnerContainer<GameObject>();
 
         public event Action<GameObject> OnInstantiatedObject = delegate {  };
 
