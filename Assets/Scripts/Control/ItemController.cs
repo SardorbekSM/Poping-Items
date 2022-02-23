@@ -46,6 +46,15 @@ namespace Control
 
             item.ChangePosition(_positionGetter.GetRandom());
             item.ChangePattern(newPattern, type);
+
+            var loopedActionAsync = new LoopedActionAsync();
+            loopedActionAsync.DoAction += item.ResetToDefault;
+            loopedActionAsync.Begin(_itemModel.Lifetime);
+            item.Reseted += () =>
+            {
+                loopedActionAsync.DoAction -= item.ResetToDefault;
+                loopedActionAsync.EndLoop();
+            };
         }
         
         public void EndControl()

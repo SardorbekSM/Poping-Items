@@ -10,26 +10,23 @@ namespace View
     public class ItemView : MonoBehaviour, ISpawnableObject<IPooler<GameObject>>, IClickBehaviour
     {
         [SerializeField] private Button _itemButton;
-        [SerializeField] private float _lifeTime;
         [SerializeField] private Transform _patternPlace;
-        
         private IPooler<GameObject> _pooler;
-        private ILoopedAction _loopedActionAsync;
-
+        
         public InteractableType PatternType { get; private set; }
         public event Action ButtonClicked;
+        public event Action Reseted;
+
+        private void OnEnable()
+        {
+            _itemButton.onClick.AddListener(OnButtonClicked);
+        }
 
         public void SetValue(IPooler<GameObject> value)
         {
-            _loopedActionAsync = new LoopedActionAsync();
-            _loopedActionAsync.DoAction += ResetToDefault;
-            _loopedActionAsync.Begin(_lifeTime);
-        
             gameObject.SetActive(true);
 
             _pooler = value;
-        
-            _itemButton.onClick.AddListener(OnButtonClicked);
         }
 
         public void ChangePosition(Vector2 newPosition)
@@ -46,11 +43,11 @@ namespace View
 
         public void ResetToDefault()
         {
-            _itemButton.onClick.RemoveAllListeners();
-            _loopedActionAsync.EndLoop();
             _pooler.Return(gameObject);
             gameObject.SetActive(false);
             Destroy(_patternPlace.GetChild(0).gameObject);
+            
+            Reseted?.Invoke();
             ButtonClicked = delegate { };
         }
 
@@ -60,10 +57,14 @@ namespace View
             ResetToDefault();
         }
 
+        private void OnDestroy()
+        {
+            Reseted?.Invoke();
+        }
+
         private void OnDisable()
         {
-            _loopedActionAsync.DoAction -= ResetToDefault;
-            _loopedActionAsync.EndLoop();
+            _itemButton.onClick.RemoveAllListeners();
         }
     }
 }
