@@ -11,7 +11,8 @@ namespace Model
         private readonly ItemsData _itemsData;
 
         public float SpawnDuration => _itemsData.SpawnDuration;
-        public SpawnData Prefabs => _itemsData.Prefabs; 
+        public SpawnData Prefabs => _itemsData.Prefabs;
+        public float Lifetime => _itemsData.ItemsLifeTime;
 
         public ItemModel(ItemsData itemsData)
         {
