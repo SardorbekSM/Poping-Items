@@ -28,7 +28,7 @@ namespace Control
 
         public void Initialize()
         {
-            _iterationModel.InitializeNewPatterns();
+            _iterationModel.UpdatePatterns();
             
             _correctPatterns = new List<GameObject>(_iterationModel.CorrectPatterns);
             _wrongPatterns = new List<GameObject>(_iterationModel.WrongPatterns);

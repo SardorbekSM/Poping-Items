@@ -1,10 +1,14 @@
 ﻿using System;
+
+using UnityEngine;
+
 using Core.Pool;
 using Core.Randomizer;
 using Core.Spawner;
 using Core.Spawner.Interfaces;
+
 using Data;
-using UnityEngine;
+using View;
 
 namespace Control
 {
@@ -30,8 +34,12 @@ namespace Control
 
         public void OnSpawnedObject(GameObject spawnedObject)
         {
-            spawnedObject.GetComponent<ISpawnableObject<IPooler<GameObject>>>()?.SetValue(_pooler);
+            var itemView = spawnedObject.GetComponent<ItemView>();
 
+            itemView.Reseted += () => _pooler.Return(spawnedObject);
+            
+            spawnedObject.gameObject.SetActive(true);
+            
             _spawnerContainer.SetValue(spawnedObject);
 
             OnInstantiatedObject.Invoke(spawnedObject);

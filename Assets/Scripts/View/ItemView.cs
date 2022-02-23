@@ -7,26 +7,14 @@ using UnityEngine.UI;
 
 namespace View
 {
-    public class ItemView : MonoBehaviour, ISpawnableObject<IPooler<GameObject>>, IClickBehaviour
+    public class ItemView : MonoBehaviour, IClickBehaviour
     {
         [SerializeField] private Button _itemButton;
         [SerializeField] private Transform _patternPlace;
-        private IPooler<GameObject> _pooler;
         
         public InteractableType PatternType { get; private set; }
         public event Action ButtonClicked;
         public event Action Reseted;
-
-        private void OnEnable()
-        {
-            _itemButton.onClick.AddListener(OnButtonClicked);
-        }
-
-        public void SetValue(IPooler<GameObject> value)
-        {
-            gameObject.SetActive(true);
-            _pooler = value;
-        }
 
         public void ChangePosition(Vector2 newPosition)
         {
@@ -47,8 +35,13 @@ namespace View
             Reseted?.Invoke();
             ButtonClicked = delegate { };
         }
+        
+        private void OnEnable()
+        {
+            _itemButton.onClick.AddListener(OnButtonClicked);
+        }
 
-        public void OnButtonClicked()
+        private void OnButtonClicked()
         {
             ButtonClicked?.Invoke();
             ResetToDefault();
@@ -61,7 +54,6 @@ namespace View
 
         private void OnDisable()
         {
-            _pooler.Return(gameObject);
             _itemButton.onClick.RemoveAllListeners();
         }
     }
