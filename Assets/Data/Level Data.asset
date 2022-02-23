@@ -16,5 +16,5 @@ MonoBehaviour:
     type: 2}
   _iterationsCount: 3
   _startValue: 0
-  _levelRequiredItemsCount: 24
-  _iterationRequiredItemsCount: 8
+  _levelRequiredItemsCount: 6
+  _iterationRequiredItemsCount: 2

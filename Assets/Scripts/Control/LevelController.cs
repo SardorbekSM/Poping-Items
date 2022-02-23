@@ -8,22 +8,22 @@ namespace Control
     public class LevelController : ILevelController
     {
         private readonly LevelModel _levelModel;
-        private readonly PatternGenerator _patternGenerator;
+        private readonly GameController _gameController;
 
         private int _score;
         private int _iterationScore;
         
         public event Action Scored;
 
-        public LevelController(LevelModel levelModel, PatternGenerator patternGenerator)
+        public LevelController(LevelModel levelModel, GameController gameController)
         {
             _levelModel = levelModel;
-            _patternGenerator = patternGenerator;
+            _gameController = gameController;
         }
 
         public void StartControl()
         {
-            _patternGenerator.Initialize();
+            _gameController.Initialize();
         }
 
         public float AddScore()
@@ -43,7 +43,7 @@ namespace Control
 
             _iterationScore = _levelModel.StartValue;
 
-            _patternGenerator.Initialize();
+            _gameController.Initialize();
 
             if (_score < _levelModel.LevelItemsCount) return;
             
@@ -58,7 +58,7 @@ namespace Control
 
         public void EndControl()
         {
-            _patternGenerator.ResetToDefault();
+            _gameController.ResetToDefault();
         }
     }
 }

@@ -8,34 +8,29 @@ using UnityEngine;
 
 namespace Core.Spawner
 {
-    public sealed class LoopedSpawner : ISpawnerBehaviour
+    public sealed class SpawnerWithPool : ISpawnerBehaviour
     {
         private readonly IRandomizer _randomizer;
         
-        private ILoopedAction _loopedActionAsync;
         private IPooler<GameObject> _pooler;
         private ISpawner<GameObject> _spawner;
-        private ISpawnerContainer<GameObject> _spawnerContainer = new SpawnerContainer<GameObject>();
+        private readonly ISpawnerContainer<GameObject> _spawnerContainer;
 
         public event Action<GameObject> OnInstantiatedObject = delegate {  };
 
-        public LoopedSpawner(IRandomizer randomizer)
+        public SpawnerWithPool(IRandomizer randomizer)
         {
-            _loopedActionAsync = new LoopedActionAsync();
+            _spawnerContainer = new SpawnerContainer<GameObject>();
             _randomizer = randomizer;
         }
 
-        public void Initialize(SpawnData spawnData, float duration)
+        public void Initialize(SpawnData spawnData)
         {
             _pooler = new RandomizerPooler(spawnData.Prefabs, _randomizer);
             _spawner = new Spawner<GameObject>(_pooler);
-            _spawnerContainer = new SpawnerContainer<GameObject>();
-            
-            _loopedActionAsync.DoAction += Spawn;
-            _loopedActionAsync.Begin(duration);
         }
 
-        private async void Spawn()
+        public async void Spawn()
         {
             await _spawner.BeginSpawning(OnSpawnedObject);
         }
@@ -51,8 +46,6 @@ namespace Core.Spawner
 
         public void Dispose()
         {
-            _loopedActionAsync.DoAction -= Spawn;
-            _loopedActionAsync.EndLoop();
             _spawnerContainer?.Dispose();
             _pooler?.Dispose();
         }

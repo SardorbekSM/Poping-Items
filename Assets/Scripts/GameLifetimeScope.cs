@@ -45,7 +45,7 @@ public class GameLifetimeScope : LifetimeScope
     {
         builder.Register<UniqueValueRandomizer>(Lifetime.Singleton).AsImplementedInterfaces();
         builder.Register<PositionGetter>(Lifetime.Singleton).AsImplementedInterfaces();
-        builder.Register<LoopedSpawner>(Lifetime.Singleton).AsImplementedInterfaces();
+        builder.Register<SpawnerWithPool>(Lifetime.Singleton).AsImplementedInterfaces();
         builder.Register<GameObjectFactory>(Lifetime.Singleton).AsImplementedInterfaces();
         builder.Register<SliderController>(Lifetime.Singleton).AsImplementedInterfaces();
         builder.Register<LevelController>(Lifetime.Singleton).AsImplementedInterfaces();
@@ -57,7 +57,7 @@ public class GameLifetimeScope : LifetimeScope
         builder.Register<LevelModel>(Lifetime.Singleton).AsSelf();
         builder.Register<ItemModel>(Lifetime.Singleton).AsSelf();
         builder.Register<MainCameraBorders>(Lifetime.Singleton).AsSelf();
-        builder.Register<PatternGenerator>(Lifetime.Singleton).AsSelf();
+        builder.Register<GameController>(Lifetime.Singleton).AsSelf();
         builder.Register<IterationModel>(Lifetime.Singleton).AsSelf();
 
         builder.RegisterEntryPoint<GameProcess>();

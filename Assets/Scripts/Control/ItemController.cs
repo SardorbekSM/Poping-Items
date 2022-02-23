@@ -13,22 +13,25 @@ namespace Control
     {
         private readonly IPositionGetter _positionGetter;
         private readonly ISpawnerBehaviour _spawnerWithPool;
-        private readonly PatternGenerator _patternGenerator;
+        private readonly GameController _gameController;
         private readonly ItemModel _itemModel;
-        
-        public ItemController(IPositionGetter positionGetter, ISpawnerBehaviour spawnerWithPool, PatternGenerator patternGenerator, ItemModel itemModel)
+        private readonly ILoopedAction _loop;
+
+        public ItemController(IPositionGetter positionGetter, ISpawnerBehaviour spawnerWithPool, GameController gameController, ItemModel itemModel)
         {
             _positionGetter = positionGetter;
             _spawnerWithPool = spawnerWithPool;
-            _patternGenerator = patternGenerator;
+            _gameController = gameController;
             _itemModel = itemModel;
+            _loop = new LoopedActionAsync();
         }
 
         public void StartControl()
         {
             _spawnerWithPool.OnInstantiatedObject += OnSpawned;
-            _spawnerWithPool.Dispose();
-            _spawnerWithPool.Initialize(_itemModel.Prefabs, _itemModel.SpawnDuration);
+            _spawnerWithPool.Initialize(_itemModel.Prefabs);
+            _loop.DoAction += _spawnerWithPool.Spawn;
+            _loop.Begin(_itemModel.SpawnDuration);
         }
 
         private void OnSpawned(GameObject obj)
@@ -37,9 +40,9 @@ namespace Control
             
             Assert.IsNotNull(item, "ItemView not found on spawned object in " + obj);
 
-            var newPattern = _patternGenerator.GetPattern(out var type);
+            var newPattern = _gameController.GetPattern(out var type);
 
-            Assert.IsNotNull(newPattern," Item pattern not created in " + _patternGenerator);
+            Assert.IsNotNull(newPattern," Item pattern not created in " + _gameController);
 
             item.ChangePosition(_positionGetter.GetRandom());
             item.ChangePattern(newPattern, type);
@@ -49,6 +52,8 @@ namespace Control
         {
             _spawnerWithPool.OnInstantiatedObject -= OnSpawned;
             _spawnerWithPool.Dispose();
+            _loop.DoAction -= _spawnerWithPool.Spawn;
+            _loop.EndLoop();
         }
     }
 }

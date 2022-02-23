@@ -1,11 +1,12 @@
 ﻿using System.Collections.Generic;
 using Core.Randomizer;
 using Data;
+using Model;
 using UnityEngine;
 
-namespace Model
+namespace Control
 {
-    public class PatternGenerator
+    public class GameController
     {
         private readonly IterationModel _iterationModel;
         private readonly IRandomizer _randomizer;
@@ -18,7 +19,7 @@ namespace Model
 
         private GameObject CorrectPattern { get; set; }
 
-        public PatternGenerator(IRandomizer randomizer, IterationModel iterationModel, IFactoryGameObject<GameObject> factory)
+        public GameController(IRandomizer randomizer, IterationModel iterationModel, IFactoryGameObject<GameObject> factory)
         {
             _iterationModel = iterationModel;
             _randomizer = randomizer;
