@@ -15,7 +15,7 @@ namespace Control
     {
         private readonly IPositionGetter _positionGetter;
         private readonly ISpawnerBehaviour _spawnerWithPool;
-        private readonly ILoopedAction _loop;
+        private readonly ILoopedAction _loopedAction;
         private readonly IPooler<GameObject> _pooler;
         private readonly GameController _gameController;
         private readonly ItemModel _itemModel;
@@ -29,7 +29,7 @@ namespace Control
             _spawnerWithPool = spawnerWithPool;
             _gameController = gameController;
             _itemModel = itemModel;
-            _loop = new LoopedActionAsync();
+            _loopedAction = new LoopedActionAsync();
             _pooler = new RandomizerPooler(_itemModel.Prefabs, randomizer);
             _spawnerWithPool.Initialize(_pooler);
         }
@@ -38,8 +38,8 @@ namespace Control
         {
             _pooler.Dispose();
             _spawnerWithPool.OnInstantiatedObject += OnSpawned;
-            _loop.DoAction += _spawnerWithPool.Spawn;
-            _loop.Begin(_itemModel.SpawnDuration);
+            _loopedAction.DoAction += _spawnerWithPool.Spawn;
+            _loopedAction.Begin(_itemModel.SpawnDuration);
         }
 
         private void OnSpawned(GameObject spawnedObject)
@@ -73,10 +73,10 @@ namespace Control
         public void EndControl()
         {
             _spawnerWithPool.OnInstantiatedObject -= OnSpawned;
+            _loopedAction.DoAction -= _spawnerWithPool.Spawn;
+            _loopedAction.EndLoop();
             _spawnerWithPool.Dispose();
             _pooler?.Dispose();
-            _loop.DoAction -= _spawnerWithPool.Spawn;
-            _loop.EndLoop();
         }
     }
 }
