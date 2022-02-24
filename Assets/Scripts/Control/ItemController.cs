@@ -19,10 +19,8 @@ namespace Control
         private readonly ISpawnerBehaviour _spawnerWithPool;
         private readonly ILoopedAction _loopedAction;
         private readonly IPooler<GameObject> _pooler;
-        
         private readonly GameController _gameController;
         private readonly ItemModel _itemModel;
-
 
         public ItemController(IPositionGetter positionGetter, 
             ISpawnerBehaviour spawnerWithPool,  IRandomizer randomizer, LevelModel levelModel,

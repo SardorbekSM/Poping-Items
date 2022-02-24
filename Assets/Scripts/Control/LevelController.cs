@@ -13,14 +13,12 @@ namespace Control
     public class LevelController : IStartable, IDisposable
     {
         private readonly LevelModel _levelModel;
-        private readonly ISpawnerBehaviour _spawnerBehaviour;
+        private readonly ISpawnerBehaviour _spawner;
         private readonly EndGameView _endGameView;
 
-        private int _iterationScore;
-        
-        public LevelController(LevelModel levelModel, ISpawnerBehaviour spawnerBehaviour, EndGameView endGameView)
+        public LevelController(LevelModel levelModel, ISpawnerBehaviour spawner, EndGameView endGameView)
         {
-            _spawnerBehaviour = spawnerBehaviour;
+            _spawner = spawner;
             _levelModel = levelModel;
             _endGameView = endGameView;
             levelModel.restarted += Start;
@@ -29,7 +27,7 @@ namespace Control
         
         public void Start()
         {
-            _spawnerBehaviour.OnInstantiatedObject += SubscribeToClick;
+            _spawner.OnInstantiatedObject += SubscribeToClick;
         }
 
         private void SubscribeToClick(GameObject obj)
@@ -71,12 +69,11 @@ namespace Control
         private void AllLevelsComplete()
         {
             _endGameView.Activate(_levelModel.restarted);
-            _levelModel.levelCompleted?.Invoke();
         }
 
         public void Dispose()
         {
-            _spawnerBehaviour.OnInstantiatedObject -= SubscribeToClick;
+            _spawner.OnInstantiatedObject -= SubscribeToClick;
         }
     }
 }

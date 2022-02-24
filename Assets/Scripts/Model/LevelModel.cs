@@ -36,6 +36,7 @@ namespace Model
         public void ResetLevelScore()
         {
             LevelScore = StartValue;
+            levelCompleted?.Invoke();
         }
 
         public LevelModel(LevelData levelData)
