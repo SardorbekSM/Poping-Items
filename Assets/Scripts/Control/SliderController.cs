@@ -1,60 +1,37 @@
-﻿using Control.Interfaces;
-using Core;
-using Core.Spawner.Interfaces;
-using Data;
+﻿using System;
 using Model;
-using UnityEngine;
-using UnityEngine.Assertions;
+using VContainer.Unity;
 using View;
 
 namespace Control
 {
-    public class SliderController : ISliderController
+    public class SliderController : IStartable, IDisposable
     {
         private readonly SliderView _sliderView;
         private readonly LevelModel _levelModel;
-        private readonly ILevelController _scoreControl;
-        private readonly ISpawnerBehaviour _spawnerBehaviour;
 
-        public SliderController(SliderView sliderView, LevelModel levelModel, ILevelController scoreControl, ISpawnerBehaviour spawnerBehaviour)
+        public SliderController(SliderView sliderView, LevelModel levelModel)
         {
             _sliderView = sliderView;
             _levelModel = levelModel;
-            _scoreControl = scoreControl;
-            _spawnerBehaviour = spawnerBehaviour;
+            levelModel.Restarted += Start;
+            levelModel.LevelCompleted += Dispose;
         }
 
-        public void StartControl()
+        public void Start()
         {
-            _spawnerBehaviour.OnInstantiatedObject += SubscribeToClick;
             _sliderView.CreateSliderSpan(_levelModel.StartValue, _levelModel.LevelItemsCount);
-        }
-
-        private void SubscribeToClick(GameObject obj)
-        {
-            var item = obj.GetComponent<IClickBehaviour>();
-            
-            Assert.IsNotNull(item);
-
-            item.ButtonClicked += () => ChangeSliderValue(obj);
+            _levelModel.ScoreChanged += ChangeSliderValue;
         }
         
-        private void ChangeSliderValue(GameObject obj)
+        private void ChangeSliderValue()
         {
-            var view = obj.GetComponent<ItemView>();
-            
-            Assert.IsNotNull(view); 
-
-            if (view.PatternType != InteractableType.Correct) return;
-            
-            _sliderView.ChangeValue(_scoreControl.AddScore());
-            
-            Debug.Log("Add Score");
+            _sliderView.ChangeValue(_levelModel.LevelScore);
         }
 
-        public void EndControl()
+        public void Dispose()
         {
-            _spawnerBehaviour.OnInstantiatedObject -= SubscribeToClick;
+            _levelModel.ScoreChanged -= ChangeSliderValue;
         }
     }
 }

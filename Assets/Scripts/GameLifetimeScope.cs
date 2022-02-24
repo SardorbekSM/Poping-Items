@@ -51,15 +51,14 @@ public class GameLifetimeScope : LifetimeScope
         builder.Register<SpawnerWithPool>(Lifetime.Singleton).AsImplementedInterfaces();
         builder.Register<GameObjectFactory>(Lifetime.Singleton).AsImplementedInterfaces();
         builder.Register<MainCameraBorders>(Lifetime.Singleton).AsSelf();
-
-        builder.RegisterEntryPoint<GameProcess>();
     }
 
     private void BindControllers(IContainerBuilder builder)
     {
-        builder.Register<SliderController>(Lifetime.Singleton).AsImplementedInterfaces();
-        builder.Register<LevelController>(Lifetime.Singleton).AsImplementedInterfaces();
-        builder.Register<ItemController>(Lifetime.Singleton).AsImplementedInterfaces();
+        builder.RegisterEntryPoint<SliderController>();
+        builder.RegisterEntryPoint<LevelController>();
+        builder.RegisterEntryPoint<ItemController>();
+
         builder.Register<GameController>(Lifetime.Singleton).AsSelf();
     }
 

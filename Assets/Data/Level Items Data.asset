@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Level Items Data
   m_EditorClassIdentifier: 
   _spawnDuration: 0.5
-  _itemsLifeTime: 0
-  _prefabs: {fileID: 11400000, guid: e2e368963b992784dbf6ab7d39292243, type: 2}
+  _itemsLifeTime: 8
+  _itemsToSpawn: {fileID: 11400000, guid: e2e368963b992784dbf6ab7d39292243, type: 2}

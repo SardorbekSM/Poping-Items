@@ -1,64 +1,88 @@
 ﻿using System;
 
-using Control.Interfaces;
+using Core;
+using Core.Spawner.Interfaces;
 using Model;
+using UnityEngine;
+using UnityEngine.Assertions;
+using VContainer.Unity;
+using View;
 
 namespace Control
 {
-    public class LevelController : ILevelController
+    public class LevelController : IStartable, IDisposable
     {
         private readonly LevelModel _levelModel;
         private readonly GameController _gameController;
+        private readonly ISpawnerBehaviour _spawnerBehaviour;
+        private readonly EndGameView _endGameView;
 
-        private int _score;
         private int _iterationScore;
         
-        public event Action Scored;
-
-        public LevelController(LevelModel levelModel, GameController gameController)
+        public LevelController(LevelModel levelModel, GameController gameController, ISpawnerBehaviour spawnerBehaviour, EndGameView endGameView)
         {
+            _spawnerBehaviour = spawnerBehaviour;
             _levelModel = levelModel;
             _gameController = gameController;
+            _endGameView = endGameView;
+            levelModel.Restarted += Start;
+            levelModel.LevelCompleted += Dispose;
         }
-
-        public void StartControl()
+        
+        public void Start()
         {
+            _spawnerBehaviour.OnInstantiatedObject += SubscribeToClick;
             _gameController.Initialize();
         }
 
-        public float AddScore()
+        private void SubscribeToClick(GameObject obj)
         {
-            var newScore = ++_score;
+            var item = obj.GetComponent<IClickBehaviour>();
             
+            Assert.IsNotNull(item);
+
+            item.ButtonClicked += () => TryAddScore(obj);
+        }
+        
+        private void TryAddScore(GameObject obj)
+        {
+            var view = obj.GetComponent<ItemView>();
+            
+            Assert.IsNotNull(view); 
+
+            if (view.PatternType != InteractableType.Correct) return;
+
+            _levelModel.IncrementScore();
             OnScoreChanged();
             
-            return newScore;
+            Debug.Log("Add Score");
         }
 
         private void OnScoreChanged()
         {
-            _iterationScore++;
+            if (_levelModel.IterationScore < _levelModel.IterationItemsCount) return;
 
-            if (_iterationScore < _levelModel.IterationItemsCount) return;
-
-            _iterationScore = _levelModel.StartValue;
+           _levelModel.ResetIterationScore();
 
             _gameController.Initialize();
 
-            if (_score < _levelModel.LevelItemsCount) return;
+            if (_levelModel.LevelScore < _levelModel.LevelItemsCount) return;
+            
+            _levelModel.ResetLevelScore();
             
             AllLevelsComplete();
         }
 
         private void AllLevelsComplete()
         {
-            _score = _levelModel.StartValue;
-            Scored?.Invoke();
+            _endGameView.Activate(_levelModel.Restarted);
+            _levelModel.LevelCompleted?.Invoke();
         }
 
-        public void EndControl()
+        public void Dispose()
         {
             _gameController.ResetToDefault();
+            _spawnerBehaviour.OnInstantiatedObject -= SubscribeToClick;
         }
     }
 }

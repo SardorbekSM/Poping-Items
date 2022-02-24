@@ -1,4 +1,4 @@
-﻿using Control.Interfaces;
+﻿using System;
 using Core.Pool;
 using Core.Position;
 using Core.Randomizer;
@@ -7,11 +7,13 @@ using Core.WaiterAsync;
 using Model;
 using UnityEngine;
 using UnityEngine.Assertions;
+using VContainer.Unity;
 using View;
+using Object = UnityEngine.Object;
 
 namespace Control
 {
-    public class ItemController : IItemController
+    public class ItemController : IStartable, IDisposable
     {
         private readonly IPositionGetter _positionGetter;
         private readonly ISpawnerBehaviour _spawnerWithPool;
@@ -22,7 +24,7 @@ namespace Control
 
 
         public ItemController(IPositionGetter positionGetter, 
-            ISpawnerBehaviour spawnerWithPool,  IRandomizer randomizer,
+            ISpawnerBehaviour spawnerWithPool,  IRandomizer randomizer, LevelModel levelModel,
             GameController gameController, ItemModel itemModel)
         {
             _positionGetter = positionGetter;
@@ -32,11 +34,13 @@ namespace Control
             _loopedAction = new LoopedActionAsync();
             _pooler = new RandomizerPooler(_itemModel.Prefabs, randomizer);
             _spawnerWithPool.Initialize(_pooler);
+            
+            levelModel.Restarted += Start;
+            levelModel.LevelCompleted += Dispose;
         }
 
-        public void StartControl()
+        public void Start()
         {
-            _pooler.Dispose();
             _spawnerWithPool.OnInstantiatedObject += OnSpawned;
             _loopedAction.DoAction += _spawnerWithPool.Spawn;
             _loopedAction.Begin(_itemModel.SpawnDuration);
@@ -70,13 +74,11 @@ namespace Control
             };
         }
         
-        public void EndControl()
+        public void Dispose()
         {
             _spawnerWithPool.OnInstantiatedObject -= OnSpawned;
             _loopedAction.DoAction -= _spawnerWithPool.Spawn;
             _loopedAction.EndLoop();
-            _spawnerWithPool.Dispose();
-            _pooler?.Dispose();
         }
     }
 }
