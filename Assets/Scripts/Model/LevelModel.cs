@@ -1,6 +1,5 @@
 ﻿using System;
 using Data;
-using UnityEngine;
 
 namespace Model
 {
@@ -17,21 +16,21 @@ namespace Model
         public int LevelScore { get; private set; }
 
         public event Action ScoreChanged;
-        public Action IterationCompleted;
-        public Action LevelCompleted;
-        public Action Restarted;
+        public Action iterationCompleted;
+        public Action levelCompleted;
+        public Action restarted;
 
         public void IncrementScore()
         {
             ++LevelScore;
             ++IterationScore;
-            Debug.Log("Score Changed");
             ScoreChanged?.Invoke();
         }
 
         public void ResetIterationScore()
         {
             IterationScore = StartValue;
+            iterationCompleted?.Invoke();
         }
 
         public void ResetLevelScore()

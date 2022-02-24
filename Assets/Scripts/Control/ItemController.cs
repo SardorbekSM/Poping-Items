@@ -19,6 +19,7 @@ namespace Control
         private readonly ISpawnerBehaviour _spawnerWithPool;
         private readonly ILoopedAction _loopedAction;
         private readonly IPooler<GameObject> _pooler;
+        
         private readonly GameController _gameController;
         private readonly ItemModel _itemModel;
 
@@ -35,8 +36,8 @@ namespace Control
             _pooler = new RandomizerPooler(_itemModel.Prefabs, randomizer);
             _spawnerWithPool.Initialize(_pooler);
             
-            levelModel.Restarted += Start;
-            levelModel.LevelCompleted += Dispose;
+            levelModel.restarted += Start;
+            levelModel.levelCompleted += Dispose;
         }
 
         public void Start()

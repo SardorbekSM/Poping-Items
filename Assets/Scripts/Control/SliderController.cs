@@ -14,8 +14,8 @@ namespace Control
         {
             _sliderView = sliderView;
             _levelModel = levelModel;
-            levelModel.Restarted += Start;
-            levelModel.LevelCompleted += Dispose;
+            levelModel.restarted += Start;
+            levelModel.levelCompleted += Dispose;
         }
 
         public void Start()

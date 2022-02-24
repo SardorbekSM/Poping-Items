@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using Core;
 using Core.Randomizer;
 using Model;
@@ -19,14 +20,20 @@ namespace Control
 
         private GameObject CorrectPattern { get; set; }
 
-        public GameController(IRandomizer randomizer, IterationModel iterationModel, IFactoryGameObject<GameObject> factory)
+        public GameController(IRandomizer randomizer, IterationModel iterationModel, IFactoryGameObject<GameObject> factory, LevelModel levelModel)
         {
             _iterationModel = iterationModel;
             _randomizer = randomizer;
             _factory = factory;
+
+            levelModel.restarted += Initialize;
+            levelModel.iterationCompleted += Initialize;
+            levelModel.levelCompleted += ResetToDefault;
+            
+            Initialize();
         }
 
-        public void Initialize()
+        private void Initialize()
         {
             _iterationModel.UpdatePatterns();
             
@@ -72,7 +79,7 @@ namespace Control
             return _factory.Create(_wrongPatterns[index]);
         }
 
-        public void ResetToDefault()
+        private void ResetToDefault()
         {
             _correctPatterns.Clear();
             _wrongPatterns.Clear();

@@ -1,11 +1,12 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
-public class GameObjectFactory : IFactoryGameObject<GameObject>
+namespace Core.Spawner
 {
-    public GameObject Create(Object prefab)
+    public class GameObjectFactory : IFactoryGameObject<GameObject>
     {
-        return (GameObject) Object.Instantiate(prefab);
+        public GameObject Create(Object prefab)
+        {
+            return (GameObject) Object.Instantiate(prefab);
+        }
     }
 }
