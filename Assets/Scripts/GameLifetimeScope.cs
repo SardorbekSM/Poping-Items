@@ -27,7 +27,10 @@ public class GameLifetimeScope : LifetimeScope
     protected override void Configure(IContainerBuilder builder)
     {
         BindCore(builder);
+        BindModels(builder);
+        BindControllers(builder);
         BindComponents(builder);
+        
         BindInstance(builder, _itemsData);
         BindInstance(builder, _levelData);
         BindInstance(builder, _itemsOffsetData);
@@ -47,20 +50,23 @@ public class GameLifetimeScope : LifetimeScope
         builder.Register<PositionGetter>(Lifetime.Singleton).AsImplementedInterfaces();
         builder.Register<SpawnerWithPool>(Lifetime.Singleton).AsImplementedInterfaces();
         builder.Register<GameObjectFactory>(Lifetime.Singleton).AsImplementedInterfaces();
-        builder.Register<SliderController>(Lifetime.Singleton).AsImplementedInterfaces();
-        builder.Register<LevelController>(Lifetime.Singleton).AsImplementedInterfaces();
-        builder.Register<ItemController>(Lifetime.Singleton).AsImplementedInterfaces();
-        
-        // Как можно передвигать строки с помощью alt как в VS
-        // И еще namespace автоматически ctrl + k + e;
-        
+        builder.Register<MainCameraBorders>(Lifetime.Singleton).AsSelf();
+    }
+
+    private void BindControllers(IContainerBuilder builder)
+    {
+        builder.RegisterEntryPoint<SliderController>();
+        builder.RegisterEntryPoint<LevelController>();
+        builder.RegisterEntryPoint<ItemController>();
+
+        builder.Register<GameController>(Lifetime.Singleton).AsSelf();
+    }
+
+    private void BindModels(IContainerBuilder builder)
+    {
         builder.Register<LevelModel>(Lifetime.Singleton).AsSelf();
         builder.Register<ItemModel>(Lifetime.Singleton).AsSelf();
-        builder.Register<MainCameraBorders>(Lifetime.Singleton).AsSelf();
-        builder.Register<PatternGenerator>(Lifetime.Singleton).AsSelf();
         builder.Register<IterationModel>(Lifetime.Singleton).AsSelf();
-
-        builder.RegisterEntryPoint<GameProcess>();
     }
     
     private void BindInstance<T>(IContainerBuilder builder, T instance)

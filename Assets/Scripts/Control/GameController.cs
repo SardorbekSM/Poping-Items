@@ -1,12 +1,13 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using Core;
 using Core.Randomizer;
-using Data;
+using Model;
 using UnityEngine;
 
-namespace Model
+namespace Control
 {
-    public class PatternGenerator
+    public class GameController
     {
         private readonly IterationModel _iterationModel;
         private readonly IRandomizer _randomizer;
@@ -19,16 +20,22 @@ namespace Model
 
         private GameObject CorrectPattern { get; set; }
 
-        public PatternGenerator(IRandomizer randomizer, IterationModel iterationModel, IFactoryGameObject<GameObject> factory)
+        public GameController(IRandomizer randomizer, IterationModel iterationModel, IFactoryGameObject<GameObject> factory, LevelModel levelModel)
         {
             _iterationModel = iterationModel;
             _randomizer = randomizer;
             _factory = factory;
+
+            levelModel.restarted += Initialize;
+            levelModel.iterationCompleted += Initialize;
+            levelModel.levelCompleted += ResetToDefault;
+            
+            Initialize();
         }
 
-        public void Initialize()
+        private void Initialize()
         {
-            _iterationModel.InitializeNewPatterns();
+            _iterationModel.UpdatePatterns();
             
             _correctPatterns = new List<GameObject>(_iterationModel.CorrectPatterns);
             _wrongPatterns = new List<GameObject>(_iterationModel.WrongPatterns);
@@ -72,7 +79,7 @@ namespace Model
             return _factory.Create(_wrongPatterns[index]);
         }
 
-        public void ResetToDefault()
+        private void ResetToDefault()
         {
             _correctPatterns.Clear();
             _wrongPatterns.Clear();

@@ -23,7 +23,7 @@ namespace Model
             _iterationsCount = iterationPatternsData.IterationPatterns.Length;
         }
 
-        public void InitializeNewPatterns()
+        public void UpdatePatterns()
         {
             if (_currentIteration < _iterationsCount)
             {

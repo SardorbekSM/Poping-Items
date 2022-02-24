@@ -1,54 +1,83 @@
-﻿using Control.Interfaces;
+﻿using System;
+using Core.Pool;
 using Core.Position;
+using Core.Randomizer;
 using Core.Spawner.Interfaces;
 using Core.WaiterAsync;
 using Model;
 using UnityEngine;
 using UnityEngine.Assertions;
+using VContainer.Unity;
 using View;
+using Object = UnityEngine.Object;
 
 namespace Control
 {
-    public class ItemController : IItemController
+    public class ItemController : IStartable, IDisposable
     {
         private readonly IPositionGetter _positionGetter;
         private readonly ISpawnerBehaviour _spawnerWithPool;
-        private readonly PatternGenerator _patternGenerator;
+        private readonly ILoopedAction _loopedAction;
+        private readonly IPooler<GameObject> _pooler;
+        private readonly GameController _gameController;
         private readonly ItemModel _itemModel;
-        
-        public ItemController(IPositionGetter positionGetter, ISpawnerBehaviour spawnerWithPool, PatternGenerator patternGenerator, ItemModel itemModel)
+
+        public ItemController(IPositionGetter positionGetter, 
+            ISpawnerBehaviour spawnerWithPool,  IRandomizer randomizer, LevelModel levelModel,
+            GameController gameController, ItemModel itemModel)
         {
             _positionGetter = positionGetter;
             _spawnerWithPool = spawnerWithPool;
-            _patternGenerator = patternGenerator;
+            _gameController = gameController;
             _itemModel = itemModel;
+            _loopedAction = new LoopedActionAsync();
+            _pooler = new RandomizerPooler(_itemModel.Prefabs, randomizer);
+            _spawnerWithPool.Initialize(_pooler);
+            
+            levelModel.restarted += Start;
+            levelModel.levelCompleted += Dispose;
         }
 
-        public void StartControl()
+        public void Start()
         {
             _spawnerWithPool.OnInstantiatedObject += OnSpawned;
-            _spawnerWithPool.Dispose();
-            _itemModel.BeginSpawn();
+            _loopedAction.DoAction += _spawnerWithPool.Spawn;
+            _loopedAction.Begin(_itemModel.SpawnDuration);
         }
 
-        private void OnSpawned(GameObject obj)
+        private void OnSpawned(GameObject spawnedObject)
         {
-            var item = obj.GetComponent<ItemView>();
+            spawnedObject.SetActive(true);
+
+            var itemView = spawnedObject.GetComponent<ItemView>();
             
-            Assert.IsNotNull(item, "ItemView not found on spawned object in " + obj);
+            Assert.IsNotNull(itemView, "ItemView not found on spawned object in " + spawnedObject);
 
-            var newPattern = _patternGenerator.GetPattern(out var type);
+            var newPattern = _gameController.GetPattern(out var type);
 
-            Assert.IsNotNull(newPattern," Item pattern not created in " + _patternGenerator);
+            Assert.IsNotNull(newPattern," Item pattern not created in " + _gameController);
 
-            item.ChangePosition(_positionGetter.GetRandom());
-            item.ChangePattern(newPattern, type);
+            itemView.ChangePosition(_positionGetter.GetRandom());
+            itemView.ChangePattern(newPattern, type);
+
+            var loopedActionAsync = new LoopedActionAsync();
+            loopedActionAsync.DoAction += itemView.ResetToDefault;
+            loopedActionAsync.Begin(_itemModel.Lifetime);
+            itemView.Reseted += () =>
+            {
+                Object.Destroy(newPattern);
+                loopedActionAsync.DoAction -= itemView.ResetToDefault;
+                loopedActionAsync.EndLoop();
+                spawnedObject.SetActive(false);
+                _pooler.Return(spawnedObject);
+            };
         }
         
-        public void EndControl()
+        public void Dispose()
         {
             _spawnerWithPool.OnInstantiatedObject -= OnSpawned;
-            _itemModel.EndSpawn();
+            _loopedAction.DoAction -= _spawnerWithPool.Spawn;
+            _loopedAction.EndLoop();
         }
     }
 }
