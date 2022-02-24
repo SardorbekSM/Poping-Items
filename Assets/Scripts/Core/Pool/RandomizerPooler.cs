@@ -1,6 +1,8 @@
 ﻿using System.Collections.Generic;
-using Core.Randomizer;
+
 using UnityEngine;
+
+using Core.Randomizer;
 
 namespace Core.Pool
 {

@@ -1,8 +1,10 @@
 ﻿using System;
-using Core.CameraUtils;
-using Data;
+
 using UnityEngine;
 using Random = UnityEngine.Random;
+
+using Core.CameraUtils;
+using Data;
 
 namespace Core.Position
 {
@@ -18,12 +20,7 @@ namespace Core.Position
             _cameraBorders = cameraBorders;
             _itemsOffsetData = itemsOffsetData;
         }
-
-        public Vector2 GetDefault()
-        {
-            return Vector2.zero;
-        }
-
+        
         public Vector2 GetRandom()
         {
             return GetRandomInCamera(_cameraBorders.LeftBorder, _cameraBorders.RightBorder, _cameraBorders.BottomBorder);

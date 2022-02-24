@@ -1,6 +1,7 @@
-﻿using Data;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.Assertions;
+
+using Data;
 
 namespace Core.CameraUtils
 {
@@ -13,7 +14,7 @@ namespace Core.CameraUtils
         public float RightBorder { get; private set; }
         public float BottomBorder { get; private set; }
 
-        public MainCameraBorders(ItemsOffsetData itemsOffsetData, UnityEngine.Camera mainCamera)
+        public MainCameraBorders(ItemsOffsetData itemsOffsetData, Camera mainCamera)
         {
             _itemsOffsetData = itemsOffsetData;
             _mainCamera = mainCamera;

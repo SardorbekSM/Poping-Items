@@ -1,6 +1,8 @@
 ﻿using System;
-using Model;
+
 using VContainer.Unity;
+
+using Model;
 using View;
 
 namespace Control

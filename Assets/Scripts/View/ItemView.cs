@@ -1,9 +1,9 @@
 ﻿using System;
-using Core;
-using Core.WaiterAsync;
-using Data;
+
 using UnityEngine;
 using UnityEngine.UI;
+
+using Core;
 
 namespace View
 {

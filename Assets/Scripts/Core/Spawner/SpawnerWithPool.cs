@@ -1,6 +1,8 @@
 ﻿using System;
-using Core.Spawner.Interfaces;
+
 using UnityEngine;
+
+using Core.Spawner.Interfaces;
 
 namespace Core.Spawner
 {

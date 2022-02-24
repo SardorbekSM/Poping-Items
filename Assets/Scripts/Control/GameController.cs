@@ -1,9 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+
+using UnityEngine;
+
 using Core;
 using Core.Randomizer;
 using Model;
-using UnityEngine;
 
 namespace Control
 {
